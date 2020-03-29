@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>BulmaBoilerplate</title>
+    <link>/</link>
+    <description>Recent content on BulmaBoilerplate</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Homepage</title>
+      <link>/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/</guid>
+      <description>Start your next Bulma project in seconds
+Introduction What is BulmaBoilerplate BulmaBoilerplate is a profesionnal Bulma plate with Sass and JavaScript all runned by Gulp and Webpack. It provides a full project structure to help you with Bulma customization and JavaScript development.
+Demo site and documentation are using Hugo, the powerful static site generator.
+Did you think about distributing your work on our markteplace ?
+You have created an amazing Bulma Template ?</description>
+    </item>
+    
+  </channel>
+</rss>

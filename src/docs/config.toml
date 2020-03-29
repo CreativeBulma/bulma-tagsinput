@@ -1,0 +1,16 @@
+baseURL = "https://demo.creativebulma.net/boilerplate/1.0/"
+languageCode = "en-us"
+title = "BulmaBoilerplate"
+theme = "creativebulma"
+
+[markup]
+  [markup.highlight]
+    style = "manni"
+
+[menu]
+
+  [[menu.main]]
+    identifier = "how-to"
+    name = "How-To"
+    url = "#"
+    weight = 20

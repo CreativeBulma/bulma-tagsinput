@@ -1,0 +1,123 @@
+@charset "utf-8"
+
+/**
+ * ----------------------------------------
+ *  GENERAL COLORS
+ * ----------------------------------------
+ */
+$blue: #006fff
+$cyan: #17A2B8
+$green: #3bd098
+$orange: #f6b503
+$purple: #6C63FF
+$red: #fd4967
+$turquoise: #37BC9B
+$yellow: #F4C414
+
+$primary: $purple
+$secondary: #050505
+$info: #6ab2f5
+$success: $green
+$danger:  $red
+$warning: $orange
+
+$link: #333537
+
+$inverted: #212a38
+$dark: #333537
+$grey: #808488
+$grey-light: lighten($grey, 15%)
+$grey-lighter: lighten($grey-light, 5%)
+$grey-darker: lighten($dark, 15%)
+$grey-dark: lighten($grey-darker, 5%)
+
+$white-bis: darken($white, 5%)
+$white-ter: darken($white-ter, 5%)
+
+$body-background-color: #F8F9FA
+$background-pageheader: #F8F9FA
+$background: #F8F9FA
+$border: #E8E8E8
+
+/**
+ * ----------------------------------------
+ *  TEXT COLORS
+ * ----------------------------------------
+ */
+$text: #4a4a4a
+$title-color: $text
+$subtitle-color: $text
+
+/**
+ * ----------------------------------------
+ *  INVERT COLORS
+ * ----------------------------------------
+ */
+$orange-invert: findColorInvert($orange)
+$orange-light: findLightColor($orange)
+$orange-dark: findDarkColor($orange)
+
+$yellow-invert: findColorInvert($yellow)
+$yellow-light: findLightColor($yellow)
+$yellow-dark: findDarkColor($yellow)
+
+$green-invert: findColorInvert($green)
+$green-light: findLightColor($green)
+$green-dark: findDarkColor($green)
+
+$turquoise-invert: findColorInvert($turquoise)
+$turquoise-light: findLightColor($turquoise)
+$turquoise-dark: findDarkColor($turquoise)
+
+$cyan-invert: findColorInvert($cyan)
+$cyan-light: findLightColor($cyan)
+$cyan-dark: findDarkColor($cyan)
+
+$blue-invert: findColorInvert($blue)
+$blue-light: findLightColor($blue)
+$blue-dark: findDarkColor($blue)
+
+$purple-invert: findColorInvert($purple)
+$purple-light: findLightColor($purple)
+$purple-dark: findDarkColor($purple)
+
+$red-invert: findColorInvert($red)
+$red-light: findLightColor($red)
+$red-dark: findDarkColor($red)
+
+$primary-invert: findColorInvert($primary)
+$primary-light: findLightColor($primary)
+$primary-dark: findDarkColor($primary)
+
+$secondary-invert: findColorInvert($secondary)
+$secondary-light: findLightColor($secondary)
+$secondary-dark: findDarkColor($secondary)
+
+$info-invert: findColorInvert($info)
+$info-light: findLightColor($info)
+$info-dark: findDarkColor($info)
+
+$success-invert: findColorInvert($success)
+$success-light: findLightColor($success)
+$success-dark: findDarkColor($success)
+
+$warning-invert: findColorInvert($warning)
+$warning-light: findLightColor($warning)
+$warning-dark: findDarkColor($warning)
+
+$danger-invert: findColorInvert($danger)
+$danger-light: findLightColor($danger)
+$danger-dark: findDarkColor($danger)
+
+$light-invert: findColorInvert($light)
+$dark-invert: findColorInvert($dark)	
+
+/**
+ * ----------------------------------------
+ *  COLORS MAPS
+ * ----------------------------------------
+ */
+$custom-colors: ("secondary": ($secondary, $secondary-invert, $secondary-light, $secondary-dark), "blue": ($blue, $blue-invert, $blue-light, $blue-dark), "cyan": ($cyan, $cyan-invert, $cyan-light, $cyan-dark), "green": ($green, $green-invert, $green-light, $green-dark), "orange": ($orange, $orange-invert, $orange-light, $orange-dark), "purple": ($purple, $purple-invert, $purple-light, $purple-dark), "red": ($red, $red-invert, $red-light, $red-dark), "turquoise": ($turquoise, $turquoise-invert, $turquoise-light, $turquoise-dark), "yellow": ($yellow, $yellow-invert, $yellow-light, $yellow-dark)) // DO NOT DELETE
+$custom-shades: null // DO NOT DELETE
+
+
