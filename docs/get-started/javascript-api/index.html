@@ -1,0 +1,2502 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <base href="https://demo.creativebulma.net/components/tagsinput/1.0/">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    
+    <title>Javascript API - BulmaTagsInput</title>
+
+    <link rel="icon" href="https://demo.creativebulma.net/components/tagsinput/1.0/favicon.png">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <link rel="stylesheet" href="/components/tagsinput/1.0/css/docs.css" />
+    <link rel="stylesheet" href="/components/tagsinput/1.0/css/bulma-tagsinput.min.css" />
+
+    
+
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+
+<body class=''>
+    
+    <div class="container is-fullheight">
+        
+        <div class="mobile-burger burger is-hidden-desktop" data-target="#doc-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="columns is-gapless is-fullheight">
+            <div id="doc-menu" class="column is-2 menu is-mobile">
+                <a href="https://demo.creativebulma.net/components/tagsinput/1.0/" class="brand">
+    <span class="title is-6 has-text-weight-normal">BulmaTagsInput</span>
+    <span class="subtitle tag is-primary is-light is-7 has-text-weight-light is-uppercase">docs</span>
+</a>
+<ul class="menu-list">
+    
+    
+    
+        
+            <li class="">
+                <a href="/components/tagsinput/1.0/" class="menu-item">
+                    
+                    <span>Introduction</span>
+                </a>
+            </li>
+        
+    
+        
+            <li class="menu-item has-dropdown is-active">
+                <a href="#" class="menu-title">
+                    
+                    <span>Get started</span>
+                    <span class="menu-caret"></span>
+                </a>
+                <ul class="menu-dropdown">
+                    
+                        <li class="">
+                            <a href="/components/tagsinput/1.0/get-started/" class="menu-item">Installation</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="/components/tagsinput/1.0/get-started/usage/" class="menu-item">Usage</a>
+                        </li>
+                    
+                        <li class="is-active">
+                            <a href="/components/tagsinput/1.0/get-started/javascript-api/" class="menu-item">Javascript API</a>
+                        </li>
+                    
+                </ul>
+            </li>
+        
+    
+        
+            <li class="menu-item has-dropdown ">
+                <a href="#" class="menu-title">
+                    
+                    <span>How-To</span>
+                    <span class="menu-caret"></span>
+                </a>
+                <ul class="menu-dropdown">
+                    
+                        <li class="">
+                            <a href="/components/tagsinput/1.0/how-to/customize/" class="menu-item">Customize</a>
+                        </li>
+                    
+                </ul>
+            </li>
+        
+    
+        
+            <li class="">
+                <a href="/components/tagsinput/1.0/changelog/" class="menu-item">
+                    
+                    <span>Changelog</span>
+                </a>
+            </li>
+        
+    
+</ul>
+            </div>
+            <div class="column is-fullheight">
+                <nav class="navbar" role="navigation" aria-label="navigation" style="background-color: transparent !important;">
+    <div class="navbar-menu">
+        <div class="navbar-start">
+        </div>
+        <div class="navbar-end">
+            
+            
+            <div class="navbar-item">
+                <span >Version 1.0</span>
+            </div>
+            
+            
+            <a class="navbar-item is-square" href="https://github.com/CreativeBulma/bulma-tagsinput" alt="Github repository" target="_blank">
+                <span class="icon">
+                    <i class="fab fa-lg fa-github"></i>
+                </span>
+            </a>
+            
+        </div>
+    </div>
+</nav>
+
+                <div class="section is-fullheight" style="padding: 3rem;">
+                    <div class="content is-fullheight">
+                        <h1 id="javascript-api">JavaScript API</h1>
+<h2 id="javascript-api-documentation">Javascript API documentation</h2>
+<p>BulmaTagsInput is available as a JavaScript object, so you can use it directly.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#09f;font-style:italic">// Instantiate on one element
+</span><span style="color:#09f;font-style:italic"></span><span style="color:#069;font-weight:bold">new</span> BulmaTagsInput(selector, options);
+
+<span style="color:#09f;font-style:italic">// Instantiate on multiple elements
+</span><span style="color:#09f;font-style:italic"></span>BulmaTagsInput.attach(selector, options);
+</code></pre></div><p><strong>Arguments</strong></p>
+<ul>
+<li>selector: query <code>String</code> returning a single <code>Node</code> or directly a <code>Node</code></li>
+<li>options: see <a href="https://demo.creativebulma.net/components/tagsinput/1.0/get-started/javascript-api/#options">Options</a> section</li>
+</ul>
+
+<div class="notification is-info is-light" >Main differences between methods are when using <code>attach</code>:</p>
+<ul>
+<li>selector can be a query <code>String</code> returning a single <code>Node</code> or a <code>NodeList</code>, directly a <code>Node</code> or a <code>NodeList</code></li>
+<li>DOM modifications will be observed to detect any new element responding to the given selector to automatically instantiate BulmaTagsInput on them with the given option.</li>
+</ul></div>
+<h3 id="access-to-bulmatagsinput-instance">Access to BulmaTagsInput instance</h3>
+<p>Whatever the way you use to instantiate BulmaTagsInput, all element on which BulmaTagsInput is applied will now contains a new <code>BulmaTagsInput</code> function which will let you access to the instance at any time.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#069;font-weight:bold">var</span> inputTags <span style="color:#555">=</span> <span style="color:#366">document</span>.getElementById(<span style="color:#c30">&#39;input-tags&#39;</span>);
+<span style="color:#069;font-weight:bold">new</span> BulmaTagsInput(inputTags);
+
+<span style="color:#09f;font-style:italic">// Access to the BulmaTagsInput instance
+</span><span style="color:#09f;font-style:italic"></span><span style="color:#069;font-weight:bold">var</span> btiInstance <span style="color:#555">=</span> inputTags.BulmaTagsInput();
+
+<span style="color:#09f;font-style:italic">// Call BulmaTagsInput method
+</span><span style="color:#09f;font-style:italic"></span>btiInstance.add(<span style="color:#c30">&#39;new Tag&#39;</span>);
+</code></pre></div><hr>
+<h2 id="options">Options</h2>
+<h3 id="customize-plugin-behavior-with-options">Customize plugin behavior with options</h3>
+<p>You can easily manage the component behavior by passing an object of options to the constructor.</p>
+<p>Options can be set either through JavaScript or directly on the DOM as dataset of the element.
+<div class="tabs">
+    <ul>
+        
+		
+
+		
+		
+		
+
+		
+        <li class="is-active" id="nav-1" data-toggle="tab" data-target="#tab11" role="tab" aria-selected="true">
+            <a>1. JavaScript</a>
+        </li>
+        
+		
+
+		
+		
+		
+
+		
+        <li id="nav-1" data-toggle="tab" data-target="#tab12" role="tab" aria-selected="false">
+            <a>2. Dataset</a>
+        </li>
+        
+		
+    </ul>
+</div>
+<div class="tab-content" id="1">
+
+
+
+
+
+
+<div class="tab-pane is-active" id="tab11" role="tabpanel" aria-labelledby="nav-tabName1">
+	<p>Provide options when instanciating plugin. Options will be applied to all element provided (or found by the given selector).</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">BulmaTagsInput.attach(<span style="color:#c30">&#39;input[data-type=&#34;tags&#34;], input[type=&#34;tags&#34;], select[data-type=&#34;tags&#34;], select[type=&#34;tags&#34;]&#39;</span>, {
+    allowDuplicates<span style="color:#555">:</span> <span style="color:#069;font-weight:bold">false</span>,
+	caseSensitive<span style="color:#555">:</span> <span style="color:#069;font-weight:bold">true</span>,
+	clearSelectionOnTyping<span style="color:#555">:</span> <span style="color:#069;font-weight:bold">false</span>,
+	closeDropdownOnItemSelect<span style="color:#555">:</span> <span style="color:#069;font-weight:bold">true</span>,
+	delimiter<span style="color:#555">:</span> <span style="color:#c30">&#39;,&#39;</span>,
+	freeInput<span style="color:#555">:</span> <span style="color:#069;font-weight:bold">true</span>,
+	highlightDuplicate<span style="color:#555">:</span> <span style="color:#069;font-weight:bold">true</span>,
+	highlightMatchesString<span style="color:#555">:</span> <span style="color:#069;font-weight:bold">true</span>,
+	itemValue<span style="color:#555">:</span> <span style="color:#069;font-weight:bold">undefined</span>,
+  	itemText<span style="color:#555">:</span> <span style="color:#069;font-weight:bold">undefined</span>,
+	maxTags<span style="color:#555">:</span> <span style="color:#069;font-weight:bold">undefined</span>,
+	maxChars<span style="color:#555">:</span> <span style="color:#069;font-weight:bold">undefined</span>,
+	minChars<span style="color:#555">:</span> <span style="color:#f60">1</span>,
+	noResultsLabel<span style="color:#555">:</span> <span style="color:#c30">&#39;No results found&#39;</span>,
+	placeholder<span style="color:#555">:</span> <span style="color:#c30">&#39;&#39;</span>,
+	removable<span style="color:#555">:</span> <span style="color:#069;font-weight:bold">true</span>,
+	searchMinChars<span style="color:#555">:</span> <span style="color:#f60">1</span>,
+	searchOn<span style="color:#555">:</span> <span style="color:#c30">&#39;text&#39;</span>,
+	selectable<span style="color:#555">:</span> <span style="color:#069;font-weight:bold">true</span>,
+	tagClass<span style="color:#555">:</span> <span style="color:#c30">&#39;is-rounded&#39;</span>,
+	trim<span style="color:#555">:</span> <span style="color:#069;font-weight:bold">true</span>
+});
+</code></pre></div>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="tab-pane" id="tab12" role="tabpanel" aria-labelledby="nav-tabName2">
+	<p>Add option directly to the element by using dataset attributes. This way, options can be specific to each element. These declaration will override any default option or option passed by the JavaScript instantiation.
+All you have to do is to use the <a href="https://en.wikipedia.org/wiki/Letter_case#Special_case_styles" target="_blank" rel="noreferrer noopener">kebab-case</a> notation of option and declare it as a <code>data attribute</code> of the HTML Element.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#309;font-weight:bold">input</span> <span style="color:#309">type</span><span style="color:#555">=</span><span style="color:#c30">&#34;tags&#34;</span> <span style="color:#309">data-allow-duplicates</span><span style="color:#555">=</span><span style="color:#c30">&#34;true&#34;</span> <span style="color:#309">data-max-chars</span><span style="color:#555">=</span><span style="color:#c30">&#34;10&#34;</span> <span style="color:#309">data-min-chars</span><span style="color:#555">=</span><span style="color:#c30">&#34;3&#34;</span> <span style="color:#309">data-selectable</span><span style="color:#555">=</span><span style="color:#c30">&#34;false&#34;</span>&gt;
+</code></pre></div>
+</div>
+
+
+
+</div></p>
+<h3 id="options-list">Options list</h3>
+<p>All available option are described in the folowing table:
+<table class="table is-hoverable">
+    <thead>
+        <tr>
+            <th class="is-narrow">Option name</th>
+            <th>Description</th>
+            <th class="is-narrow">Type</th>
+            <th class="is-narrow">Default value</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+        <tr>
+            <td class="is-narrow has-background-light">allowDuplicates</td>
+            <td class="has-text-grey">When true, the same tag can be added multiple times.</td>
+            
+            <td class="is-narrow">Boolean</td>
+            
+            <td class="is-narrow"><code>false</code></td>
+        </tr>
+        
+        <tr>
+            <td class="is-narrow has-background-light">caseSensitive</td>
+            <td class="has-text-grey">When true, duplicate tags value check is case sensitive.</td>
+            
+            <td class="is-narrow">Boolean</td>
+            
+            <td class="is-narrow"><code>true</code></td>
+        </tr>
+        
+        <tr>
+            <td class="is-narrow has-background-light">clearSelectionOnTyping</td>
+            <td class="has-text-grey">When true, tags will be unselected when new tag is entered.</td>
+            
+            <td class="is-narrow">Boolean</td>
+            
+            <td class="is-narrow"><code>false</code></td>
+        </tr>
+        
+        <tr>
+            <td class="is-narrow has-background-light">closeDropdownOnItemSelect</td>
+            <td class="has-text-grey">When true, datalist will close automatically after an item have been selected.</td>
+            
+            <td class="is-narrow">Boolean</td>
+            
+            <td class="is-narrow"><code>true</code></td>
+        </tr>
+        
+        <tr>
+            <td class="is-narrow has-background-light">delimiter</td>
+            <td class="has-text-grey">Multiple tags can be added at once. Delimiter is used to separate all tags.</td>
+            
+            <td class="is-narrow">String</td>
+            
+            <td class="is-narrow"><code>,</code></td>
+        </tr>
+        
+        <tr>
+            <td class="is-narrow has-background-light">freeInput</td>
+            <td class="has-text-grey">When true, tags can be entered manually. This option is useful with select Tags inputs. Set to false automatically when using on select element.</td>
+            
+            <td class="is-narrow">Boolean</td>
+            
+            <td class="is-narrow"><code>true</code></td>
+        </tr>
+        
+        <tr>
+            <td class="is-narrow has-background-light">highlightDuplicate</td>
+            <td class="has-text-grey">When true, if <code>allowDuplicates</code> option if false then the already existing tag will be temporarly and visually identified as duplicate</td>
+            
+            <td class="is-narrow">Boolean</td>
+            
+            <td class="is-narrow"><code>true</code></td>
+        </tr>
+        
+        <tr>
+            <td class="is-narrow has-background-light">highlightMatchesString</td>
+            <td class="has-text-grey">When true, identified matches strings when searching is highlighted.</td>
+            
+            <td class="is-narrow">Boolean</td>
+            
+            <td class="is-narrow"><code>true</code></td>
+        </tr>
+        
+        <tr>
+            <td class="is-narrow has-background-light">itemText</td>
+            <td class="has-text-grey">When adding objects as tags, you can set itemText to the name of the property of item to use for a its tag&rsquo;s text. When this options is not set, the value of <em>itemValue</em> will be used.</td>
+            
+            <td class="is-narrow">String</td>
+            
+            <td class="is-narrow"><code>undefined</code></td>
+        </tr>
+        
+        <tr>
+            <td class="is-narrow has-background-light">itemValue</td>
+            <td class="has-text-grey">When adding objects as tags, itemValue must be set to the name of the property containing the item&rsquo;s value.</td>
+            
+            <td class="is-narrow">String</td>
+            
+            <td class="is-narrow"><code>undefined</code></td>
+        </tr>
+        
+        <tr>
+            <td class="is-narrow has-background-light">maxTags</td>
+            <td class="has-text-grey">When set, no more than the given number of tags are allowed to add.</td>
+            
+            <td class="is-narrow">Integer</td>
+            
+            <td class="is-narrow"><code>undefined</code></td>
+        </tr>
+        
+        <tr>
+            <td class="is-narrow has-background-light">maxChars</td>
+            <td class="has-text-grey">Defines the maximum length of a single tag.</td>
+            
+            <td class="is-narrow">Integer</td>
+            
+            <td class="is-narrow"><code>undefined</code></td>
+        </tr>
+        
+        <tr>
+            <td class="is-narrow has-background-light">minChars</td>
+            <td class="has-text-grey">Defines the minimum length of a single tag.</td>
+            
+            <td class="is-narrow">Integer</td>
+            
+            <td class="is-narrow"><code>1</code></td>
+        </tr>
+        
+        <tr>
+            <td class="is-narrow has-background-light">noResultsLabel</td>
+            <td class="has-text-grey">Empty dropdown label.</td>
+            
+            <td class="is-narrow">String</td>
+            
+            <td class="is-narrow"><code>No results found</code></td>
+        </tr>
+        
+        <tr>
+            <td class="is-narrow has-background-light">placeholder</td>
+            <td class="has-text-grey">TagsInput placeholder text if original input doesn&rsquo;t have one.</td>
+            
+            <td class="is-narrow">String</td>
+            
+            <td class="is-narrow"><code>undefined</code></td>
+        </tr>
+        
+        <tr>
+            <td class="is-narrow has-background-light">removable</td>
+            <td class="has-text-grey">When true, tags are removable either using the associted delete button or <em>backspace</em> and <em>delete</em> keys.</td>
+            
+            <td class="is-narrow">Boolean</td>
+            
+            <td class="is-narrow"><code>true</code></td>
+        </tr>
+        
+        <tr>
+            <td class="is-narrow has-background-light">searchMinChars</td>
+            <td class="has-text-grey">Defines the minimum length of input value before loading auto-complete.</td>
+            
+            <td class="is-narrow">Integer</td>
+            
+            <td class="is-narrow"><code>1</code></td>
+        </tr>
+        
+        <tr>
+            <td class="is-narrow has-background-light">searchOn</td>
+            <td class="has-text-grey">Defines on what dropdown item data do we search the entered value. Possible value: &lsquo;value&rsquo; or &lsquo;text&rsquo;.</td>
+            
+            <td class="is-narrow">String</td>
+            
+            <td class="is-narrow"><code>text</code></td>
+        </tr>
+        
+        <tr>
+            <td class="is-narrow has-background-light">selectable</td>
+            <td class="has-text-grey">When true, tags can be selected either by mouse click or using <em>left</em> or <em>right</em> arrow keys.</td>
+            
+            <td class="is-narrow">Boolean</td>
+            
+            <td class="is-narrow"><code>true</code></td>
+        </tr>
+        
+        <tr>
+            <td class="is-narrow has-background-light">source</td>
+            <td class="has-text-grey">Source of data proposed in dropdown (used for auto-complete).</td>
+            
+            <td class="is-narrow">Can be one of the following types:</p>
+<ul>
+<li><code>Array</code> of <code>Strings</code> / <code>Objects</code></li>
+<li><code>Function</code> =&gt; <code>Array</code> of <code>Strings</code> / <code>Objects</code></li>
+<li><code>Promise</code> =&gt; <code>Array</code> of <code>Strings</code> / <code>Objects</code>.</li>
+</ul></td>
+            
+            <td class="is-narrow"><code>undefined</code></td>
+        </tr>
+        
+        <tr>
+            <td class="is-narrow has-background-light">tagClass</td>
+            <td class="has-text-grey">Classname applied to each tag.</td>
+            
+            <td class="is-narrow">String</td>
+            
+            <td class="is-narrow"><code>is-rounded</code></td>
+        </tr>
+        
+        <tr>
+            <td class="is-narrow has-background-light">trim</td>
+            <td class="has-text-grey">When true, automatically removes all whitespace around tags.</td>
+            
+            <td class="is-narrow">Boolean</td>
+            
+            <td class="is-narrow"><code>true</code></td>
+        </tr>
+        
+    </tbody>
+</table></p>
+<hr>
+<h1 id="api">API</h1>
+<h2 id="interact-with-the-component">Interact with the component</h2>
+
+
+	
+		<div class="symbol">
+			<span class="symbol-name">BulmaTagsInput</span>
+			<span class="symbol-separator">:</span>
+			<span class="symbol-type">class</span>
+			<span class="symbol-scope">
+				
+				<div class="tag is-primary">constructor</div>
+				
+				
+				
+			</span>
+		</div>
+	
+	
+		<p>Instanciate the component based on the element provided and register the instance into <code>BulmaTagsInput</code> function of the element.</p>
+	
+	
+		<h5 class="title is-5">Parameters</h5>
+		
+			<nav class="level param is-mobile">
+				<div class="level-left">
+					<div class="level-item">
+						<span class="param-name">element</span>
+						<span class="param-separator">:</span>
+						<span class="param-type">String<span class='param-type-separator'>|</span>Node</span>
+					</div>
+				</div>
+				<div class="level-right">
+					<div class="level-item">
+						<p>
+							
+								<em>Default:</em>&nbsp;<span class="tag">null</span>
+							
+							
+								&nbsp;<span class="tag is-danger">Required</span>
+							
+						</p>
+					</div>
+				</div>
+			</nav>
+			<div class="param-description">Node element (can be a selector string - must target only one node - or a DOM node) on which attach the component</div>
+		
+			<nav class="level param is-mobile">
+				<div class="level-left">
+					<div class="level-item">
+						<span class="param-name">options</span>
+						<span class="param-separator">:</span>
+						<span class="param-type">Object</span>
+					</div>
+				</div>
+				<div class="level-right">
+					<div class="level-item">
+						<p>
+							
+								<em>Default:</em>&nbsp;<span class="tag">{}</span>
+							
+							
+						</p>
+					</div>
+				</div>
+			</nav>
+			<div class="param-description">Component options. These options are merged with default options and options set via element data-attribute.</div>
+		
+	
+	
+		<h5 class="title is-5">Example</h5>
+		<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#069;font-weight:bold">const</span> bulmaTagsInputElement <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> BulmaTagsInput(<span style="color:#c30">&#39;#input-tags&#39;</span>);
+
+<span style="color:#09f;font-style:italic">// Access to the BulmaTagsInput instance from DOM
+</span><span style="color:#09f;font-style:italic"></span><span style="color:#069;font-weight:bold">const</span> inputTagsElement <span style="color:#555">=</span> <span style="color:#366">document</span>.getElementById(<span style="color:#c30">&#39;input-tags&#39;</span>);
+<span style="color:#069;font-weight:bold">if</span> (inputTagsElement) {
+  <span style="color:#069;font-weight:bold">const</span> bulmaTagsInputInstance <span style="color:#555">=</span> inputTagsElement.BulmaTagsInput();
+}
+</code></pre></div>
+	
+	<hr class="is-small" />
+
+	
+		<div class="symbol">
+			<span class="symbol-name">attach</span>
+			<span class="symbol-separator">:</span>
+			<span class="symbol-type">Array</span>
+			<span class="symbol-scope">
+				
+				<div class="tag is-primary">constructor</div>
+				
+				
+				
+			</span>
+		</div>
+	
+	
+		<p>Constructor shortcut with possibility to pass a String, a Node or a NodeList as a selector so we can instantciate multiple element at once. Return an array of all instances. Note that each instance is link to the related DOM node under <code>BulmaTagsInput</code> function.</p>
+	
+	
+		<h5 class="title is-5">Parameters</h5>
+		
+			<nav class="level param is-mobile">
+				<div class="level-left">
+					<div class="level-item">
+						<span class="param-name">selector</span>
+						<span class="param-separator">:</span>
+						<span class="param-type">String<span class='param-type-separator'>|</span>Node<span class='param-type-separator'>|</span>NodeList</span>
+					</div>
+				</div>
+				<div class="level-right">
+					<div class="level-item">
+						<p>
+							
+								<em>Default:</em>&nbsp;<span class="tag">input[data-type=&#34;tags&#34;], input[type=&#34;tags&#34;], select[data-type=&#34;tags&#34;], select[type=&#34;tags&#34;]</span>
+							
+							
+								&nbsp;<span class="tag is-danger">Required</span>
+							
+						</p>
+					</div>
+				</div>
+			</nav>
+			<div class="param-description">Selector (can be a selector string - can target multiple nodes - or a DOM node or a DOM nodes list) on which attach the component</div>
+		
+			<nav class="level param is-mobile">
+				<div class="level-left">
+					<div class="level-item">
+						<span class="param-name">options</span>
+						<span class="param-separator">:</span>
+						<span class="param-type">Object</span>
+					</div>
+				</div>
+				<div class="level-right">
+					<div class="level-item">
+						<p>
+							
+								<em>Default:</em>&nbsp;<span class="tag">{}</span>
+							
+							
+						</p>
+					</div>
+				</div>
+			</nav>
+			<div class="param-description">Component options. These options are merged with default options and options set via element data-attribute.</div>
+		
+	
+	
+		<h5 class="title is-5">Example</h5>
+		<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#09f;font-style:italic">// Return an array of BulmaTagsInput instances (empty if no DOM node found)
+</span><span style="color:#09f;font-style:italic"></span><span style="color:#069;font-weight:bold">const</span> bulmaTagsInputInstances <span style="color:#555">=</span> BulmaTagsInput.attach();
+
+<span style="color:#09f;font-style:italic">// Loop into instances
+</span><span style="color:#09f;font-style:italic"></span>bulmaTagsInputInstances.forEach(bulmaTagsInputInstance =&gt; {
+    <span style="color:#09f;font-style:italic">// Work with the instance
+</span><span style="color:#09f;font-style:italic"></span>});
+</code></pre></div>
+	
+	<hr class="is-small" />
+
+	
+		<div class="symbol">
+			<span class="symbol-name">add</span>
+			<span class="symbol-separator">:</span>
+			<span class="symbol-type">BulmaTagsInput</span>
+			<span class="symbol-scope">
+				
+				
+				
+				<div class="tag is-success">public</div>
+				
+			</span>
+		</div>
+	
+	
+		<p>Add given item to the component</p>
+	
+	
+		<h5 class="title is-5">Parameters</h5>
+		
+			<nav class="level param is-mobile">
+				<div class="level-left">
+					<div class="level-item">
+						<span class="param-name">item</span>
+						<span class="param-separator">:</span>
+						<span class="param-type">String<span class='param-type-separator'>|</span>Object</span>
+					</div>
+				</div>
+				<div class="level-right">
+					<div class="level-item">
+						<p>
+							
+							
+								&nbsp;<span class="tag is-danger">Required</span>
+							
+						</p>
+					</div>
+				</div>
+			</nav>
+			<div class="param-description"><p>Item to add. It can be one of the following type: String, Array.</p>
+<p>You can provide multiple items at once by passing and Array of item or a string with multiple value delimited by <code>delimiter</code> option (default: comma).</p>
+</div>
+		
+	
+	
+		<h5 class="title is-5">Example</h5>
+		<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#069;font-weight:bold">var</span> inputTags <span style="color:#555">=</span> <span style="color:#366">document</span>.getElementById(<span style="color:#c30">&#39;myInputTag&#39;</span>);
+
+<span style="color:#09f;font-style:italic">// Add one string item
+</span><span style="color:#09f;font-style:italic"></span>inputTags.BulmaTagsInput().add(<span style="color:#c30">&#39;john&#39;</span>);
+
+<span style="color:#09f;font-style:italic">// Add multiple string items in once by passing multiple values as a string delimited by comma
+</span><span style="color:#09f;font-style:italic"></span>inputTags.BulmaTagsInput().add(<span style="color:#c30">&#39;john,jane&#39;</span>);
+
+<span style="color:#09f;font-style:italic">// Add multiple string items as array
+</span><span style="color:#09f;font-style:italic"></span>inputTags.BulmaTagsInput().add([<span style="color:#c30">&#39;john&#39;</span>, <span style="color:#c30">&#39;jane&#39;</span>]);
+
+<span style="color:#09f;font-style:italic">// Add one object item
+</span><span style="color:#09f;font-style:italic"></span>inputTags.BulmaTagsInput().add({
+     <span style="color:#c30">&#34;value&#34;</span><span style="color:#555">:</span> <span style="color:#c30">&#34;1&#34;</span>,
+     <span style="color:#c30">&#34;text&#34;</span><span style="color:#555">:</span> <span style="color:#c30">&#34;John&#34;</span>
+});
+
+<span style="color:#09f;font-style:italic">// Add multiple object items at once
+</span><span style="color:#09f;font-style:italic"></span>inputTags.BulmaTagsInput().add([{
+     <span style="color:#c30">&#34;value&#34;</span><span style="color:#555">:</span> <span style="color:#c30">&#34;1&#34;</span>,
+     <span style="color:#c30">&#34;text&#34;</span><span style="color:#555">:</span> <span style="color:#c30">&#34;John&#34;</span>
+}, {
+     <span style="color:#c30">&#34;value&#34;</span><span style="color:#555">:</span> <span style="color:#c30">&#34;2&#34;</span>,
+     <span style="color:#c30">&#34;text&#34;</span><span style="color:#555">:</span> <span style="color:#c30">&#34;Jane&#34;</span>
+}]);
+</code></pre></div>
+	
+	<hr class="is-small" />
+
+	
+		<div class="symbol">
+			<span class="symbol-name">clearSelection</span>
+			<span class="symbol-separator">:</span>
+			<span class="symbol-type">BulmaTagsInput</span>
+			<span class="symbol-scope">
+				
+				
+				
+				<div class="tag is-success">public</div>
+				
+			</span>
+		</div>
+	
+	
+		<p>Unselect the current selected tag</p>
+	
+	
+	
+		<h5 class="title is-5">Example</h5>
+		<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#069;font-weight:bold">var</span> inputTags <span style="color:#555">=</span> <span style="color:#366">document</span>.getElementById(<span style="color:#c30">&#39;myInputTag&#39;</span>);
+
+<span style="color:#09f;font-style:italic">// Clear selection
+</span><span style="color:#09f;font-style:italic"></span>inputTags.BulmaTagsInput().clearSelection();
+</code></pre></div>
+	
+	<hr class="is-small" />
+
+	
+		<div class="symbol">
+			<span class="symbol-name">flush</span>
+			<span class="symbol-separator">:</span>
+			<span class="symbol-type">BulmaTagsInput</span>
+			<span class="symbol-scope">
+				
+				
+				
+				<div class="tag is-success">public</div>
+				
+			</span>
+		</div>
+	
+	
+		<p>Shortcut to removeAll method</p>
+	
+	
+	
+		<h5 class="title is-5">Example</h5>
+		<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#069;font-weight:bold">var</span> inputTags <span style="color:#555">=</span> <span style="color:#366">document</span>.getElementById(<span style="color:#c30">&#39;myInputTag&#39;</span>);
+
+<span style="color:#09f;font-style:italic">// Remove all tags focus
+</span><span style="color:#09f;font-style:italic"></span>inputTags.BulmaTagsInput().flush();
+</code></pre></div>
+	
+	<hr class="is-small" />
+
+	
+		<div class="symbol">
+			<span class="symbol-name">focus</span>
+			<span class="symbol-separator">:</span>
+			<span class="symbol-type">BulmaTagsInput</span>
+			<span class="symbol-scope">
+				
+				
+				
+				<div class="tag is-success">public</div>
+				
+			</span>
+		</div>
+	
+	
+		<p>Sets focus on the input</p>
+	
+	
+	
+		<h5 class="title is-5">Example</h5>
+		<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#069;font-weight:bold">var</span> inputTags <span style="color:#555">=</span> <span style="color:#366">document</span>.getElementById(<span style="color:#c30">&#39;myInputTag&#39;</span>);
+
+<span style="color:#09f;font-style:italic">// Set focus
+</span><span style="color:#09f;font-style:italic"></span>inputTags.BulmaTagsInput().focus();
+</code></pre></div>
+	
+	<hr class="is-small" />
+
+	
+		<div class="symbol">
+			<span class="symbol-name">has</span>
+			<span class="symbol-separator">:</span>
+			<span class="symbol-type">Boolean</span>
+			<span class="symbol-scope">
+				
+				
+				
+				<div class="tag is-success">public</div>
+				
+			</span>
+		</div>
+	
+	
+		<p>Check if given item is present</p>
+	
+	
+		<h5 class="title is-5">Parameters</h5>
+		
+			<nav class="level param is-mobile">
+				<div class="level-left">
+					<div class="level-item">
+						<span class="param-name">item</span>
+						<span class="param-separator">:</span>
+						<span class="param-type">String<span class='param-type-separator'>|</span>Object</span>
+					</div>
+				</div>
+				<div class="level-right">
+					<div class="level-item">
+						<p>
+							
+							
+								&nbsp;<span class="tag is-danger">Required</span>
+							
+						</p>
+					</div>
+				</div>
+			</nav>
+			<div class="param-description">Item to find. It can be one of the following type: String, Array.</div>
+		
+	
+	
+		<h5 class="title is-5">Example</h5>
+		<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#069;font-weight:bold">var</span> inputTags <span style="color:#555">=</span> <span style="color:#366">document</span>.getElementById(<span style="color:#c30">&#39;myInputTag&#39;</span>);
+inputTags.BulmaTagsInput().add(<span style="color:#c30">&#39;john&#39;</span>);
+
+inputTags.BulmaTagsInput().has(<span style="color:#c30">&#39;john&#39;</span>); <span style="color:#09f;font-style:italic">// return True
+</span><span style="color:#09f;font-style:italic"></span>inputTags.BulmaTagsInput().has(<span style="color:#c30">&#39;jane&#39;</span>); <span style="color:#09f;font-style:italic">// return False
+</span></code></pre></div>
+	
+	<hr class="is-small" />
+
+	
+		<div class="symbol">
+			<span class="symbol-name">hasValue</span>
+			<span class="symbol-separator">:</span>
+			<span class="symbol-type">Boolean</span>
+			<span class="symbol-scope">
+				
+				
+				
+				<div class="tag is-success">public</div>
+				
+			</span>
+		</div>
+	
+	
+		<p>Check if given value is present</p>
+	
+	
+		<h5 class="title is-5">Parameters</h5>
+		
+			<nav class="level param is-mobile">
+				<div class="level-left">
+					<div class="level-item">
+						<span class="param-name">value</span>
+						<span class="param-separator">:</span>
+						<span class="param-type">String</span>
+					</div>
+				</div>
+				<div class="level-right">
+					<div class="level-item">
+						<p>
+							
+							
+								&nbsp;<span class="tag is-danger">Required</span>
+							
+						</p>
+					</div>
+				</div>
+			</nav>
+			<div class="param-description">Single value to find.</div>
+		
+	
+	
+		<h5 class="title is-5">Example</h5>
+		<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#069;font-weight:bold">var</span> inputTags <span style="color:#555">=</span> <span style="color:#366">document</span>.getElementById(<span style="color:#c30">&#39;myInputTag&#39;</span>);
+inputTags.BulmaTagsInput().add({
+    <span style="color:#c30">&#34;value&#34;</span><span style="color:#555">:</span> <span style="color:#c30">&#34;john&#34;</span>,
+    <span style="color:#c30">&#34;text&#34;</span><span style="color:#555">:</span> <span style="color:#c30">&#34;John Doe&#34;</span>
+});
+
+inputTags.BulmaTagsInput().hasValue(<span style="color:#c30">&#39;john&#39;</span>); <span style="color:#09f;font-style:italic">// return True
+</span><span style="color:#09f;font-style:italic"></span>inputTags.BulmaTagsInput().hasValue(<span style="color:#c30">&#39;jane&#39;</span>); <span style="color:#09f;font-style:italic">// return False
+</span></code></pre></div>
+	
+	<hr class="is-small" />
+
+	
+		<div class="symbol">
+			<span class="symbol-name">hasText</span>
+			<span class="symbol-separator">:</span>
+			<span class="symbol-type">Boolean</span>
+			<span class="symbol-scope">
+				
+				
+				
+				<div class="tag is-success">public</div>
+				
+			</span>
+		</div>
+	
+	
+		<p>Check if given text is present</p>
+	
+	
+		<h5 class="title is-5">Parameters</h5>
+		
+			<nav class="level param is-mobile">
+				<div class="level-left">
+					<div class="level-item">
+						<span class="param-name">value</span>
+						<span class="param-separator">:</span>
+						<span class="param-type">String</span>
+					</div>
+				</div>
+				<div class="level-right">
+					<div class="level-item">
+						<p>
+							
+							
+								&nbsp;<span class="tag is-danger">Required</span>
+							
+						</p>
+					</div>
+				</div>
+			</nav>
+			<div class="param-description">single Text to find in items.</div>
+		
+	
+	
+		<h5 class="title is-5">Example</h5>
+		<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#069;font-weight:bold">var</span> inputTags <span style="color:#555">=</span> <span style="color:#366">document</span>.getElementById(<span style="color:#c30">&#39;myInputTag&#39;</span>);
+inputTags.BulmaTagsInput().add({
+    <span style="color:#c30">&#34;value&#34;</span><span style="color:#555">:</span> <span style="color:#c30">&#34;john&#34;</span>,
+    <span style="color:#c30">&#34;text&#34;</span><span style="color:#555">:</span> <span style="color:#c30">&#34;John Doe&#34;</span>
+});
+
+inputTags.BulmaTagsInput().hasText(<span style="color:#c30">&#39;John Doe&#39;</span>); <span style="color:#09f;font-style:italic">// return True
+</span><span style="color:#09f;font-style:italic"></span>inputTags.BulmaTagsInput().hasValue(<span style="color:#c30">&#39;Jane Doe&#39;</span>); <span style="color:#09f;font-style:italic">// return False
+</span></code></pre></div>
+	
+	<hr class="is-small" />
+
+	
+		<div class="symbol">
+			<span class="symbol-name">indexOf</span>
+			<span class="symbol-separator">:</span>
+			<span class="symbol-type">Integer</span>
+			<span class="symbol-scope">
+				
+				
+				
+				<div class="tag is-success">public</div>
+				
+			</span>
+		</div>
+	
+	
+		<p>Get index of given item</p>
+	
+	
+		<h5 class="title is-5">Parameters</h5>
+		
+			<nav class="level param is-mobile">
+				<div class="level-left">
+					<div class="level-item">
+						<span class="param-name">item</span>
+						<span class="param-separator">:</span>
+						<span class="param-type">String<span class='param-type-separator'>|</span>Object</span>
+					</div>
+				</div>
+				<div class="level-right">
+					<div class="level-item">
+						<p>
+							
+							
+								&nbsp;<span class="tag is-danger">Required</span>
+							
+						</p>
+					</div>
+				</div>
+			</nav>
+			<div class="param-description">Item to find. It can be one of the following type: String, Array.</div>
+		
+	
+	
+		<h5 class="title is-5">Example</h5>
+		<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#069;font-weight:bold">var</span> inputTags <span style="color:#555">=</span> <span style="color:#366">document</span>.getElementById(<span style="color:#c30">&#39;myInputTag&#39;</span>);
+inputTags.BulmaTagsInput().add(<span style="color:#c30">&#39;john&#39;</span>);
+
+inputTags.BulmaTagsInput().indexOf(<span style="color:#c30">&#39;john&#39;</span>); <span style="color:#09f;font-style:italic">// return 0
+</span><span style="color:#09f;font-style:italic"></span>inputTags.BulmaTagsInput().has(<span style="color:#c30">&#39;jane&#39;</span>); <span style="color:#09f;font-style:italic">// return -1
+</span></code></pre></div>
+	
+	<hr class="is-small" />
+
+	
+		<div class="symbol">
+			<span class="symbol-name">input</span>
+			<span class="symbol-separator">:</span>
+			<span class="symbol-type">HTMLElement</span>
+			<span class="symbol-scope">
+				
+				
+				
+				<div class="tag is-success">public</div>
+				
+			</span>
+		</div>
+	
+	
+		<p>Get the internal input element</p>
+	
+	
+	
+		<h5 class="title is-5">Example</h5>
+		<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#069;font-weight:bold">var</span> inputTags <span style="color:#555">=</span> <span style="color:#366">document</span>.getElementById(<span style="color:#c30">&#39;myInputTag&#39;</span>);
+inputTags.BulmaTagsInput().add(<span style="color:#c30">&#39;john&#39;</span>);
+
+inputTags.BulmaTagsInput().input();
+</code></pre></div>
+	
+	<hr class="is-small" />
+
+	
+		<div class="symbol">
+			<span class="symbol-name">items</span>
+			<span class="symbol-separator">:</span>
+			<span class="symbol-type">Array</span>
+			<span class="symbol-scope">
+				
+				
+				
+				<div class="tag is-success">public</div>
+				
+			</span>
+		</div>
+	
+	
+		<p>Get all added items</p>
+	
+	
+	
+		<h5 class="title is-5">Example</h5>
+		<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#069;font-weight:bold">var</span> inputTags <span style="color:#555">=</span> <span style="color:#366">document</span>.getElementById(<span style="color:#c30">&#39;myInputTag&#39;</span>);
+inputTags.BulmaTagsInput().add(<span style="color:#c30">&#39;john&#39;</span>);
+
+inputTags.BulmaTagsInput().item(); <span style="color:#09f;font-style:italic">// return [&#39;john&#39;]
+</span></code></pre></div>
+	
+	<hr class="is-small" />
+
+	
+		<div class="symbol">
+			<span class="symbol-name">remove</span>
+			<span class="symbol-separator">:</span>
+			<span class="symbol-type">BulmaTagsInput</span>
+			<span class="symbol-scope">
+				
+				
+				
+				<div class="tag is-success">public</div>
+				
+			</span>
+		</div>
+	
+	
+		<p>Remove given items</p>
+	
+	
+		<h5 class="title is-5">Parameters</h5>
+		
+			<nav class="level param is-mobile">
+				<div class="level-left">
+					<div class="level-item">
+						<span class="param-name">item</span>
+						<span class="param-separator">:</span>
+						<span class="param-type">String<span class='param-type-separator'>|</span>Object</span>
+					</div>
+				</div>
+				<div class="level-right">
+					<div class="level-item">
+						<p>
+							
+							
+								&nbsp;<span class="tag is-danger">Required</span>
+							
+						</p>
+					</div>
+				</div>
+			</nav>
+			<div class="param-description"><p>Item to add. It can be one of the following type: String, Array.</p>
+<p>You can provide multiple items at once by passing and Array of item or a string with multiple value delimited by <code>delimiter</code> option (default: comma).</p>
+</div>
+		
+	
+	
+		<h5 class="title is-5">Example</h5>
+		<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#069;font-weight:bold">var</span> inputTags <span style="color:#555">=</span> <span style="color:#366">document</span>.getElementById(<span style="color:#c30">&#39;myInputTag&#39;</span>);
+inputTags.BulmaTagsInput().add(<span style="color:#c30">&#39;john&#39;</span>);
+
+inputTags.BulmaTagsInput().remove(<span style="color:#c30">&#39;john&#39;</span>);
+</code></pre></div>
+	
+	<hr class="is-small" />
+
+	
+		<div class="symbol">
+			<span class="symbol-name">removeAll</span>
+			<span class="symbol-separator">:</span>
+			<span class="symbol-type">BulmaTagsInput</span>
+			<span class="symbol-scope">
+				
+				
+				
+				<div class="tag is-success">public</div>
+				
+			</span>
+		</div>
+	
+	
+		<p>Remove all tags at once</p>
+	
+	
+	
+		<h5 class="title is-5">Example</h5>
+		<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#069;font-weight:bold">var</span> inputTags <span style="color:#555">=</span> <span style="color:#366">document</span>.getElementById(<span style="color:#c30">&#39;myInputTag&#39;</span>);
+inputTags.BulmaTagsInput().add(<span style="color:#c30">&#39;john&#39;</span>);
+inputTags.BulmaTagsInput().add(<span style="color:#c30">&#39;jane&#39;</span>);
+
+inputTags.BulmaTagsInput().items(); <span style="color:#09f;font-style:italic">// return [&#39;john&#39;, &#39;jane&#39;]
+</span><span style="color:#09f;font-style:italic"></span>
+inputTags.BulmaTagsInput().removeAll();
+inputTags.BulmaTagsInput().items(); <span style="color:#09f;font-style:italic">// return [] (empty array)
+</span></code></pre></div>
+	
+	<hr class="is-small" />
+
+	
+		<div class="symbol">
+			<span class="symbol-name">removeAtIndex</span>
+			<span class="symbol-separator">:</span>
+			<span class="symbol-type">BulmaTagsInput</span>
+			<span class="symbol-scope">
+				
+				
+				
+				<div class="tag is-success">public</div>
+				
+			</span>
+		</div>
+	
+	
+		<p>Remove item at given index.</p>
+	
+	
+		<h5 class="title is-5">Parameters</h5>
+		
+			<nav class="level param is-mobile">
+				<div class="level-left">
+					<div class="level-item">
+						<span class="param-name">index</span>
+						<span class="param-separator">:</span>
+						<span class="param-type">Integer</span>
+					</div>
+				</div>
+				<div class="level-right">
+					<div class="level-item">
+						<p>
+							
+							
+								&nbsp;<span class="tag is-danger">Required</span>
+							
+						</p>
+					</div>
+				</div>
+			</nav>
+			<div class="param-description">Index of the item to remove.</div>
+		
+			<nav class="level param is-mobile">
+				<div class="level-left">
+					<div class="level-item">
+						<span class="param-name">clearSelection</span>
+						<span class="param-separator">:</span>
+						<span class="param-type">Boolean</span>
+					</div>
+				</div>
+				<div class="level-right">
+					<div class="level-item">
+						<p>
+							
+							
+						</p>
+					</div>
+				</div>
+			</nav>
+			<div class="param-description">Should current selection be cleared (default: true)</div>
+		
+	
+	
+		<h5 class="title is-5">Example</h5>
+		<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#069;font-weight:bold">var</span> inputTags <span style="color:#555">=</span> <span style="color:#366">document</span>.getElementById(<span style="color:#c30">&#39;myInputTag&#39;</span>);
+inputTags.BulmaTagsInput().add(<span style="color:#c30">&#39;john&#39;</span>);
+
+inputTags.BulmaTagsInput().items(); <span style="color:#09f;font-style:italic">// return [&#39;john&#39;]
+</span><span style="color:#09f;font-style:italic"></span>
+inputTags.BulmaTagsInput().removeAtIndex(<span style="color:#f60">0</span>);
+inputTags.BulmaTagsInput().items(); <span style="color:#09f;font-style:italic">// return [] (empty array)
+</span></code></pre></div>
+	
+	<hr class="is-small" />
+
+	
+		<div class="symbol">
+			<span class="symbol-name">select</span>
+			<span class="symbol-separator">:</span>
+			<span class="symbol-type">BulmaTagsInput</span>
+			<span class="symbol-scope">
+				
+				
+				
+				<div class="tag is-success">public</div>
+				
+			</span>
+		</div>
+	
+	
+		<p>Select given item</p>
+	
+	
+		<h5 class="title is-5">Parameters</h5>
+		
+			<nav class="level param is-mobile">
+				<div class="level-left">
+					<div class="level-item">
+						<span class="param-name">item</span>
+						<span class="param-separator">:</span>
+						<span class="param-type">String<span class='param-type-separator'>|</span>Object</span>
+					</div>
+				</div>
+				<div class="level-right">
+					<div class="level-item">
+						<p>
+							
+							
+								&nbsp;<span class="tag is-danger">Required</span>
+							
+						</p>
+					</div>
+				</div>
+			</nav>
+			<div class="param-description"><p>Item to add. It can be one of the following type: String, Array.</p>
+<p>You can provide multiple items at once by passing and Array of item or a string with multiple value delimited by <code>delimiter</code> option (default: comma). If a list of items is passed then each item will be selected one by one and at the end only the last existing item from the list will be selected at the end.</p>
+</div>
+		
+	
+	
+		<h5 class="title is-5">Example</h5>
+		<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#069;font-weight:bold">var</span> inputTags <span style="color:#555">=</span> <span style="color:#366">document</span>.getElementById(<span style="color:#c30">&#39;myInputTag&#39;</span>);
+inputTags.BulmaTagsInput().add(<span style="color:#c30">&#39;john&#39;</span>);
+inputTags.BulmaTagsInput().add(<span style="color:#c30">&#39;jane&#39;</span>);
+
+inputTags.BulmaTagsInput().select(<span style="color:#c30">&#39;john&#39;</span>); <span style="color:#09f;font-style:italic">// Tag containing &#39;john&#39; value now have is-selected class
+</span></code></pre></div>
+	
+	<hr class="is-small" />
+
+	
+		<div class="symbol">
+			<span class="symbol-name">selectAtIndex</span>
+			<span class="symbol-separator">:</span>
+			<span class="symbol-type">BulmaTagsInput</span>
+			<span class="symbol-scope">
+				
+				
+				
+				<div class="tag is-success">public</div>
+				
+			</span>
+		</div>
+	
+	
+		<p>Select tag at given index</p>
+	
+	
+		<h5 class="title is-5">Parameters</h5>
+		
+			<nav class="level param is-mobile">
+				<div class="level-left">
+					<div class="level-item">
+						<span class="param-name">index</span>
+						<span class="param-separator">:</span>
+						<span class="param-type">Integer</span>
+					</div>
+				</div>
+				<div class="level-right">
+					<div class="level-item">
+						<p>
+							
+							
+								&nbsp;<span class="tag is-danger">Required</span>
+							
+						</p>
+					</div>
+				</div>
+			</nav>
+			<div class="param-description">Index of the item to select.</div>
+		
+	
+	
+		<h5 class="title is-5">Example</h5>
+		<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#069;font-weight:bold">var</span> inputTags <span style="color:#555">=</span> <span style="color:#366">document</span>.getElementById(<span style="color:#c30">&#39;myInputTag&#39;</span>);
+inputTags.BulmaTagsInput().add(<span style="color:#c30">&#39;john&#39;</span>);
+inputTags.BulmaTagsInput().add(<span style="color:#c30">&#39;jane&#39;</span>);
+
+inputTags.BulmaTagsInput().selectAtIndex(<span style="color:#f60">0</span>); <span style="color:#09f;font-style:italic">// Tag containing &#39;john&#39; value now have is-selected class
+</span></code></pre></div>
+	
+	<hr class="is-small" />
+
+	
+		<div class="symbol">
+			<span class="symbol-name">selected</span>
+			<span class="symbol-separator">:</span>
+			<span class="symbol-type">Integer</span>
+			<span class="symbol-scope">
+				
+				
+				
+				<div class="tag is-success">public</div>
+				
+			</span>
+		</div>
+	
+	
+		<p>Get the current selected item</p>
+	
+	
+	
+		<h5 class="title is-5">Example</h5>
+		<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#069;font-weight:bold">var</span> inputTags <span style="color:#555">=</span> <span style="color:#366">document</span>.getElementById(<span style="color:#c30">&#39;myInputTag&#39;</span>);
+inputTags.BulmaTagsInput().add(<span style="color:#c30">&#39;john&#39;</span>);
+inputTags.BulmaTagsInput().add(<span style="color:#c30">&#39;jane&#39;</span>);
+
+inputTags.BulmaTagsInput().selectAtIndex(<span style="color:#f60">0</span>);
+<span style="color:#069;font-weight:bold">var</span> selectedItem <span style="color:#555">=</span> inputTags.BulmaTagsInput().selected;
+<span style="color:#09f;font-style:italic">// selectedItem = &#39;john&#39;
+</span></code></pre></div>
+	
+	<hr class="is-small" />
+
+	
+		<div class="symbol">
+			<span class="symbol-name">selectedIndex</span>
+			<span class="symbol-separator">:</span>
+			<span class="symbol-type">String|Object</span>
+			<span class="symbol-scope">
+				
+				
+				
+				<div class="tag is-success">public</div>
+				
+			</span>
+		</div>
+	
+	
+		<p>Get the current selected item index</p>
+	
+	
+	
+		<h5 class="title is-5">Example</h5>
+		<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#069;font-weight:bold">var</span> inputTags <span style="color:#555">=</span> <span style="color:#366">document</span>.getElementById(<span style="color:#c30">&#39;myInputTag&#39;</span>);
+inputTags.BulmaTagsInput().add(<span style="color:#c30">&#39;john&#39;</span>);
+inputTags.BulmaTagsInput().add(<span style="color:#c30">&#39;jane&#39;</span>);
+
+inputTags.BulmaTagsInput().selectAtIndex(<span style="color:#f60">0</span>);
+<span style="color:#069;font-weight:bold">var</span> selectedItem <span style="color:#555">=</span> inputTags.BulmaTagsInput().selectedIndex;
+<span style="color:#09f;font-style:italic">// selectedItem = 0
+</span></code></pre></div>
+	
+	<hr class="is-small" />
+
+	
+		<div class="symbol">
+			<span class="symbol-name">value</span>
+			<span class="symbol-separator">:</span>
+			<span class="symbol-type">String|Array</span>
+			<span class="symbol-scope">
+				
+				
+				
+				<div class="tag is-success">public</div>
+				
+			</span>
+		</div>
+	
+	
+		<p>Get component value</p>
+	
+	
+	
+		<h5 class="title is-5">Example</h5>
+		<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#069;font-weight:bold">var</span> inputTags <span style="color:#555">=</span> <span style="color:#366">document</span>.getElementById(<span style="color:#c30">&#39;myInputTag&#39;</span>);
+inputTags.BulmaTagsInput().add(<span style="color:#c30">&#39;john&#39;</span>);
+inputTags.BulmaTagsInput().add(<span style="color:#c30">&#39;jane&#39;</span>);
+
+<span style="color:#069;font-weight:bold">var</span> value <span style="color:#555">=</span> inputTags.BulmaTagsInput().value;
+<span style="color:#09f;font-style:italic">// value = &#34;john,jane&#34;
+</span><span style="color:#09f;font-style:italic"></span>
+<span style="color:#09f;font-style:italic">// If component has been instantiated on a multiple select element then a real array is returned
+</span><span style="color:#09f;font-style:italic">// value = [&#34;john&#34;, &#34;jane&#34;]
+</span></code></pre></div>
+	
+	<hr class="is-small" />
+
+	
+		<div class="symbol">
+			<span class="symbol-name">_build</span>
+			<span class="symbol-scope">
+				
+				
+				<div class="tag is-dark">private</div>
+				
+				
+			</span>
+		</div>
+	
+	
+		<p>Build TagsInput DOM elements</p>
+	
+	
+	
+	<hr class="is-small" />
+
+	
+		<div class="symbol">
+			<span class="symbol-name">_bindEvents</span>
+			<span class="symbol-scope">
+				
+				
+				<div class="tag is-dark">private</div>
+				
+				
+			</span>
+		</div>
+	
+	
+		<p>Bind all events listener</p>
+	
+	
+	
+	<hr class="is-small" />
+
+	
+		<div class="symbol">
+			<span class="symbol-name">_caretAtStart</span>
+			<span class="symbol-separator">:</span>
+			<span class="symbol-type">Boolean</span>
+			<span class="symbol-scope">
+				
+				
+				<div class="tag is-dark">private</div>
+				
+				
+			</span>
+		</div>
+	
+	
+		<p>Determine if input caret it at the start of the input or not.</p>
+	
+	
+	
+	<hr class="is-small" />
+
+	
+		<div class="symbol">
+			<span class="symbol-name">_checkLength</span>
+			<span class="symbol-separator">:</span>
+			<span class="symbol-type">Boolean</span>
+			<span class="symbol-scope">
+				
+				
+				<div class="tag is-dark">private</div>
+				
+				
+			</span>
+		</div>
+	
+	
+		<p>Check value length constraint if option activated</p>
+	
+	
+		<h5 class="title is-5">Parameters</h5>
+		
+			<nav class="level param is-mobile">
+				<div class="level-left">
+					<div class="level-item">
+						<span class="param-name">item</span>
+						<span class="param-separator">:</span>
+						<span class="param-type">String<span class='param-type-separator'>|</span>Object</span>
+					</div>
+				</div>
+				<div class="level-right">
+					<div class="level-item">
+						<p>
+							
+							
+								&nbsp;<span class="tag is-danger">Required</span>
+							
+						</p>
+					</div>
+				</div>
+			</nav>
+			<div class="param-description">Item data</div>
+		
+	
+	
+	<hr class="is-small" />
+
+	
+		<div class="symbol">
+			<span class="symbol-name">_createDropdownItem</span>
+			<span class="symbol-scope">
+				
+				
+				<div class="tag is-dark">private</div>
+				
+				
+			</span>
+		</div>
+	
+	
+		<p>Create a new dropdown item based on given item data</p>
+	
+	
+		<h5 class="title is-5">Parameters</h5>
+		
+			<nav class="level param is-mobile">
+				<div class="level-left">
+					<div class="level-item">
+						<span class="param-name">item</span>
+						<span class="param-separator">:</span>
+						<span class="param-type">String<span class='param-type-separator'>|</span>Object</span>
+					</div>
+				</div>
+				<div class="level-right">
+					<div class="level-item">
+						<p>
+							
+							
+								&nbsp;<span class="tag is-danger">Required</span>
+							
+						</p>
+					</div>
+				</div>
+			</nav>
+			<div class="param-description">Item data</div>
+		
+	
+	
+	<hr class="is-small" />
+
+	
+		<div class="symbol">
+			<span class="symbol-name">_createTag</span>
+			<span class="symbol-scope">
+				
+				
+				<div class="tag is-dark">private</div>
+				
+				
+			</span>
+		</div>
+	
+	
+		<p>Create a new tag and add it to the DOM</p>
+	
+	
+		<h5 class="title is-5">Parameters</h5>
+		
+			<nav class="level param is-mobile">
+				<div class="level-left">
+					<div class="level-item">
+						<span class="param-name">item</span>
+						<span class="param-separator">:</span>
+						<span class="param-type">String<span class='param-type-separator'>|</span>Object</span>
+					</div>
+				</div>
+				<div class="level-right">
+					<div class="level-item">
+						<p>
+							
+							
+								&nbsp;<span class="tag is-danger">Required</span>
+							
+						</p>
+					</div>
+				</div>
+			</nav>
+			<div class="param-description">Item data</div>
+		
+	
+	
+	<hr class="is-small" />
+
+	
+		<div class="symbol">
+			<span class="symbol-name">_emptyDropdown</span>
+			<span class="symbol-scope">
+				
+				
+				<div class="tag is-dark">private</div>
+				
+				
+			</span>
+		</div>
+	
+	
+		<p>Remove all dropdown items except the empty title</p>
+	
+	
+	
+	<hr class="is-small" />
+
+	
+		<div class="symbol">
+			<span class="symbol-name">_filterDropdownItems</span>
+			<span class="symbol-scope">
+				
+				
+				<div class="tag is-dark">private</div>
+				
+				
+			</span>
+		</div>
+	
+	
+		<p>Filter Dropdown items to be compliant with already selected items and current input value
+Filtering is made on Text by default (can be changed with option)</p>
+	
+	
+		<h5 class="title is-5">Parameters</h5>
+		
+			<nav class="level param is-mobile">
+				<div class="level-left">
+					<div class="level-item">
+						<span class="param-name">value</span>
+						<span class="param-separator">:</span>
+						<span class="param-type">String</span>
+					</div>
+				</div>
+				<div class="level-right">
+					<div class="level-item">
+						<p>
+							
+							
+						</p>
+					</div>
+				</div>
+			</nav>
+			<div class="param-description">String to search for to filter items</div>
+		
+	
+	
+	<hr class="is-small" />
+
+	
+		<div class="symbol">
+			<span class="symbol-name">_highlightMatchesInString</span>
+			<span class="symbol-scope">
+				
+				
+				<div class="tag is-dark">private</div>
+				
+				
+			</span>
+		</div>
+	
+	
+		<p>Find needle into a string and wrap it with <!-- raw HTML omitted --> HTML tag</p>
+	
+	
+		<h5 class="title is-5">Parameters</h5>
+		
+			<nav class="level param is-mobile">
+				<div class="level-left">
+					<div class="level-item">
+						<span class="param-name">string</span>
+						<span class="param-separator">:</span>
+						<span class="param-type">String</span>
+					</div>
+				</div>
+				<div class="level-right">
+					<div class="level-item">
+						<p>
+							
+							
+								&nbsp;<span class="tag is-danger">Required</span>
+							
+						</p>
+					</div>
+				</div>
+			</nav>
+			<div class="param-description">String in which search item</div>
+		
+			<nav class="level param is-mobile">
+				<div class="level-left">
+					<div class="level-item">
+						<span class="param-name">needle</span>
+						<span class="param-separator">:</span>
+						<span class="param-type">String</span>
+					</div>
+				</div>
+				<div class="level-right">
+					<div class="level-item">
+						<p>
+							
+							
+								&nbsp;<span class="tag is-danger">Required</span>
+							
+						</p>
+					</div>
+				</div>
+			</nav>
+			<div class="param-description">String to search for</div>
+		
+	
+	
+	<hr class="is-small" />
+
+	
+		<div class="symbol">
+			<span class="symbol-name">_init</span>
+			<span class="symbol-scope">
+				
+				
+				<div class="tag is-dark">private</div>
+				
+				
+			</span>
+		</div>
+	
+	
+		<p>Initialize component, define internal variables and elements.</p>
+	
+	
+	
+	<hr class="is-small" />
+
+	
+		<div class="symbol">
+			<span class="symbol-name">_onDocumentClick</span>
+			<span class="symbol-scope">
+				
+				
+				<div class="tag is-dark">private</div>
+				
+				
+			</span>
+		</div>
+	
+	
+		<p>Listen document click events to manage dropdown visibility. It prevents dropdown to be hidden when the click occurs inside the TagsInput component.</p>
+	
+	
+		<h5 class="title is-5">Parameters</h5>
+		
+			<nav class="level param is-mobile">
+				<div class="level-left">
+					<div class="level-item">
+						<span class="param-name">event</span>
+						<span class="param-separator">:</span>
+						<span class="param-type">Event</span>
+					</div>
+				</div>
+				<div class="level-right">
+					<div class="level-item">
+						<p>
+							
+							
+								&nbsp;<span class="tag is-danger">Required</span>
+							
+						</p>
+					</div>
+				</div>
+			</nav>
+			<div class="param-description">DOM Event Object reference</div>
+		
+	
+	
+	<hr class="is-small" />
+
+	
+		<div class="symbol">
+			<span class="symbol-name">_onDropdownItemClick</span>
+			<span class="symbol-scope">
+				
+				
+				<div class="tag is-dark">private</div>
+				
+				
+			</span>
+		</div>
+	
+	
+		<p>Listener handling dropdown item click and call <code>add</code> method.</p>
+	
+	
+		<h5 class="title is-5">Parameters</h5>
+		
+			<nav class="level param is-mobile">
+				<div class="level-left">
+					<div class="level-item">
+						<span class="param-name">event</span>
+						<span class="param-separator">:</span>
+						<span class="param-type">Event</span>
+					</div>
+				</div>
+				<div class="level-right">
+					<div class="level-item">
+						<p>
+							
+							
+								&nbsp;<span class="tag is-danger">Required</span>
+							
+						</p>
+					</div>
+				</div>
+			</nav>
+			<div class="param-description">DOM Event Object reference</div>
+		
+	
+	
+	<hr class="is-small" />
+
+	
+		<div class="symbol">
+			<span class="symbol-name">_onInputChange</span>
+			<span class="symbol-scope">
+				
+				
+				<div class="tag is-dark">private</div>
+				
+				
+			</span>
+		</div>
+	
+	
+		<p>Listen to internal input change event and filter dropdonw items.</p>
+	
+	
+		<h5 class="title is-5">Parameters</h5>
+		
+			<nav class="level param is-mobile">
+				<div class="level-left">
+					<div class="level-item">
+						<span class="param-name">event</span>
+						<span class="param-separator">:</span>
+						<span class="param-type">Event</span>
+					</div>
+				</div>
+				<div class="level-right">
+					<div class="level-item">
+						<p>
+							
+							
+								&nbsp;<span class="tag is-danger">Required</span>
+							
+						</p>
+					</div>
+				</div>
+			</nav>
+			<div class="param-description">DOM Event Object reference</div>
+		
+	
+	
+	<hr class="is-small" />
+
+	
+		<div class="symbol">
+			<span class="symbol-name">_onInputClick</span>
+			<span class="symbol-scope">
+				
+				
+				<div class="tag is-dark">private</div>
+				
+				
+			</span>
+		</div>
+	
+	
+		<p>Listen to internal input click event and display dropdown if it is relevant.</p>
+	
+	
+		<h5 class="title is-5">Parameters</h5>
+		
+			<nav class="level param is-mobile">
+				<div class="level-left">
+					<div class="level-item">
+						<span class="param-name">event</span>
+						<span class="param-separator">:</span>
+						<span class="param-type">Event</span>
+					</div>
+				</div>
+				<div class="level-right">
+					<div class="level-item">
+						<p>
+							
+							
+								&nbsp;<span class="tag is-danger">Required</span>
+							
+						</p>
+					</div>
+				</div>
+			</nav>
+			<div class="param-description">DOM Event Object reference</div>
+		
+	
+	
+	<hr class="is-small" />
+
+	
+		<div class="symbol">
+			<span class="symbol-name">_onInputFocusIn</span>
+			<span class="symbol-scope">
+				
+				
+				<div class="tag is-dark">private</div>
+				
+				
+			</span>
+		</div>
+	
+	
+		<p>Add <code>is-focused</code> class to the TagsInput container when the internal input get focus.</p>
+	
+	
+		<h5 class="title is-5">Parameters</h5>
+		
+			<nav class="level param is-mobile">
+				<div class="level-left">
+					<div class="level-item">
+						<span class="param-name">event</span>
+						<span class="param-separator">:</span>
+						<span class="param-type">Event</span>
+					</div>
+				</div>
+				<div class="level-right">
+					<div class="level-item">
+						<p>
+							
+							
+								&nbsp;<span class="tag is-danger">Required</span>
+							
+						</p>
+					</div>
+				</div>
+			</nav>
+			<div class="param-description">DOM Event Object reference</div>
+		
+	
+	
+	<hr class="is-small" />
+
+	
+		<div class="symbol">
+			<span class="symbol-name">_onInputFocusOut</span>
+			<span class="symbol-scope">
+				
+				
+				<div class="tag is-dark">private</div>
+				
+				
+			</span>
+		</div>
+	
+	
+		<p>Remove <code>is-focused</code> class from the TagsInput container when the internal input lost focus.</p>
+	
+	
+		<h5 class="title is-5">Parameters</h5>
+		
+			<nav class="level param is-mobile">
+				<div class="level-left">
+					<div class="level-item">
+						<span class="param-name">event</span>
+						<span class="param-separator">:</span>
+						<span class="param-type">Event</span>
+					</div>
+				</div>
+				<div class="level-right">
+					<div class="level-item">
+						<p>
+							
+							
+								&nbsp;<span class="tag is-danger">Required</span>
+							
+						</p>
+					</div>
+				</div>
+			</nav>
+			<div class="param-description">DOM Event Object reference</div>
+		
+	
+	
+	<hr class="is-small" />
+
+	
+		<div class="symbol">
+			<span class="symbol-name">_onInputKeyDown</span>
+			<span class="symbol-scope">
+				
+				
+				<div class="tag is-dark">private</div>
+				
+				
+			</span>
+		</div>
+	
+	
+		<p></p>
+	
+	
+		<h5 class="title is-5">Parameters</h5>
+		
+			<nav class="level param is-mobile">
+				<div class="level-left">
+					<div class="level-item">
+						<span class="param-name">event</span>
+						<span class="param-separator">:</span>
+						<span class="param-type">Event</span>
+					</div>
+				</div>
+				<div class="level-right">
+					<div class="level-item">
+						<p>
+							
+							
+								&nbsp;<span class="tag is-danger">Required</span>
+							
+						</p>
+					</div>
+				</div>
+			</nav>
+			<div class="param-description">DOM Event Object reference</div>
+		
+	
+	
+	<hr class="is-small" />
+
+	
+		<div class="symbol">
+			<span class="symbol-name">_onInputKeyPress</span>
+			<span class="symbol-scope">
+				
+				
+				<div class="tag is-dark">private</div>
+				
+				
+			</span>
+		</div>
+	
+	
+		<p></p>
+	
+	
+		<h5 class="title is-5">Parameters</h5>
+		
+			<nav class="level param is-mobile">
+				<div class="level-left">
+					<div class="level-item">
+						<span class="param-name">event</span>
+						<span class="param-separator">:</span>
+						<span class="param-type">Event</span>
+					</div>
+				</div>
+				<div class="level-right">
+					<div class="level-item">
+						<p>
+							
+							
+								&nbsp;<span class="tag is-danger">Required</span>
+							
+						</p>
+					</div>
+				</div>
+			</nav>
+			<div class="param-description">DOM Event Object reference</div>
+		
+	
+	
+	<hr class="is-small" />
+
+	
+		<div class="symbol">
+			<span class="symbol-name">_onOriginalInputChange</span>
+			<span class="symbol-scope">
+				
+				
+				<div class="tag is-dark">private</div>
+				
+				
+			</span>
+		</div>
+	
+	
+		<p>Listen to original input <code>change</code> event to automatically update tags.</p>
+	
+	
+		<h5 class="title is-5">Parameters</h5>
+		
+			<nav class="level param is-mobile">
+				<div class="level-left">
+					<div class="level-item">
+						<span class="param-name">event</span>
+						<span class="param-separator">:</span>
+						<span class="param-type">Event</span>
+					</div>
+				</div>
+				<div class="level-right">
+					<div class="level-item">
+						<p>
+							
+							
+								&nbsp;<span class="tag is-danger">Required</span>
+							
+						</p>
+					</div>
+				</div>
+			</nav>
+			<div class="param-description">DOM Event Object reference</div>
+		
+	
+	
+	<hr class="is-small" />
+
+	
+		<div class="symbol">
+			<span class="symbol-name">_onTagClick</span>
+			<span class="symbol-scope">
+				
+				
+				<div class="tag is-dark">private</div>
+				
+				
+			</span>
+		</div>
+	
+	
+		<p>Listen to tags click events to handle tag selection.</p>
+	
+	
+		<h5 class="title is-5">Parameters</h5>
+		
+			<nav class="level param is-mobile">
+				<div class="level-left">
+					<div class="level-item">
+						<span class="param-name">event</span>
+						<span class="param-separator">:</span>
+						<span class="param-type">Event</span>
+					</div>
+				</div>
+				<div class="level-right">
+					<div class="level-item">
+						<p>
+							
+							
+								&nbsp;<span class="tag is-danger">Required</span>
+							
+						</p>
+					</div>
+				</div>
+			</nav>
+			<div class="param-description">DOM Event Object reference</div>
+		
+	
+	
+	<hr class="is-small" />
+
+	
+		<div class="symbol">
+			<span class="symbol-name">_onTagDeleteClick</span>
+			<span class="symbol-scope">
+				
+				
+				<div class="tag is-dark">private</div>
+				
+				
+			</span>
+		</div>
+	
+	
+		<p>Listen to tag delete button click event to handle tag deletion.</p>
+	
+	
+		<h5 class="title is-5">Parameters</h5>
+		
+			<nav class="level param is-mobile">
+				<div class="level-left">
+					<div class="level-item">
+						<span class="param-name">event</span>
+						<span class="param-separator">:</span>
+						<span class="param-type">Event</span>
+					</div>
+				</div>
+				<div class="level-right">
+					<div class="level-item">
+						<p>
+							
+							
+								&nbsp;<span class="tag is-danger">Required</span>
+							
+						</p>
+					</div>
+				</div>
+			</nav>
+			<div class="param-description">DOM Event Object reference</div>
+		
+	
+	
+	<hr class="is-small" />
+
+	
+		<div class="symbol">
+			<span class="symbol-name">_openDropdown</span>
+			<span class="symbol-scope">
+				
+				
+				<div class="tag is-dark">private</div>
+				
+				
+			</span>
+		</div>
+	
+	
+		<p>Open dropdown element</p>
+	
+	
+	
+	<hr class="is-small" />
+
+	
+		<div class="symbol">
+			<span class="symbol-name">_propagateChange</span>
+			<span class="symbol-scope">
+				
+				
+				<div class="tag is-dark">private</div>
+				
+				
+			</span>
+		</div>
+	
+	
+		<p>Propagate internal input changes to the original input</p>
+	
+	
+	
+	<hr class="is-small" />
+
+	
+		<div class="symbol">
+			<span class="symbol-name">_trim</span>
+			<span class="symbol-scope">
+				
+				
+				<div class="tag is-dark">private</div>
+				
+				
+			</span>
+		</div>
+	
+	
+		<p>Trim item is <code>trim</code> option is set to <code>true</code>. This function handle both string and object items.</p>
+	
+	
+	
+	<hr class="is-small" />
+
+	
+		<div class="symbol">
+			<span class="symbol-name">_updateDropdown</span>
+			<span class="symbol-scope">
+				
+				
+				<div class="tag is-dark">private</div>
+				
+				
+			</span>
+		</div>
+	
+	
+		<p>Update dropdown items based on context.</p>
+	
+	
+	
+	<hr class="is-small" />
+
+	
+		<div class="symbol">
+			<span class="symbol-name">_updateSelectOptions</span>
+			<span class="symbol-scope">
+				
+				
+				<div class="tag is-dark">private</div>
+				
+				
+			</span>
+		</div>
+	
+	
+		<p>Update original select option based on given item.</p>
+	
+	
+		<h5 class="title is-5">Parameters</h5>
+		
+			<nav class="level param is-mobile">
+				<div class="level-left">
+					<div class="level-item">
+						<span class="param-name">item</span>
+						<span class="param-separator">:</span>
+						<span class="param-type">String<span class='param-type-separator'>|</span>Object</span>
+					</div>
+				</div>
+				<div class="level-right">
+					<div class="level-item">
+						<p>
+							
+							
+								&nbsp;<span class="tag is-danger">Required</span>
+							
+						</p>
+					</div>
+				</div>
+			</nav>
+			<div class="param-description">Item data</div>
+		
+	
+	
+	<hr class="is-small" />
+
+<h1 id="events">Events</h1>
+<p>This component provides some events you can listen to to react on state changes.
+
+
+
+<table class="table is-hoverable">
+    <thead>
+        <tr>
+            
+            <th>Event name</th>
+            
+            <th>Description</th>
+            
+            <th>Example</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        
+        <tr>
+            <td class="is-narrow has-background-light">before.add</td>
+            <td class="has-text-grey">Trigerred before adding new tag. The concerned item is passed as parameter. You can modify the item before its treatment by returning the new item data or prevent tag to be added by returning false.</td>
+            <td class="is-narrow"><div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#069;font-weight:bold">var</span> inputTags <span style="color:#555">=</span> <span style="color:#366">document</span>.getElementById(<span style="color:#c30">&#39;myInputTag&#39;</span>);
+<span style="color:#09f;font-style:italic">// Example to capitalize a string item
+</span><span style="color:#09f;font-style:italic"></span>inputTags.BulmaTagsInput().on(<span style="color:#c30">&#39;before.add&#39;</span>, <span style="color:#069;font-weight:bold">function</span>(item) {
+    <span style="color:#069;font-weight:bold">return</span> item.charAt(<span style="color:#f60">0</span>).toUpperCase() <span style="color:#555">+</span> item.slice(<span style="color:#f60">1</span>);
+});
+
+<span style="color:#09f;font-style:italic">// Example to accept string with only letters
+</span><span style="color:#09f;font-style:italic"></span>inputTags.BulmaTagsInput().on(<span style="color:#c30">&#39;before.add&#39;</span>, <span style="color:#069;font-weight:bold">function</span>(item) {
+    <span style="color:#069;font-weight:bold">return</span> item.value.match(<span style="color:#3aa">/^[A-Za-z]+$/</span>);
+});
+</code></pre></div></td>
+        </tr>
+        
+        <tr>
+            <td class="is-narrow has-background-light">after.add</td>
+            <td class="has-text-grey">Triggered once a tag has been added. The added item and the related tag are passed in an object as parameter.</td>
+            <td class="is-narrow"><div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#069;font-weight:bold">var</span> inputTags <span style="color:#555">=</span> <span style="color:#366">document</span>.getElementById(<span style="color:#c30">&#39;myInputTag&#39;</span>);
+inputTags.BulmaTagsInput().on(<span style="color:#c30">&#39;after.add&#39;</span>, <span style="color:#069;font-weight:bold">function</span>(data) {
+    console.log(data.item);
+    console.log(data.tag);
+});
+</code></pre></div></td>
+        </tr>
+        
+        <tr>
+            <td class="is-narrow has-background-light">before.remove</td>
+            <td class="has-text-grey">Triggered before removing a tag. The concerned item is passed as parameter. You can prevent deletion by returning <code>false</code>.</td>
+            <td class="is-narrow"><div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#069;font-weight:bold">var</span> inputTags <span style="color:#555">=</span> <span style="color:#366">document</span>.getElementById(<span style="color:#c30">&#39;myInputTag&#39;</span>);
+<span style="color:#09f;font-style:italic">// Prevent all tags from being deleted
+</span><span style="color:#09f;font-style:italic"></span>inputTags.BulmaTagsInput().on(<span style="color:#c30">&#39;before.remove&#39;</span>, <span style="color:#069;font-weight:bold">function</span>(item) {
+    <span style="color:#069;font-weight:bold">return</span> <span style="color:#069;font-weight:bold">false</span>;
+});
+</code></pre></div></td>
+        </tr>
+        
+        <tr>
+            <td class="is-narrow has-background-light">after.remove</td>
+            <td class="has-text-grey">Triggered once a tag has been removed. The removed item is passed as parameter.</td>
+            <td class="is-narrow"><div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#069;font-weight:bold">var</span> inputTags <span style="color:#555">=</span> <span style="color:#366">document</span>.getElementById(<span style="color:#c30">&#39;myInputTag&#39;</span>);
+<span style="color:#09f;font-style:italic">// Log all string items removes in the console
+</span><span style="color:#09f;font-style:italic"></span>inputTags.BulmaTagsInput().on(<span style="color:#c30">&#39;after.remove&#39;</span>, <span style="color:#069;font-weight:bold">function</span>(item) {
+    console.log(item <span style="color:#555">+</span> <span style="color:#c30">&#34; has been removed&#34;</span>;
+});
+</code></pre></div></td>
+        </tr>
+        
+        <tr>
+            <td class="is-narrow has-background-light">before.flush</td>
+            <td class="has-text-grey">Triggered before flushing items. Items array is passed as parameter.</td>
+            <td class="is-narrow"><div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#069;font-weight:bold">var</span> inputTags <span style="color:#555">=</span> <span style="color:#366">document</span>.getElementById(<span style="color:#c30">&#39;myInputTag&#39;</span>);
+<span style="color:#09f;font-style:italic">// Log all string items concerned by the flush
+</span><span style="color:#09f;font-style:italic"></span>inputTags.BulmaTagsInput().on(<span style="color:#c30">&#39;before.flush&#39;</span>, <span style="color:#069;font-weight:bold">function</span>(items) {
+    items.forEach(<span style="color:#069;font-weight:bold">function</span>(item) {
+        console.log(item <span style="color:#555">+</span> <span style="color:#c30">&#34; will be flush&#34;</span>;
+    });
+});
+</code></pre></div></td>
+        </tr>
+        
+        <tr>
+            <td class="is-narrow has-background-light">after.flush</td>
+            <td class="has-text-grey">Triggered after flushing items.</td>
+            <td class="is-narrow"><div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#069;font-weight:bold">var</span> inputTags <span style="color:#555">=</span> <span style="color:#366">document</span>.getElementById(<span style="color:#c30">&#39;myInputTag&#39;</span>);
+inputTags.BulmaTagsInput().on(<span style="color:#c30">&#39;after.flush&#39;</span>, <span style="color:#069;font-weight:bold">function</span>(items) {
+    <span style="color:#09f;font-style:italic">// items should be an empty array
+</span><span style="color:#09f;font-style:italic"></span>});
+</code></pre></div></td>
+        </tr>
+        
+        <tr>
+            <td class="is-narrow has-background-light">before.select</td>
+            <td class="has-text-grey">Triggered before selecting an item. The concerned item and related tag are passed in an Object as parameter.</td>
+            <td class="is-narrow"><div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#069;font-weight:bold">var</span> inputTags <span style="color:#555">=</span> <span style="color:#366">document</span>.getElementById(<span style="color:#c30">&#39;myInputTag&#39;</span>);
+inputTags.BulmaTagsInput().on(<span style="color:#c30">&#39;before.select&#39;</span>, <span style="color:#069;font-weight:bold">function</span>(data) {
+    console.log(data.item);
+    console.log(data.tag);
+});
+</code></pre></div></td>
+        </tr>
+        
+        <tr>
+            <td class="is-narrow has-background-light">after.select</td>
+            <td class="has-text-grey">Triggered once an item has been selected. The concerned item and related tag are passed in an Object as parameter.</td>
+            <td class="is-narrow"><div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#069;font-weight:bold">var</span> inputTags <span style="color:#555">=</span> <span style="color:#366">document</span>.getElementById(<span style="color:#c30">&#39;myInputTag&#39;</span>);
+inputTags.BulmaTagsInput().on(<span style="color:#c30">&#39;after.select&#39;</span>, <span style="color:#069;font-weight:bold">function</span>(data) {
+    console.log(data.item);
+    console.log(data.tag);
+});
+</code></pre></div></td>
+        </tr>
+        
+        <tr>
+            <td class="is-narrow has-background-light">before.unselect</td>
+            <td class="has-text-grey">Triggered before unselect an item. The concerned item and related tag are passed in an Object as parameter.</td>
+            <td class="is-narrow"><div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#069;font-weight:bold">var</span> inputTags <span style="color:#555">=</span> <span style="color:#366">document</span>.getElementById(<span style="color:#c30">&#39;myInputTag&#39;</span>);
+inputTags.BulmaTagsInput().on(<span style="color:#c30">&#39;before.unselect&#39;</span>, <span style="color:#069;font-weight:bold">function</span>(data) {
+    console.log(data.item);
+    console.log(data.tag);
+});
+</code></pre></div></td>
+        </tr>
+        
+        <tr>
+            <td class="is-narrow has-background-light">after.unselect</td>
+            <td class="has-text-grey">Triggered once an item has been unselected. The concerned item and related tag are passed in an Object as parameter.</td>
+            <td class="is-narrow"><div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#069;font-weight:bold">var</span> inputTags <span style="color:#555">=</span> <span style="color:#366">document</span>.getElementById(<span style="color:#c30">&#39;myInputTag&#39;</span>);
+inputTags.BulmaTagsInput().on(<span style="color:#c30">&#39;after.select&#39;</span>, <span style="color:#069;font-weight:bold">function</span>(data) {
+    console.log(data.item);
+    console.log(data.tag);
+});
+</code></pre></div></td>
+        </tr>
+        
+    </tbody>
+</table></p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script src="/components/tagsinput/1.0/js/clipboard.min.js" type="text/javascript"></script>
+    <script async src="/components/tagsinput/1.0/js/docs.js" type="text/javascript"></script>
+    <script src="/components/tagsinput/1.0/js/bulma-tagsinput.min.js" type="text/javascript"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            BulmaTagsInput.attach();
+        });
+    </script>
+    
+</body>
+
+</html>

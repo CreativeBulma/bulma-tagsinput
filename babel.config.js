@@ -2,6 +2,7 @@ module.exports = {
   presets: [
     ['@babel/env'],
     ['minify', {
+      'builtIns': false,
       'keepClassName': true,
       'keepFnName': true
     }]

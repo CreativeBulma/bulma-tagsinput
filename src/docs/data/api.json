@@ -1,0 +1,598 @@
+[
+    {
+        "name": "BulmaTagsInput",
+        "type": "class",
+        "scope": "constructor",
+        "description": "Instanciate the component based on the element provided and register the instance into `BulmaTagsInput` function of the element.",
+        "parameters": [
+            {
+                "name": "element",
+                "type": [
+                    "String",
+                    "Node"
+                ],
+                "default": "null",
+                "required": true,
+                "description": "Node element (can be a selector string - must target only one node - or a DOM node) on which attach the component"
+            },
+            {
+                "name": "options",
+                "type": [
+                    "Object"
+                ],
+                "default": "{}",
+                "description": "Component options. These options are merged with default options and options set via element data-attribute.\n"
+            }
+        ],
+        "example": "const bulmaTagsInputElement = new BulmaTagsInput('#input-tags');\n\n// Access to the BulmaTagsInput instance from DOM\nconst inputTagsElement = document.getElementById('input-tags');\nif (inputTagsElement) {\n  const bulmaTagsInputInstance = inputTagsElement.BulmaTagsInput();\n}\n"
+    },
+    {
+        "name": "attach",
+        "type": "Array",
+        "scope": "constructor",
+        "description": "Constructor shortcut with possibility to pass a String, a Node or a NodeList as a selector so we can instantciate multiple element at once. Return an array of all instances. Note that each instance is link to the related DOM node under `BulmaTagsInput` function.",
+        "example": "// Return an array of BulmaTagsInput instances (empty if no DOM node found)\nconst bulmaTagsInputInstances = BulmaTagsInput.attach();\n\n// Loop into instances\nbulmaTagsInputInstances.forEach(bulmaTagsInputInstance => {\n    // Work with the instance\n});\n",
+        "parameters": [
+            {
+                "name": "selector",
+                "type": [
+                    "String",
+                    "Node",
+                    "NodeList"
+                ],
+                "default": "input[data-type=\"tags\"], input[type=\"tags\"], select[data-type=\"tags\"], select[type=\"tags\"]",
+                "required": true,
+                "description": "Selector (can be a selector string - can target multiple nodes - or a DOM node or a DOM nodes list) on which attach the component"
+            },
+            {
+                "name": "options",
+                "type": [
+                    "Object"
+                ],
+                "default": "{}",
+                "description": "Component options. These options are merged with default options and options set via element data-attribute."
+            }
+        ]
+    },
+    {
+        "name": "add",
+        "type": "BulmaTagsInput",
+        "scope": "public",
+        "description": "Add given item to the component",
+        "parameters": [
+            {
+                "name": "item",
+                "type": [
+                    "String",
+                    "Object"
+                ],
+                "required": true,
+                "description": "Item to add. It can be one of the following type: String, Array.\n\nYou can provide multiple items at once by passing and Array of item or a string with multiple value delimited by `delimiter` option (default: comma)."
+            }
+        ],
+        "example": "var inputTags = document.getElementById('myInputTag');\r\n\r\n\/\/ Add one string item\r\ninputTags.BulmaTagsInput().add('john');\r\n\r\n\/\/ Add multiple string items in once by passing multiple values as a string delimited by comma\r\ninputTags.BulmaTagsInput().add('john,jane');\r\n\r\n\/\/ Add multiple string items as array\r\ninputTags.BulmaTagsInput().add(['john', 'jane']);\r\n\r\n\/\/ Add one object item\r\ninputTags.BulmaTagsInput().add({\r\n     \"value\": \"1\",\r\n     \"text\": \"John\"\r\n});\r\n\r\n\/\/ Add multiple object items at once\r\ninputTags.BulmaTagsInput().add([{\r\n     \"value\": \"1\",\r\n     \"text\": \"John\"\r\n}, {\r\n     \"value\": \"2\",\r\n     \"text\": \"Jane\"\r\n}]);"
+    },
+    {
+        "name": "clearSelection",
+        "type": "BulmaTagsInput",
+        "scope": "public",
+        "description": "Unselect the current selected tag",
+        "example": "var inputTags = document.getElementById('myInputTag');\r\n\r\n\/\/ Clear selection\r\ninputTags.BulmaTagsInput().clearSelection();"
+    },
+    {
+        "name": "flush",
+        "type": "BulmaTagsInput",
+        "scope": "public",
+        "description": "Shortcut to removeAll method",
+        "example": "var inputTags = document.getElementById('myInputTag');\r\n\r\n\/\/ Remove all tags focus\r\ninputTags.BulmaTagsInput().flush();"
+    },
+    {
+        "name": "focus",
+        "type": "BulmaTagsInput",
+        "scope": "public",
+        "description": "Sets focus on the input",
+        "example": "var inputTags = document.getElementById('myInputTag');\r\n\r\n\/\/ Set focus\r\ninputTags.BulmaTagsInput().focus();"
+    },
+    {
+        "name": "has",
+        "type": "Boolean",
+        "scope": "public",
+        "description": "Check if given item is present",
+        "parameters": [
+            {
+                "name": "item",
+                "type": [
+                    "String",
+                    "Object"
+                ],
+                "required": true,
+                "description": "Item to find. It can be one of the following type: String, Array."
+            }
+        ],
+        "example": "var inputTags = document.getElementById('myInputTag');\r\ninputTags.BulmaTagsInput().add('john');\r\n\r\ninputTags.BulmaTagsInput().has('john'); \/\/ return True\r\ninputTags.BulmaTagsInput().has('jane'); \/\/ return False"
+    },
+    {
+        "name": "hasValue",
+        "type": "Boolean",
+        "scope": "public",
+        "description": "Check if given value is present",
+        "parameters": [
+            {
+                "name": "value",
+                "type": [
+                    "String"
+                ],
+                "required": true,
+                "description": "Single value to find."
+            }
+        ],
+        "example": "var inputTags = document.getElementById('myInputTag');\r\ninputTags.BulmaTagsInput().add({\r\n    \"value\": \"john\",\r\n    \"text\": \"John Doe\"\r\n});\r\n\r\ninputTags.BulmaTagsInput().hasValue('john'); \/\/ return True\r\ninputTags.BulmaTagsInput().hasValue('jane'); \/\/ return False"
+    },
+    {
+        "name": "hasText",
+        "type": "Boolean",
+        "scope": "public",
+        "description": "Check if given text is present",
+        "parameters": [
+            {
+                "name": "value",
+                "type": [
+                    "String"
+                ],
+                "required": true,
+                "description": "single Text to find in items."
+            }
+        ],
+        "example": "var inputTags = document.getElementById('myInputTag');\r\ninputTags.BulmaTagsInput().add({\r\n    \"value\": \"john\",\r\n    \"text\": \"John Doe\"\r\n});\r\n\r\ninputTags.BulmaTagsInput().hasText('John Doe'); \/\/ return True\r\ninputTags.BulmaTagsInput().hasValue('Jane Doe'); \/\/ return False"
+    },
+    {
+        "name": "indexOf",
+        "type": "Integer",
+        "scope": "public",
+        "description": "Get index of given item",
+        "parameters": [
+            {
+                "name": "item",
+                "type": [
+                    "String",
+                    "Object"
+                ],
+                "required": true,
+                "description": "Item to find. It can be one of the following type: String, Array."
+            }
+        ],
+        "example": "var inputTags = document.getElementById('myInputTag');\r\ninputTags.BulmaTagsInput().add('john');\r\n\r\ninputTags.BulmaTagsInput().indexOf('john'); \/\/ return 0\r\ninputTags.BulmaTagsInput().has('jane'); \/\/ return -1"
+    },
+    {
+        "name": "input",
+        "type": "HTMLElement",
+        "scope": "public",
+        "description": "Get the internal input element",
+        "example": "var inputTags = document.getElementById('myInputTag');\r\ninputTags.BulmaTagsInput().add('john');\r\n\r\ninputTags.BulmaTagsInput().input();"
+    },
+    {
+        "name": "items",
+        "type": "Array",
+        "scope": "public",
+        "description": "Get all added items",
+        "example": "var inputTags = document.getElementById('myInputTag');\r\ninputTags.BulmaTagsInput().add('john');\r\n\r\ninputTags.BulmaTagsInput().item(); \/\/ return ['john']"
+    },
+    {
+        "name": "remove",
+        "type": "BulmaTagsInput",
+        "scope": "public",
+        "description": "Remove given items",
+        "parameters": [
+            {
+                "name": "item",
+                "type": [
+                    "String",
+                    "Object"
+                ],
+                "required": true,
+                "description": "Item to add. It can be one of the following type: String, Array.\n\nYou can provide multiple items at once by passing and Array of item or a string with multiple value delimited by `delimiter` option (default: comma)."
+            }
+        ],
+        "example": "var inputTags = document.getElementById('myInputTag');\r\ninputTags.BulmaTagsInput().add('john');\r\n\r\ninputTags.BulmaTagsInput().remove('john');"
+    },
+    {
+        "name": "removeAll",
+        "type": "BulmaTagsInput",
+        "scope": "public",
+        "description": "Remove all tags at once",
+        "example": "var inputTags = document.getElementById('myInputTag');\r\ninputTags.BulmaTagsInput().add('john');\r\ninputTags.BulmaTagsInput().add('jane');\r\n\r\ninputTags.BulmaTagsInput().items(); \/\/ return ['john', 'jane']\r\n\r\ninputTags.BulmaTagsInput().removeAll();\r\ninputTags.BulmaTagsInput().items(); \/\/ return [] (empty array)"
+    },
+    {
+        "name": "removeAtIndex",
+        "type": "BulmaTagsInput",
+        "scope": "public",
+        "description": "Remove item at given index.",
+        "parameters": [
+            {
+                "name": "index",
+                "type": [
+                    "Integer"
+                ],
+                "required": true,
+                "description": "Index of the item to remove."
+            },
+            {
+                "name": "clearSelection",
+                "type": [
+                    "Boolean"
+                ],
+                "description": "Should current selection be cleared (default: true)"
+            }
+        ],
+        "example": "var inputTags = document.getElementById('myInputTag');\r\ninputTags.BulmaTagsInput().add('john');\r\n\r\ninputTags.BulmaTagsInput().items(); \/\/ return ['john']\r\n\r\ninputTags.BulmaTagsInput().removeAtIndex(0);\r\ninputTags.BulmaTagsInput().items(); \/\/ return [] (empty array)"
+    },
+    {
+        "name": "select",
+        "type": "BulmaTagsInput",
+        "scope": "public",
+        "description": "Select given item",
+        "parameters": [
+            {
+                "name": "item",
+                "type": [
+                    "String",
+                    "Object"
+                ],
+                "required": true,
+                "description": "Item to add. It can be one of the following type: String, Array.\n\nYou can provide multiple items at once by passing and Array of item or a string with multiple value delimited by `delimiter` option (default: comma). If a list of items is passed then each item will be selected one by one and at the end only the last existing item from the list will be selected at the end."
+            }
+        ],
+        "example": "var inputTags = document.getElementById('myInputTag');\r\ninputTags.BulmaTagsInput().add('john');\r\ninputTags.BulmaTagsInput().add('jane');\r\n\r\ninputTags.BulmaTagsInput().select('john'); \/\/ Tag containing 'john' value now have is-selected class"
+    },
+    {
+        "name": "selectAtIndex",
+        "type": "BulmaTagsInput",
+        "scope": "public",
+        "description": "Select tag at given index",
+        "parameters": [
+            {
+                "name": "index",
+                "type": [
+                    "Integer"
+                ],
+                "required": true,
+                "description": "Index of the item to select."
+            }
+        ],
+        "example": "var inputTags = document.getElementById('myInputTag');\r\ninputTags.BulmaTagsInput().add('john');\r\ninputTags.BulmaTagsInput().add('jane');\r\n\r\ninputTags.BulmaTagsInput().selectAtIndex(0); \/\/ Tag containing 'john' value now have is-selected class"
+    },
+    {
+        "name": "selected",
+        "type": "Integer",
+        "scope": "public",
+        "description": "Get the current selected item",
+        "example": "var inputTags = document.getElementById('myInputTag');\r\ninputTags.BulmaTagsInput().add('john');\r\ninputTags.BulmaTagsInput().add('jane');\r\n\r\ninputTags.BulmaTagsInput().selectAtIndex(0);\r\nvar selectedItem = inputTags.BulmaTagsInput().selected;\r\n\/\/ selectedItem = 'john'"
+    },
+    {
+        "name": "selectedIndex",
+        "type": "String|Object",
+        "scope": "public",
+        "description": "Get the current selected item index",
+        "example": "var inputTags = document.getElementById('myInputTag');\r\ninputTags.BulmaTagsInput().add('john');\r\ninputTags.BulmaTagsInput().add('jane');\r\n\r\ninputTags.BulmaTagsInput().selectAtIndex(0);\r\nvar selectedItem = inputTags.BulmaTagsInput().selectedIndex;\r\n\/\/ selectedItem = 0"
+    },
+    {
+        "name": "value",
+        "type": "String|Array",
+        "scope": "public",
+        "description": "Get component value",
+        "example": "var inputTags = document.getElementById('myInputTag');\r\ninputTags.BulmaTagsInput().add('john');\r\ninputTags.BulmaTagsInput().add('jane');\r\n\r\nvar value = inputTags.BulmaTagsInput().value;\r\n\/\/ value = \"john,jane\"\r\n\r\n\/\/ If component has been instantiated on a multiple select element then a real array is returned\r\n\/\/ value = [\"john\", \"jane\"]\r\n"
+    },
+    {
+        "name": "_build",
+        "scope": "private",
+        "description": "Build TagsInput DOM elements"
+    },
+    {
+        "name": "_bindEvents",
+        "scope": "private",
+        "description": "Bind all events listener"
+    },
+    {
+        "name": "_caretAtStart",
+        "type": "Boolean",
+        "scope": "private",
+        "description": "Determine if input caret it at the start of the input or not."
+    },
+    {
+        "name": "_checkLength",
+        "type": "Boolean",
+        "scope": "private",
+        "description": "Check value length constraint if option activated",
+        "parameters": [
+            {
+                "name": "item",
+                "type": [
+                    "String",
+                    "Object"
+                ],
+                "required": true,
+                "description": "Item data"
+            }
+        ]
+    },
+    {
+        "name": "_createDropdownItem",
+        "scope": "private",
+        "description": "Create a new dropdown item based on given item data",
+        "parameters": [
+            {
+                "name": "item",
+                "type": [
+                    "String",
+                    "Object"
+                ],
+                "required": true,
+                "description": "Item data"
+            }
+        ]
+    },
+    {
+        "name": "_createTag",
+        "scope": "private",
+        "description": "Create a new tag and add it to the DOM",
+        "parameters": [
+            {
+                "name": "item",
+                "type": [
+                    "String",
+                    "Object"
+                ],
+                "required": true,
+                "description": "Item data"
+            }
+        ]
+    },
+    {
+        "name": "_emptyDropdown",
+        "scope": "private",
+        "description": "Remove all dropdown items except the empty title"
+    },
+    {
+        "name": "_filterDropdownItems",
+        "scope": "private",
+        "description": "Filter Dropdown items to be compliant with already selected items and current input value\nFiltering is made on Text by default (can be changed with option)",
+        "parameters": [
+            {
+                "name": "value",
+                "type": [
+                    "String"
+                ],
+                "description": "String to search for to filter items"
+            }
+        ]
+    },
+    {
+        "name": "_highlightMatchesInString",
+        "scope": "private",
+        "description": "Find needle into a string and wrap it with <mark> HTML tag",
+        "parameters": [
+            {
+                "name": "string",
+                "type": [
+                    "String"
+                ],
+                "required": true,
+                "description": "String in which search item"
+            },
+            {
+                "name": "needle",
+                "type": [
+                    "String"
+                ],
+                "required": true,
+                "description": "String to search for"
+            }
+        ]
+    },
+    {
+        "name": "_init",
+        "scope": "private",
+        "description": "Initialize component, define internal variables and elements."
+    },
+    {
+        "name": "_onDocumentClick",
+        "scope": "private",
+        "description": "Listen document click events to manage dropdown visibility. It prevents dropdown to be hidden when the click occurs inside the TagsInput component.",
+        "parameters": [
+            {
+                "name": "event",
+                "type": [
+                    "Event"
+                ],
+                "required": true,
+                "description": "DOM Event Object reference"
+            }
+        ]
+    },
+    {
+        "name": "_onDropdownItemClick",
+        "scope": "private",
+        "description": "Listener handling dropdown item click and call `add` method.",
+        "parameters": [
+            {
+                "name": "event",
+                "type": [
+                    "Event"
+                ],
+                "required": true,
+                "description": "DOM Event Object reference"
+            }
+        ]
+    },
+    {
+        "name": "_onInputChange",
+        "scope": "private",
+        "description": "Listen to internal input change event and filter dropdonw items.",
+        "parameters": [
+            {
+                "name": "event",
+                "type": [
+                    "Event"
+                ],
+                "required": true,
+                "description": "DOM Event Object reference"
+            }
+        ]
+    },
+    {
+        "name": "_onInputClick",
+        "scope": "private",
+        "description": "Listen to internal input click event and display dropdown if it is relevant.",
+        "parameters": [
+            {
+                "name": "event",
+                "type": [
+                    "Event"
+                ],
+                "required": true,
+                "description": "DOM Event Object reference"
+            }
+        ]
+    },
+    {
+        "name": "_onInputFocusIn",
+        "scope": "private",
+        "description": "Add `is-focused` class to the TagsInput container when the internal input get focus.",
+        "parameters": [
+            {
+                "name": "event",
+                "type": [
+                    "Event"
+                ],
+                "required": true,
+                "description": "DOM Event Object reference"
+            }
+        ]
+    },
+    {
+        "name": "_onInputFocusOut",
+        "scope": "private",
+        "description": "Remove `is-focused` class from the TagsInput container when the internal input lost focus.",
+        "parameters": [
+            {
+                "name": "event",
+                "type": [
+                    "Event"
+                ],
+                "required": true,
+                "description": "DOM Event Object reference"
+            }
+        ]
+    },
+    {
+        "name": "_onInputKeyDown",
+        "scope": "private",
+        "description": "",
+        "parameters": [
+            {
+                "name": "event",
+                "type": [
+                    "Event"
+                ],
+                "required": true,
+                "description": "DOM Event Object reference"
+            }
+        ]
+    },
+    {
+        "name": "_onInputKeyPress",
+        "scope": "private",
+        "description": "",
+        "parameters": [
+            {
+                "name": "event",
+                "type": [
+                    "Event"
+                ],
+                "required": true,
+                "description": "DOM Event Object reference"
+            }
+        ]
+    },
+    {
+        "name": "_onOriginalInputChange",
+        "scope": "private",
+        "description": "Listen to original input `change` event to automatically update tags.",
+        "parameters": [
+            {
+                "name": "event",
+                "type": [
+                    "Event"
+                ],
+                "required": true,
+                "description": "DOM Event Object reference"
+            }
+        ]
+    },
+    {
+        "name": "_onTagClick",
+        "scope": "private",
+        "description": "Listen to tags click events to handle tag selection.",
+        "parameters": [
+            {
+                "name": "event",
+                "type": [
+                    "Event"
+                ],
+                "required": true,
+                "description": "DOM Event Object reference"
+            }
+        ]
+    },
+    {
+        "name": "_onTagDeleteClick",
+        "scope": "private",
+        "description": "Listen to tag delete button click event to handle tag deletion.",
+        "parameters": [
+            {
+                "name": "event",
+                "type": [
+                    "Event"
+                ],
+                "required": true,
+                "description": "DOM Event Object reference"
+            }
+        ]
+    },
+    {
+        "name": "_openDropdown",
+        "scope": "private",
+        "description": "Open dropdown element"
+    },
+    {
+        "name": "_propagateChange",
+        "scope": "private",
+        "description": "Propagate internal input changes to the original input"
+    },
+    {
+        "name": "_trim",
+        "scope": "private",
+        "description": "Trim item is `trim` option is set to `true`. This function handle both string and object items."
+    },
+    {
+        "name": "_updateDropdown",
+        "scope": "private",
+        "description": "Update dropdown items based on context."
+    },
+    {
+        "name": "_updateSelectOptions",
+        "scope": "private",
+        "description": "Update original select option based on given item.",
+        "parameters": [
+            {
+                "name": "item",
+                "type": [
+                    "String",
+                    "Object"
+                ],
+                "required": true,
+                "description": "Item data"
+            }
+        ]
+    }
+]

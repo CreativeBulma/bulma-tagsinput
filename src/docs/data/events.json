@@ -1,0 +1,65 @@
+{
+    "headers": [
+        {
+            "name": "Event name"
+        },
+        {
+            "name": "Description"
+        },
+        {
+            "name": "Example"
+        }
+    ],
+    "body": [
+        {
+            "name": "before.add",
+            "description": "Trigerred before adding new tag. The concerned item is passed as parameter. You can modify the item before its treatment by returning the new item data or prevent tag to be added by returning false.",
+            "example": "var inputTags = document.getElementById('myInputTag');\r\n\/\/ Example to capitalize a string item\r\ninputTags.BulmaTagsInput().on('before.add', function(item) {\r\n    return item.charAt(0).toUpperCase() + item.slice(1);\r\n});\r\n\r\n\/\/ Example to accept string with only letters\r\ninputTags.BulmaTagsInput().on('before.add', function(item) {\r\n    return item.value.match(\/^[A-Za-z]+$\/);\r\n});"
+        },
+        {
+            "name": "after.add",
+            "description": "Triggered once a tag has been added. The added item and the related tag are passed in an object as parameter.",
+            "example": "var inputTags = document.getElementById('myInputTag');\r\ninputTags.BulmaTagsInput().on('after.add', function(data) {\r\n    console.log(data.item);\r\n    console.log(data.tag);\r\n});"
+        },
+        {
+            "name": "before.remove",
+            "description": "Triggered before removing a tag. The concerned item is passed as parameter. You can prevent deletion by returning `false`.",
+            "example": "var inputTags = document.getElementById('myInputTag');\r\n\/\/ Prevent all tags from being deleted\r\ninputTags.BulmaTagsInput().on('before.remove', function(item) {\r\n    return false;\r\n});"
+        },
+        {
+            "name": "after.remove",
+            "description": "Triggered once a tag has been removed. The removed item is passed as parameter.",
+            "example": "var inputTags = document.getElementById('myInputTag');\r\n\/\/ Log all string items removes in the console\r\ninputTags.BulmaTagsInput().on('after.remove', function(item) {\r\n    console.log(item + \" has been removed\";\r\n});"
+        },
+        {
+            "name": "before.flush",
+            "description": "Triggered before flushing items. Items array is passed as parameter.",
+            "example": "var inputTags = document.getElementById('myInputTag');\r\n\/\/ Log all string items concerned by the flush\r\ninputTags.BulmaTagsInput().on('before.flush', function(items) {\r\n    items.forEach(function(item) {\r\n        console.log(item + \" will be flush\";\r\n    });\r\n});"
+        },
+        {
+            "name": "after.flush",
+            "description": "Triggered after flushing items.",
+            "example": "var inputTags = document.getElementById('myInputTag');\r\ninputTags.BulmaTagsInput().on('after.flush', function(items) {\r\n    \/\/ items should be an empty array\r\n});"
+        },
+        {
+            "name": "before.select",
+            "description": "Triggered before selecting an item. The concerned item and related tag are passed in an Object as parameter.",
+            "example": "var inputTags = document.getElementById('myInputTag');\r\ninputTags.BulmaTagsInput().on('before.select', function(data) {\r\n    console.log(data.item);\r\n    console.log(data.tag);\r\n});"
+        },
+        {
+            "name": "after.select",
+            "description": "Triggered once an item has been selected. The concerned item and related tag are passed in an Object as parameter.",
+            "example": "var inputTags = document.getElementById('myInputTag');\r\ninputTags.BulmaTagsInput().on('after.select', function(data) {\r\n    console.log(data.item);\r\n    console.log(data.tag);\r\n});"
+        },
+        {
+            "name": "before.unselect",
+            "description": "Triggered before unselect an item. The concerned item and related tag are passed in an Object as parameter.",
+            "example": "var inputTags = document.getElementById('myInputTag');\r\ninputTags.BulmaTagsInput().on('before.unselect', function(data) {\r\n    console.log(data.item);\r\n    console.log(data.tag);\r\n});"
+        },
+        {
+            "name": "after.unselect",
+            "description": "Triggered once an item has been unselected. The concerned item and related tag are passed in an Object as parameter.",
+            "example": "var inputTags = document.getElementById('myInputTag');\r\ninputTags.BulmaTagsInput().on('after.select', function(data) {\r\n    console.log(data.item);\r\n    console.log(data.tag);\r\n});"
+        }
+    ]
+}

@@ -35,11 +35,7 @@ gulp.task('scripts:build', function(done) {
 
     if (fs.existsSync(path.resolve(__dirname, 'src/js/index.js'))) {
         return gulp.src(path.resolve(__dirname, 'src/js/index.js'))
-            .pipe(webpack(Object.assign({}, require('./webpack.config.js'), {
-                output: {
-                    filename: distPath.basename ? distPath.basename : 'app.js',
-                }})
-            ))
+            .pipe(webpack(require('./webpack.config.js')))
             .pipe(header(banner.main, {package: package}))
             .pipe(rename(distPath.basename.replace('.min', '')))
             .pipe(cleanDir(path.resolve(__dirname, distPath.dirname)))
@@ -53,12 +49,20 @@ gulp.task('scripts:minify', function(done) {
     const header = require('gulp-header');
     const parsePath = require('parse-filepath');
     const rename = require("gulp-rename");
-    const uglify = require('gulp-uglify');
+    const terser = require('gulp-terser');
     
     distPath = parsePath(package.script);
 
 	return gulp.src([path.resolve(__dirname, distPath.dirname + '/*.js'), '!' + path.resolve(__dirname, distPath.dirname + '/*.min.js')])
-        .pipe(uglify())
+        .pipe(terser({                
+            compress: true,
+            keep_fnames: true,
+            ie8: false,
+            mangle: true,
+            output: {
+                comments: false
+            }
+        }))
         .pipe(header(banner.main, {package: package}))
         .pipe(rename({
             suffix: '.min'
@@ -67,12 +71,15 @@ gulp.task('scripts:minify', function(done) {
 });
 
 gulp.task('scripts:copy', function() {
+    const fs = require('fs');
+    const gulpif = require('gulp-if');
     const parsePath = require('parse-filepath');
 
     distPath = parsePath(package.script);
 
     return gulp.src(distPath.dirname + '/*.js')
-        .pipe(gulp.dest(path.resolve(__dirname, 'src/demo/static/js')));
+        .pipe(gulp.dest(path.resolve(__dirname, 'src/docs/static/js')))
+        .pipe(gulpif(fs.existsSync(path.resolve(__dirname, 'src/demo')), gulp.dest(path.resolve(__dirname, 'src/demo/static/js'))));
 });
 
 /**
@@ -95,7 +102,7 @@ gulp.task('styles:build', function() {
     distPath = parsePath(package.style);
 
     if (fs.existsSync(path.resolve(__dirname, 'src/sass/index.sass'))) {
-        return gulp.src('src/sass/index.sass')
+        return gulp.src(['node_modules/bulma/sass/utilities/_all.sass', 'node_modules/bulma/sass/form/shared.sass', 'node_modules/bulma/sass/components/dropdown.sass', 'src/sass/index.sass'])
             .pipe(concat('app.sass'))
             .pipe(sass({
                 loadPath: [path.resolve(__dirname, 'src/sass')],
@@ -145,12 +152,15 @@ gulp.task('styles:minify', function() {
 });
 
 gulp.task('styles:copy', function() {
+    const fs = require('fs');
+    const gulpif = require('gulp-if');
     const parsePath = require('parse-filepath');
 
     distPath = parsePath(package.style);
 
     return gulp.src(path.resolve(__dirname, distPath.dirname + '/*.css'))
-        .pipe(gulp.dest(path.resolve(__dirname, 'src/docs/static/css')));
+        .pipe(gulp.dest(path.resolve(__dirname, 'src/docs/static/css')))
+        .pipe(gulpif(fs.existsSync(path.resolve(__dirname, 'src/demo')), gulp.dest(path.resolve(__dirname, 'src/demo/static/css'))));
 });
 
 /**
@@ -200,7 +210,7 @@ gulp.task('demo:build', gulp.series(shell.task(['node_modules/.bin/hugo --source
     done();
 });
 
-gulp.task('doc:serve', gulp.parallel(shell.task([`node_modules/.bin/hugo server -D --bind ${internalIp.v4.sync()} --baseURL ${internalIp.v4.sync()} --source src/demo --watch`]), function() {
+gulp.task('demo:serve', gulp.parallel(shell.task([`node_modules/.bin/hugo server -D --bind ${internalIp.v4.sync()} --baseURL ${internalIp.v4.sync()} --source src/demo --watch`]), function() {
     gulp.watch(path.resolve(__dirname, 'src/sass/**/*.sass'), gulp.series('build:styles'));
     gulp.watch(path.resolve(__dirname, 'src/js/**/*.js'), gulp.series('build:scripts'));
 }), done => {

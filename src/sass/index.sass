@@ -1,52 +1,153 @@
 @charset "utf-8"
 
-/**
- * -----------------------------------------
- *  THEME NAME: Boilerplate
- *  VERSION: 1.0
- *  DESCRIPTION: Official CreativeBulma Boilerplate to create beautiful template for the awesome Bulma CSS framework.
- *  AUTHOR: CreativeBulma
- *  URI: https://creativebulma.net/
- * -----------------------------------------
- */
+$tagsinput-selected-background-color: $primary !default
+$tagsinput-duplicate-animation: blinker .75s linear infinite !default
 
-/**
- * ----------------------------------------
- *  1. IMPORT BULMA INITIAL VARIABLES
- * ----------------------------------------
- */
-@import "bulma/sass/utilities/all"
+.tags-input
+    @extend %input
+    align-content: flex-start
+    display: flex
+    flex-wrap: wrap
+    height: auto
+    min-height: 2.5em
+    padding: 0
+    position: relative
 
-/**
- * ----------------------------------------
- *  3. IMPORT THEME VARIABLES
- * ----------------------------------------
- */
-@import "theme-sass/variables/all"
-@import "bulma-custom/variables"
+    .tag
+        font-size: $size-normal
+        margin: .1rem
+        &:hover
+            cursor: pointer
+        &.is-selected
+            background-color: $tagsinput-selected-background-color
+            color: findColorInvert($tagsinput-selected-background-color)
 
-/**
- * ----------------------------------------
- *  4. IMPORT BULMA CORE
- * ----------------------------------------
- */
-@import "bulma/sass/base/all"
-@import "bulma/sass/elements/all"
-@import "bulma/sass/form/all"
-@import "bulma/sass/components/all"
-@import "bulma/sass/grid/all"
-@import "bulma/sass/layout/all"
+        &.is-duplicate
+            animation: $tagsinput-duplicate-animation
 
-/**
- * ----------------------------------------
- *  5. IMPORT EXTENSIONS STYLES
- * ----------------------------------------
- */
-// ADD YOUR THIRD PARTY IMPORTS (from node_modules)
+    .input
+        border-color: transparent
+        box-shadow: none
+        display: inline-block
+        flex: 1 0 auto
+        height: 2.3rem
+        margin: .1rem
+        width: auto
 
-/**
- * ----------------------------------------
- *  6. IMPORT THEME SPECIFIC STYLES
- * ----------------------------------------
- */
-@import "theme-sass/all"
+    &.is-filter
+        input
+            color: $input-placeholder-color
+
+            +placeholder
+                color: $input-placeholder-color
+    &.no-input
+        input
+            color: transparent
+            text-shadow: 0 0 0 $input-placeholder-color
+
+            +placeholder
+                color: $input-placeholder-color
+                text-shadow: none
+
+    .dropdown-menu
+        width: 100%
+
+        .dropdown-content
+            max-height: 250px
+            overflow: hidden
+            overflow-y: auto
+            
+            &.is-loading
+                &::after
+                    @extend %loader
+                    left: 50%
+                    position: absolute !important
+                    top: 50%
+                    transform: translate(-50%, -50%)
+                    z-index: 4
+                &::before
+                    background-color: rgba($background, .5)
+                    content: ""
+                    height: 100%
+                    left: 0
+                    position: absolute
+                    top: 0
+                    width: 100%
+                    z-index: 3
+
+        .dropdown-item
+            &:not(.empty-title)
+                &:hover
+                    cursor: pointer
+
+            &.empty-title
+                color: $input-disabled-color
+                text-align: center
+
+                &:hover
+                    background: inherit
+                    color: $input-disabled-color
+
+            mark
+                &.is-highlighted
+                    background-color: $warning
+
+    &.is-small
+        .tag
+            font-size: $size-small
+        .input
+            +control-small
+    &.is-medium
+        .tag
+            font-size: $size-medium
+        .input
+            +control-medium
+    &.is-large
+        .tag
+            font-size: $size-large
+        .input
+            +control-large
+
+    &.is-disabled,
+    &[disabled]
+        background-color: $input-disabled-background-color
+        border-color: $input-disabled-border-color
+        box-shadow: none
+        color: $input-disabled-color
+        cursor: not-allowed
+
+        .tag
+            background-color: ligthen($input-disabled-background-color, 5%)
+            color: $input-disabled-color
+            cursor: not-allowed
+            .delete
+                background-color: darken($input-disabled-background-color, 5%)
+                border-color: darken($input-disabled-border-color, 5%)
+                box-shadow: none
+                color: $input-disabled-color
+                cursor: not-allowed
+
+        .input
+            background-color: $input-disabled-background-color
+            border-color: $input-disabled-border-color
+            box-shadow: none
+            color: $input-disabled-color
+            
+            +placeholder
+                color: $input-disabled-placeholder-color
+
+    &[readonly]
+        .input
+            box-shadow: none
+
+    &.is-active
+        .dropdown-menu
+            display: block
+
+@keyframes blinker
+    0%
+        opacity: 1.0
+    50%
+        opacity: 0.0
+    100%
+        opacity: 1.0

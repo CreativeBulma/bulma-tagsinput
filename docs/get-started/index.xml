@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Get-starteds on BulmaTagsInput</title>
+    <link>https://demo.creativebulma.net/components/tagsinput/1.0/get-started/</link>
+    <description>Recent content in Get-starteds on BulmaTagsInput</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 21 Mar 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://demo.creativebulma.net/components/tagsinput/1.0/get-started/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Installation</title>
+      <link>https://demo.creativebulma.net/components/tagsinput/1.0/get-started/</link>
+      <pubDate>Sat, 21 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://demo.creativebulma.net/components/tagsinput/1.0/get-started/</guid>
+      <description>This component extends Bulma CSS Framework, so you need to have Bulma installed to use it. Installation First, let&amp;rsquo;s install the component! There are several ways to get started with BulmaTagsInput.  1. NPM  2. CDN  3. Github    Use npm to install the bulma-tagsinput package recommended
+npm install @creativebulma/bulma-tagsinput   Use the jsDelivr CDN to link to the BulmaTagsInput stylesheet
+https://www.jsdelivr.com/package/npm/@creativebulma/bulma-tagsinput   Use the GitHub repository to get the latest development version.</description>
+    </item>
+    
+    <item>
+      <title>Usage</title>
+      <link>https://demo.creativebulma.net/components/tagsinput/1.0/get-started/usage/</link>
+      <pubDate>Sat, 21 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://demo.creativebulma.net/components/tagsinput/1.0/get-started/usage/</guid>
+      <description>Basic usage To easiest way to start with BulmaTagsInput is to add data-type=&amp;quot;tags&amp;quot; attribute or set type=&amp;quot;tags&amp;quot; to an input element and call BulmaTagsInput.attach(); to convert them all into a Tags input control.
+By default Tags input prevent duplicate entries and create selectable and removable tags. These options can be overiden either by JavaScript or by adding options into the input dataset (see Javascript API documentation).  Preview  Code    Tags    &amp;lt;div class=&amp;#34;field&amp;#34;&amp;gt; &amp;lt;label class=&amp;#34;label&amp;#34;&amp;gt;Tags&amp;lt;/label&amp;gt; &amp;lt;div class=&amp;#34;control&amp;#34;&amp;gt; &amp;lt;input class=&amp;#34;input&amp;#34; type=&amp;#34;text&amp;#34; data-type=&amp;#34;tags&amp;#34; placeholder=&amp;#34;Choose Tags&amp;#34; value=&amp;#34;One,Two&amp;#34;&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt;</description>
+    </item>
+    
+    <item>
+      <title>Javascript API</title>
+      <link>https://demo.creativebulma.net/components/tagsinput/1.0/get-started/javascript-api/</link>
+      <pubDate>Sat, 21 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://demo.creativebulma.net/components/tagsinput/1.0/get-started/javascript-api/</guid>
+      <description>JavaScript API Javascript API documentation BulmaTagsInput is available as a JavaScript object, so you can use it directly.
+// Instantiate on one element new BulmaTagsInput(selector, options); // Instantiate on multiple elements BulmaTagsInput.attach(selector, options); Arguments
+ selector: query String returning a single Node or directly a Node options: see Options section  Main differences between methods are when using attach:
+ selector can be a query String returning a single Node or a NodeList, directly a Node or a NodeList DOM modifications will be observed to detect any new element responding to the given selector to automatically instantiate BulmaTagsInput on them with the given option.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -71,7 +71,7 @@ export default class EventEmitter {
      * @param eventArgs
      */
     emit(eventName, ...eventArgs) {
-        this._applyEvents(eventName, eventArgs);
+        return this._applyEvents(eventName, eventArgs);
 	}
 	
 	/**
@@ -134,21 +134,27 @@ export default class EventEmitter {
      * @protected
      */
     _applyEvents(eventName, eventArguments) {
+		let result = eventArguments;
+
         if (this._listeners.has(eventName)) {
 			const listeners = this._listeners.get(eventName);
 			let removableListeners = [];
 
 			listeners.forEach((listener, index) => {
-				listener.fn.apply(null, eventArguments);
-
-				if (listener.once) {
-					removableListeners.unshift(index);
+				if (result = listener.fn.apply(null, eventArguments)) {
+					if (listener.once) {
+						removableListeners.unshift(index);
+					}
 				}
 			});
 	
 			removableListeners.forEach(index => {
 				listeners.splice(index, 1);
 			});
+
+			return result;
 		}
+
+		return result[0];
     }
 }

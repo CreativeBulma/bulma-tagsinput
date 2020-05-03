@@ -52,4 +52,28 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    const tabs = document.querySelectorAll('[data-toggle="tab"]') || [];
+    tabs.forEach(function(tab) {
+        tab.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            const tabPane = document.querySelector(e.currentTarget.dataset.target);
+
+            const activeTab = e.currentTarget.closest('.tabs ul').querySelector('li.is-active');
+            const activeTabPane = document.querySelector(activeTab.dataset.target);
+            if (activeTab && !activeTab.isSameNode(e.currentTarget)) {
+                activeTab.classList.remove('is-active');
+                if (activeTabPane) {
+                    activeTabPane.classList.remove('is-active');
+                }
+
+            }
+
+            e.currentTarget.classList.add('is-active');
+            if (tabPane) {
+                tabPane.classList.add('is-active');
+            }
+        });
+    });
 }, false);

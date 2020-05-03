@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <base href="https://demo.creativebulma.net/components/tagsinput/1.0/">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    
+    <title>Usage - BulmaTagsInput</title>
+
+    <link rel="icon" href="https://demo.creativebulma.net/components/tagsinput/1.0/favicon.png">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <link rel="stylesheet" href="/components/tagsinput/1.0/css/docs.css" />
+    <link rel="stylesheet" href="/components/tagsinput/1.0/css/bulma-tagsinput.min.css" />
+
+    
+
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+
+<body class=''>
+    
+    <div class="container is-fullheight">
+        
+        <div class="mobile-burger burger is-hidden-desktop" data-target="#doc-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="columns is-gapless is-fullheight">
+            <div id="doc-menu" class="column is-2 menu is-mobile">
+                <a href="https://demo.creativebulma.net/components/tagsinput/1.0/" class="brand">
+    <span class="title is-6 has-text-weight-normal">BulmaTagsInput</span>
+    <span class="subtitle tag is-primary is-light is-7 has-text-weight-light is-uppercase">docs</span>
+</a>
+<ul class="menu-list">
+    
+    
+    
+        
+            <li class="">
+                <a href="/components/tagsinput/1.0/" class="menu-item">
+                    
+                    <span>Introduction</span>
+                </a>
+            </li>
+        
+    
+        
+            <li class="menu-item has-dropdown is-active">
+                <a href="#" class="menu-title">
+                    
+                    <span>Get started</span>
+                    <span class="menu-caret"></span>
+                </a>
+                <ul class="menu-dropdown">
+                    
+                        <li class="">
+                            <a href="/components/tagsinput/1.0/get-started/" class="menu-item">Installation</a>
+                        </li>
+                    
+                        <li class="is-active">
+                            <a href="/components/tagsinput/1.0/get-started/usage/" class="menu-item">Usage</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="/components/tagsinput/1.0/get-started/javascript-api/" class="menu-item">Javascript API</a>
+                        </li>
+                    
+                </ul>
+            </li>
+        
+    
+        
+            <li class="menu-item has-dropdown ">
+                <a href="#" class="menu-title">
+                    
+                    <span>How-To</span>
+                    <span class="menu-caret"></span>
+                </a>
+                <ul class="menu-dropdown">
+                    
+                        <li class="">
+                            <a href="/components/tagsinput/1.0/how-to/customize/" class="menu-item">Customize</a>
+                        </li>
+                    
+                </ul>
+            </li>
+        
+    
+        
+            <li class="">
+                <a href="/components/tagsinput/1.0/changelog/" class="menu-item">
+                    
+                    <span>Changelog</span>
+                </a>
+            </li>
+        
+    
+</ul>
+            </div>
+            <div class="column is-fullheight">
+                <nav class="navbar" role="navigation" aria-label="navigation" style="background-color: transparent !important;">
+    <div class="navbar-menu">
+        <div class="navbar-start">
+        </div>
+        <div class="navbar-end">
+            
+            
+            <div class="navbar-item">
+                <span >Version 1.0</span>
+            </div>
+            
+            
+            <a class="navbar-item is-square" href="https://github.com/CreativeBulma/bulma-tagsinput" alt="Github repository" target="_blank">
+                <span class="icon">
+                    <i class="fab fa-lg fa-github"></i>
+                </span>
+            </a>
+            
+        </div>
+    </div>
+</nav>
+
+                <div class="section is-fullheight" style="padding: 3rem;">
+                    <div class="content is-fullheight">
+                        <h1 id="basic-usage">Basic usage</h1>
+<p>To easiest way to start with BulmaTagsInput is to add <code>data-type=&quot;tags&quot;</code> attribute or set <code>type=&quot;tags&quot;</code> to an input element and call <code>BulmaTagsInput.attach();</code> to convert them all into a Tags input control.</p>
+<p>By default Tags input prevent duplicate entries and create selectable and removable tags. These options can be overiden either by JavaScript or by adding options into the input dataset (see <a href="http://10.0.0.6:59626/get-started/javascript-api/" target="_blank" rel="noreferrer noopener">Javascript API</a> documentation).
+
+
+
+  
+
+
+
+<div class="preview">
+    <div class="tabs">
+        <ul>
+            <li class="is-active" data-toggle="tab" data-target="#previewtags-input" role="tab" aria-selected="true">
+                <a>Preview</a>
+            </li>
+            
+            <li data-toggle="tab" data-target="#previewCodetags-input" role="tab" aria-selected="false">
+                <a>Code</a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="tab-content" id="preview-tags-input">
+        <div class="tab-pane is-active" id="previewtags-input" role="tabpanel" aria-labelledby="preview-tags-input">
+            <div class="field">
+	<label class="label">Tags</label>
+	<div class="control">
+		<input class="input" type="text" data-type="tags" placeholder="Choose Tags" value="One,Two">
+	</div>
+</div>
+        </div>
+        <div class="tab-pane" id="previewCodetags-input" role="tabpanel" aria-labelledby="preview-code-tags-input">
+            <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#309;font-weight:bold">div</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;field&#34;</span>&gt;
+	&lt;<span style="color:#309;font-weight:bold">label</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;label&#34;</span>&gt;Tags&lt;/<span style="color:#309;font-weight:bold">label</span>&gt;
+	&lt;<span style="color:#309;font-weight:bold">div</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;control&#34;</span>&gt;
+		&lt;<span style="color:#309;font-weight:bold">input</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;input&#34;</span> <span style="color:#309">type</span><span style="color:#555">=</span><span style="color:#c30">&#34;text&#34;</span> <span style="color:#309">data-type</span><span style="color:#555">=</span><span style="color:#c30">&#34;tags&#34;</span> <span style="color:#309">placeholder</span><span style="color:#555">=</span><span style="color:#c30">&#34;Choose Tags&#34;</span> <span style="color:#309">value</span><span style="color:#555">=</span><span style="color:#c30">&#34;One,Two&#34;</span>&gt;
+	&lt;/<span style="color:#309;font-weight:bold">div</span>&gt;
+&lt;/<span style="color:#309;font-weight:bold">div</span>&gt;</code></pre></div>
+        </div>
+    </div>
+</div></p>
+<p>BulmaTagsInput works with <code>select</code> element as well.</p>
+<p><em>Notice that if <code>freeInput</code> option is set to <code>true</code> then you can manually type text to search through available values.</em>
+
+
+
+  
+
+
+
+<div class="preview">
+    <div class="tabs">
+        <ul>
+            <li class="is-active" data-toggle="tab" data-target="#previewtags-input-select" role="tab" aria-selected="true">
+                <a>Preview</a>
+            </li>
+            
+            <li data-toggle="tab" data-target="#previewCodetags-input-select" role="tab" aria-selected="false">
+                <a>Code</a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="tab-content" id="preview-tags-input-select">
+        <div class="tab-pane is-active" id="previewtags-input-select" role="tabpanel" aria-labelledby="preview-tags-input-select">
+            <div class="field">
+	<label class="label">Tags</label>
+	<div class="control">
+		<select data-type="tags" data-placeholder="Choose Tags">
+			<option value="one" selected>One</option>
+			<option value="two">Two</option>
+		</select>
+	</div>
+</div>
+        </div>
+        <div class="tab-pane" id="previewCodetags-input-select" role="tabpanel" aria-labelledby="preview-code-tags-input-select">
+            <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#309;font-weight:bold">div</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;field&#34;</span>&gt;
+	&lt;<span style="color:#309;font-weight:bold">label</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;label&#34;</span>&gt;Tags&lt;/<span style="color:#309;font-weight:bold">label</span>&gt;
+	&lt;<span style="color:#309;font-weight:bold">div</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;control&#34;</span>&gt;
+		&lt;<span style="color:#309;font-weight:bold">select</span> <span style="color:#309">data-type</span><span style="color:#555">=</span><span style="color:#c30">&#34;tags&#34;</span> <span style="color:#309">data-placeholder</span><span style="color:#555">=</span><span style="color:#c30">&#34;Choose Tags&#34;</span>&gt;
+			&lt;<span style="color:#309;font-weight:bold">option</span> <span style="color:#309">value</span><span style="color:#555">=</span><span style="color:#c30">&#34;one&#34;</span> <span style="color:#309">selected</span>&gt;One&lt;/<span style="color:#309;font-weight:bold">option</span>&gt;
+			&lt;<span style="color:#309;font-weight:bold">option</span> <span style="color:#309">value</span><span style="color:#555">=</span><span style="color:#c30">&#34;two&#34;</span>&gt;Two&lt;/<span style="color:#309;font-weight:bold">option</span>&gt;
+		&lt;/<span style="color:#309;font-weight:bold">select</span>&gt;
+	&lt;/<span style="color:#309;font-weight:bold">div</span>&gt;
+&lt;/<span style="color:#309;font-weight:bold">div</span>&gt;</code></pre></div>
+        </div>
+    </div>
+</div></p>
+<p>Even with a <code>multiple</code> select element:
+
+
+
+  
+
+
+
+<div class="preview">
+    <div class="tabs">
+        <ul>
+            <li class="is-active" data-toggle="tab" data-target="#previewtags-input-select-multiple" role="tab" aria-selected="true">
+                <a>Preview</a>
+            </li>
+            
+            <li data-toggle="tab" data-target="#previewCodetags-input-select-multiple" role="tab" aria-selected="false">
+                <a>Code</a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="tab-content" id="preview-tags-input-select-multiple">
+        <div class="tab-pane is-active" id="previewtags-input-select-multiple" role="tabpanel" aria-labelledby="preview-tags-input-select-multiple">
+            <div class="field">
+	<label class="label">Tags</label>
+	<div class="control">
+		<select multiple data-type="tags" data-placeholder="Choose Tags">
+			<option value="one" selected>One</option>
+			<option value="two">Two</option>
+		</select>
+	</div>
+</div>
+        </div>
+        <div class="tab-pane" id="previewCodetags-input-select-multiple" role="tabpanel" aria-labelledby="preview-code-tags-input-select-multiple">
+            <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#309;font-weight:bold">div</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;field&#34;</span>&gt;
+	&lt;<span style="color:#309;font-weight:bold">label</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;label&#34;</span>&gt;Tags&lt;/<span style="color:#309;font-weight:bold">label</span>&gt;
+	&lt;<span style="color:#309;font-weight:bold">div</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;control&#34;</span>&gt;
+		&lt;<span style="color:#309;font-weight:bold">select</span> <span style="color:#309">multiple</span> <span style="color:#309">data-type</span><span style="color:#555">=</span><span style="color:#c30">&#34;tags&#34;</span> <span style="color:#309">data-placeholder</span><span style="color:#555">=</span><span style="color:#c30">&#34;Choose Tags&#34;</span>&gt;
+			&lt;<span style="color:#309;font-weight:bold">option</span> <span style="color:#309">value</span><span style="color:#555">=</span><span style="color:#c30">&#34;one&#34;</span> <span style="color:#309">selected</span>&gt;One&lt;/<span style="color:#309;font-weight:bold">option</span>&gt;
+			&lt;<span style="color:#309;font-weight:bold">option</span> <span style="color:#309">value</span><span style="color:#555">=</span><span style="color:#c30">&#34;two&#34;</span>&gt;Two&lt;/<span style="color:#309;font-weight:bold">option</span>&gt;
+		&lt;/<span style="color:#309;font-weight:bold">select</span>&gt;
+	&lt;/<span style="color:#309;font-weight:bold">div</span>&gt;
+&lt;/<span style="color:#309;font-weight:bold">div</span>&gt;</code></pre></div>
+        </div>
+    </div>
+</div></p>
+<hr>
+<h2 id="dynamic-data-source">Dynamic data source</h2>
+<p>Work with dynamic data source to automatically retreive data.</p>
+<p>The following demo helps you find a country using free <a href="https://restcountries.eu/#api-endpoints-all" target="_blank" rel="noreferrer noopener">REST Countries API</a>.
+
+
+
+  
+
+
+
+<div class="preview">
+    <div class="tabs">
+        <ul>
+            <li class="is-active" data-toggle="tab" data-target="#previewtags-input-source" role="tab" aria-selected="true">
+                <a>Preview</a>
+            </li>
+            
+            <li data-toggle="tab" data-target="#previewCodetags-input-source" role="tab" aria-selected="false">
+                <a>Code</a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="tab-content" id="preview-tags-input-source">
+        <div class="tab-pane is-active" id="previewtags-input-source" role="tabpanel" aria-labelledby="preview-tags-input-source">
+            <div class="field">
+	<label class="label">Tags</label>
+	<div class="control">
+		<input id="tags-with-source" class="input" type="text" data-item-text="name" data-item-value="numericCode" data-case-sensitive="false" placeholder="Try finding a country name" value="">
+	</div>
+</div>
+<script>
+	document.addEventListener('DOMContentLoaded', function() {
+		const tagsInput = document.getElementById('tags-with-source');
+		new BulmaTagsInput(tagsInput, {
+			source: async function(value) {
+				// Value equal input value
+				// We can then use it to request data from external API
+				return await fetch("https://restcountries.eu/rest/v2/name/" + value)
+					.then(function(response) {
+						return response.json();
+					});
+		  	}
+	  	});
+	}, false);
+</script>
+        </div>
+        <div class="tab-pane" id="previewCodetags-input-source" role="tabpanel" aria-labelledby="preview-code-tags-input-source">
+            <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#309;font-weight:bold">div</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;field&#34;</span>&gt;
+	&lt;<span style="color:#309;font-weight:bold">label</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;label&#34;</span>&gt;Tags&lt;/<span style="color:#309;font-weight:bold">label</span>&gt;
+	&lt;<span style="color:#309;font-weight:bold">div</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;control&#34;</span>&gt;
+		&lt;<span style="color:#309;font-weight:bold">input</span> <span style="color:#309">id</span><span style="color:#555">=</span><span style="color:#c30">&#34;tags-with-source&#34;</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;input&#34;</span> <span style="color:#309">type</span><span style="color:#555">=</span><span style="color:#c30">&#34;text&#34;</span> <span style="color:#309">data-item-text</span><span style="color:#555">=</span><span style="color:#c30">&#34;name&#34;</span> <span style="color:#309">data-item-value</span><span style="color:#555">=</span><span style="color:#c30">&#34;numericCode&#34;</span> <span style="color:#309">data-case-sensitive</span><span style="color:#555">=</span><span style="color:#c30">&#34;false&#34;</span> <span style="color:#309">placeholder</span><span style="color:#555">=</span><span style="color:#c30">&#34;Try finding a country name&#34;</span> <span style="color:#309">value</span><span style="color:#555">=</span><span style="color:#c30">&#34;&#34;</span>&gt;
+	&lt;/<span style="color:#309;font-weight:bold">div</span>&gt;
+&lt;/<span style="color:#309;font-weight:bold">div</span>&gt;
+&lt;<span style="color:#309;font-weight:bold">script</span>&gt;
+	<span style="color:#366">document</span>.addEventListener(<span style="color:#c30">&#39;DOMContentLoaded&#39;</span>, <span style="color:#069;font-weight:bold">function</span>() {
+		<span style="color:#069;font-weight:bold">const</span> tagsInput <span style="color:#555">=</span> <span style="color:#366">document</span>.getElementById(<span style="color:#c30">&#39;tags-with-source&#39;</span>);
+		<span style="color:#069;font-weight:bold">new</span> BulmaTagsInput(tagsInput, {
+			source<span style="color:#555">:</span> async <span style="color:#069;font-weight:bold">function</span>(value) {
+				<span style="color:#09f;font-style:italic">// Value equal input value
+</span><span style="color:#09f;font-style:italic"></span>				<span style="color:#09f;font-style:italic">// We can then use it to request data from external API
+</span><span style="color:#09f;font-style:italic"></span>				<span style="color:#069;font-weight:bold">return</span> await fetch(<span style="color:#c30">&#34;https://restcountries.eu/rest/v2/name/&#34;</span> <span style="color:#555">+</span> value)
+					.then(<span style="color:#069;font-weight:bold">function</span>(response) {
+						<span style="color:#069;font-weight:bold">return</span> response.json();
+					});
+		  	}
+	  	});
+	}, <span style="color:#069;font-weight:bold">false</span>);
+&lt;/<span style="color:#309;font-weight:bold">script</span>&gt;</code></pre></div>
+        </div>
+    </div>
+</div></p>
+<hr>
+<h2 id="do-not-close-dropdown-at-select">Do not close dropdown at select</h2>
+<p>Prevent dropdown to close after selecting an item by setting <code>closeDropdownOnItemSelect</code> option to <code>false</code>.  <em>(default value: true)</em>
+
+
+
+  
+
+
+
+<div class="preview">
+    <div class="tabs">
+        <ul>
+            <li class="is-active" data-toggle="tab" data-target="#previewtags-input-select-dont-close" role="tab" aria-selected="true">
+                <a>Preview</a>
+            </li>
+            
+            <li data-toggle="tab" data-target="#previewCodetags-input-select-dont-close" role="tab" aria-selected="false">
+                <a>Code</a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="tab-content" id="preview-tags-input-select-dont-close">
+        <div class="tab-pane is-active" id="previewtags-input-select-dont-close" role="tabpanel" aria-labelledby="preview-tags-input-select-dont-close">
+            <div class="field">
+	<label class="label">Tags</label>
+	<div class="control">
+		<select data-type="tags" data-close-dropdown-on-item-select="false" data-placeholder="Choose Tags">
+			<option value="one" selected>One</option>
+			<option value="two">Two</option>
+		</select>
+	</div>
+</div>
+        </div>
+        <div class="tab-pane" id="previewCodetags-input-select-dont-close" role="tabpanel" aria-labelledby="preview-code-tags-input-select-dont-close">
+            <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#309;font-weight:bold">div</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;field&#34;</span>&gt;
+	&lt;<span style="color:#309;font-weight:bold">label</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;label&#34;</span>&gt;Tags&lt;/<span style="color:#309;font-weight:bold">label</span>&gt;
+	&lt;<span style="color:#309;font-weight:bold">div</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;control&#34;</span>&gt;
+		&lt;<span style="color:#309;font-weight:bold">select</span> <span style="color:#309">data-type</span><span style="color:#555">=</span><span style="color:#c30">&#34;tags&#34;</span> <span style="color:#309">data-close-dropdown-on-item-select</span><span style="color:#555">=</span><span style="color:#c30">&#34;false&#34;</span> <span style="color:#309">data-placeholder</span><span style="color:#555">=</span><span style="color:#c30">&#34;Choose Tags&#34;</span>&gt;
+			&lt;<span style="color:#309;font-weight:bold">option</span> <span style="color:#309">value</span><span style="color:#555">=</span><span style="color:#c30">&#34;one&#34;</span> <span style="color:#309">selected</span>&gt;One&lt;/<span style="color:#309;font-weight:bold">option</span>&gt;
+			&lt;<span style="color:#309;font-weight:bold">option</span> <span style="color:#309">value</span><span style="color:#555">=</span><span style="color:#c30">&#34;two&#34;</span>&gt;Two&lt;/<span style="color:#309;font-weight:bold">option</span>&gt;
+		&lt;/<span style="color:#309;font-weight:bold">select</span>&gt;
+	&lt;/<span style="color:#309;font-weight:bold">div</span>&gt;
+&lt;/<span style="color:#309;font-weight:bold">div</span>&gt;</code></pre></div>
+        </div>
+    </div>
+</div></p>
+<hr>
+<h2 id="remove-free-input">Remove free input</h2>
+<p>Remove free input by setting <code>freeInput</code> option to <code>false</code>.  <em>(default value: true - automatically set to false on select based element)</em>
+
+
+
+  
+
+
+
+<div class="preview">
+    <div class="tabs">
+        <ul>
+            <li class="is-active" data-toggle="tab" data-target="#previewtags-input-select" role="tab" aria-selected="true">
+                <a>Preview</a>
+            </li>
+            
+            <li data-toggle="tab" data-target="#previewCodetags-input-select" role="tab" aria-selected="false">
+                <a>Code</a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="tab-content" id="preview-tags-input-select">
+        <div class="tab-pane is-active" id="previewtags-input-select" role="tabpanel" aria-labelledby="preview-tags-input-select">
+            <div class="field">
+	<label class="label">Tags</label>
+	<div class="control">
+		<input class="input" type="text" data-type="tags" data-free-input="false" placeholder="Choose Tags" value="One,Two">
+	</div>
+</div>
+        </div>
+        <div class="tab-pane" id="previewCodetags-input-select" role="tabpanel" aria-labelledby="preview-code-tags-input-select">
+            <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#309;font-weight:bold">div</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;field&#34;</span>&gt;
+	&lt;<span style="color:#309;font-weight:bold">label</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;label&#34;</span>&gt;Tags&lt;/<span style="color:#309;font-weight:bold">label</span>&gt;
+	&lt;<span style="color:#309;font-weight:bold">div</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;control&#34;</span>&gt;
+		&lt;<span style="color:#309;font-weight:bold">input</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;input&#34;</span> <span style="color:#309">type</span><span style="color:#555">=</span><span style="color:#c30">&#34;text&#34;</span> <span style="color:#309">data-type</span><span style="color:#555">=</span><span style="color:#c30">&#34;tags&#34;</span> <span style="color:#309">data-free-input</span><span style="color:#555">=</span><span style="color:#c30">&#34;false&#34;</span> <span style="color:#309">placeholder</span><span style="color:#555">=</span><span style="color:#c30">&#34;Choose Tags&#34;</span> <span style="color:#309">value</span><span style="color:#555">=</span><span style="color:#c30">&#34;One,Two&#34;</span>&gt;
+	&lt;/<span style="color:#309;font-weight:bold">div</span>&gt;
+&lt;/<span style="color:#309;font-weight:bold">div</span>&gt;</code></pre></div>
+        </div>
+    </div>
+</div></p>
+<hr>
+<h2 id="allow-duplicates-tags">Allow duplicates tags</h2>
+<p>Set <code>allowDuplicates</code> to <code>true</code> to accept duplicate tags.  <em>(default value: false)</em>
+
+
+
+  
+
+
+
+<div class="preview">
+    <div class="tabs">
+        <ul>
+            <li class="is-active" data-toggle="tab" data-target="#previewtags-input-select-multiple" role="tab" aria-selected="true">
+                <a>Preview</a>
+            </li>
+            
+            <li data-toggle="tab" data-target="#previewCodetags-input-select-multiple" role="tab" aria-selected="false">
+                <a>Code</a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="tab-content" id="preview-tags-input-select-multiple">
+        <div class="tab-pane is-active" id="previewtags-input-select-multiple" role="tabpanel" aria-labelledby="preview-tags-input-select-multiple">
+            <div class="field">
+	<label class="label">Tags</label>
+	<div class="control">
+		<select multiple data-type="tags" data-allow-duplicates="true" data-placeholder="Choose Tags">
+			<option value="one" selected>One</option>
+			<option value="two">Two</option>
+		</select>
+	</div>
+</div>
+        </div>
+        <div class="tab-pane" id="previewCodetags-input-select-multiple" role="tabpanel" aria-labelledby="preview-code-tags-input-select-multiple">
+            <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#309;font-weight:bold">div</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;field&#34;</span>&gt;
+	&lt;<span style="color:#309;font-weight:bold">label</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;label&#34;</span>&gt;Tags&lt;/<span style="color:#309;font-weight:bold">label</span>&gt;
+	&lt;<span style="color:#309;font-weight:bold">div</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;control&#34;</span>&gt;
+		&lt;<span style="color:#309;font-weight:bold">select</span> <span style="color:#309">multiple</span> <span style="color:#309">data-type</span><span style="color:#555">=</span><span style="color:#c30">&#34;tags&#34;</span> <span style="color:#309">data-allow-duplicates</span><span style="color:#555">=</span><span style="color:#c30">&#34;true&#34;</span> <span style="color:#309">data-placeholder</span><span style="color:#555">=</span><span style="color:#c30">&#34;Choose Tags&#34;</span>&gt;
+			&lt;<span style="color:#309;font-weight:bold">option</span> <span style="color:#309">value</span><span style="color:#555">=</span><span style="color:#c30">&#34;one&#34;</span> <span style="color:#309">selected</span>&gt;One&lt;/<span style="color:#309;font-weight:bold">option</span>&gt;
+			&lt;<span style="color:#309;font-weight:bold">option</span> <span style="color:#309">value</span><span style="color:#555">=</span><span style="color:#c30">&#34;two&#34;</span>&gt;Two&lt;/<span style="color:#309;font-weight:bold">option</span>&gt;
+		&lt;/<span style="color:#309;font-weight:bold">select</span>&gt;
+	&lt;/<span style="color:#309;font-weight:bold">div</span>&gt;
+&lt;/<span style="color:#309;font-weight:bold">div</span>&gt;</code></pre></div>
+        </div>
+    </div>
+</div></p>
+<hr>
+<h2 id="no-removable-tags">No removable tags</h2>
+<p>Set <code>removable</code> option to <code>false</code> to make non removable tags.  <em>(default value: true)</em></p>
+<p>Options can be passed through <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLOrForeignElement/dataset" target="_blank" rel="noreferrer noopener">dataset</a>
+
+
+
+  
+
+
+
+<div class="preview">
+    <div class="tabs">
+        <ul>
+            <li class="is-active" data-toggle="tab" data-target="#preview" role="tab" aria-selected="true">
+                <a>Preview</a>
+            </li>
+            
+            <li data-toggle="tab" data-target="#previewCode" role="tab" aria-selected="false">
+                <a>Code</a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="tab-content" id="preview-">
+        <div class="tab-pane is-active" id="preview" role="tabpanel" aria-labelledby="preview-">
+            <div class="field">
+	<label class="label">Non removable tags</label>
+	<div class="control">
+		<input class="input" type="text" data-type="tags" data-removable="false" placeholder="Choose Tags" value="One,Two">
+	</div>
+</div>
+        </div>
+        <div class="tab-pane" id="previewCode" role="tabpanel" aria-labelledby="preview-code-">
+            <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#309;font-weight:bold">div</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;field&#34;</span>&gt;
+	&lt;<span style="color:#309;font-weight:bold">label</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;label&#34;</span>&gt;Non removable tags&lt;/<span style="color:#309;font-weight:bold">label</span>&gt;
+	&lt;<span style="color:#309;font-weight:bold">div</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;control&#34;</span>&gt;
+		&lt;<span style="color:#309;font-weight:bold">input</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;input&#34;</span> <span style="color:#309">type</span><span style="color:#555">=</span><span style="color:#c30">&#34;text&#34;</span> <span style="color:#309">data-type</span><span style="color:#555">=</span><span style="color:#c30">&#34;tags&#34;</span> <span style="color:#309">data-removable</span><span style="color:#555">=</span><span style="color:#c30">&#34;false&#34;</span> <span style="color:#309">placeholder</span><span style="color:#555">=</span><span style="color:#c30">&#34;Choose Tags&#34;</span> <span style="color:#309">value</span><span style="color:#555">=</span><span style="color:#c30">&#34;One,Two&#34;</span>&gt;
+	&lt;/<span style="color:#309;font-weight:bold">div</span>&gt;
+&lt;/<span style="color:#309;font-weight:bold">div</span>&gt;</code></pre></div>
+        </div>
+    </div>
+</div></p>
+<hr>
+<h2 id="no-selectable-tags">No selectable tags</h2>
+<p>Set <code>selectable</code> option to <code>false</code> to make non selectable tags.  <em>(default value: true)</em>
+
+
+
+  
+
+
+
+<div class="preview">
+    <div class="tabs">
+        <ul>
+            <li class="is-active" data-toggle="tab" data-target="#previewnon-selectable" role="tab" aria-selected="true">
+                <a>Preview</a>
+            </li>
+            
+            <li data-toggle="tab" data-target="#previewCodenon-selectable" role="tab" aria-selected="false">
+                <a>Code</a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="tab-content" id="preview-non-selectable">
+        <div class="tab-pane is-active" id="previewnon-selectable" role="tabpanel" aria-labelledby="preview-non-selectable">
+            <div class="field">
+	<label class="label">Non selectable tags</label>
+	<div class="control">
+		<input class="input" type="text" data-type="tags" data-selectable="false" placeholder="Choose Tags" value="One,Two">
+	</div>
+</div>
+        </div>
+        <div class="tab-pane" id="previewCodenon-selectable" role="tabpanel" aria-labelledby="preview-code-non-selectable">
+            <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#309;font-weight:bold">div</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;field&#34;</span>&gt;
+	&lt;<span style="color:#309;font-weight:bold">label</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;label&#34;</span>&gt;Non selectable tags&lt;/<span style="color:#309;font-weight:bold">label</span>&gt;
+	&lt;<span style="color:#309;font-weight:bold">div</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;control&#34;</span>&gt;
+		&lt;<span style="color:#309;font-weight:bold">input</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;input&#34;</span> <span style="color:#309">type</span><span style="color:#555">=</span><span style="color:#c30">&#34;text&#34;</span> <span style="color:#309">data-type</span><span style="color:#555">=</span><span style="color:#c30">&#34;tags&#34;</span> <span style="color:#309">data-selectable</span><span style="color:#555">=</span><span style="color:#c30">&#34;false&#34;</span> <span style="color:#309">placeholder</span><span style="color:#555">=</span><span style="color:#c30">&#34;Choose Tags&#34;</span> <span style="color:#309">value</span><span style="color:#555">=</span><span style="color:#c30">&#34;One,Two&#34;</span>&gt;
+	&lt;/<span style="color:#309;font-weight:bold">div</span>&gt;
+&lt;/<span style="color:#309;font-weight:bold">div</span>&gt;</code></pre></div>
+        </div>
+    </div>
+</div></p>
+<hr>
+<h2 id="limit-number-of-tags">Limit number of tags</h2>
+<p>Set maximum number of tags allowed with the <code>maxTags</code> option.  <em>(default value: undefined)</em></p>
+<p>Try adding 2 more tags in the following example.
+
+
+
+  
+
+
+
+<div class="preview">
+    <div class="tabs">
+        <ul>
+            <li class="is-active" data-toggle="tab" data-target="#previewlimit" role="tab" aria-selected="true">
+                <a>Preview</a>
+            </li>
+            
+            <li data-toggle="tab" data-target="#previewCodelimit" role="tab" aria-selected="false">
+                <a>Code</a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="tab-content" id="preview-limit">
+        <div class="tab-pane is-active" id="previewlimit" role="tabpanel" aria-labelledby="preview-limit">
+            <div class="field">
+	<label class="label">Limited number of tags (3)</label>
+	<div class="control">
+		<input class="input" type="text" data-type="tags" data-max-tags="3" placeholder="Choose Tags" value="One,Two">
+	</div>
+</div>
+        </div>
+        <div class="tab-pane" id="previewCodelimit" role="tabpanel" aria-labelledby="preview-code-limit">
+            <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#309;font-weight:bold">div</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;field&#34;</span>&gt;
+	&lt;<span style="color:#309;font-weight:bold">label</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;label&#34;</span>&gt;Limited number of tags (3)&lt;/<span style="color:#309;font-weight:bold">label</span>&gt;
+	&lt;<span style="color:#309;font-weight:bold">div</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;control&#34;</span>&gt;
+		&lt;<span style="color:#309;font-weight:bold">input</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;input&#34;</span> <span style="color:#309">type</span><span style="color:#555">=</span><span style="color:#c30">&#34;text&#34;</span> <span style="color:#309">data-type</span><span style="color:#555">=</span><span style="color:#c30">&#34;tags&#34;</span> <span style="color:#309">data-max-tags</span><span style="color:#555">=</span><span style="color:#c30">&#34;3&#34;</span> <span style="color:#309">placeholder</span><span style="color:#555">=</span><span style="color:#c30">&#34;Choose Tags&#34;</span> <span style="color:#309">value</span><span style="color:#555">=</span><span style="color:#c30">&#34;One,Two&#34;</span>&gt;
+	&lt;/<span style="color:#309;font-weight:bold">div</span>&gt;
+&lt;/<span style="color:#309;font-weight:bold">div</span>&gt;</code></pre></div>
+        </div>
+    </div>
+</div></p>
+<hr>
+<h2 id="characters-limit-for-tags">Characters limit for tags</h2>
+<p>Set maximum number of characters allowed for each tags with the <code>minChars</code> and <code>maxChars</code> option.  <em>(default value: 1 | undefined)</em></p>
+<p>Try adding tags with less than 3 characteres or more than 5 characters in the following example.
+
+
+
+  
+
+
+
+<div class="preview">
+    <div class="tabs">
+        <ul>
+            <li class="is-active" data-toggle="tab" data-target="#previewlimit-characters" role="tab" aria-selected="true">
+                <a>Preview</a>
+            </li>
+            
+            <li data-toggle="tab" data-target="#previewCodelimit-characters" role="tab" aria-selected="false">
+                <a>Code</a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="tab-content" id="preview-limit-characters">
+        <div class="tab-pane is-active" id="previewlimit-characters" role="tabpanel" aria-labelledby="preview-limit-characters">
+            <div class="field">
+	<label class="label">Limited number of characters (3 -> 5)</label>
+	<div class="control">
+		<input class="input" type="text" data-type="tags" data-min-chars="3" data-max-chars="5" placeholder="Choose Tags" value="One,Two">
+	</div>
+</div>
+        </div>
+        <div class="tab-pane" id="previewCodelimit-characters" role="tabpanel" aria-labelledby="preview-code-limit-characters">
+            <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#309;font-weight:bold">div</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;field&#34;</span>&gt;
+	&lt;<span style="color:#309;font-weight:bold">label</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;label&#34;</span>&gt;Limited number of characters (3 -&gt; 5)&lt;/<span style="color:#309;font-weight:bold">label</span>&gt;
+	&lt;<span style="color:#309;font-weight:bold">div</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;control&#34;</span>&gt;
+		&lt;<span style="color:#309;font-weight:bold">input</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;input&#34;</span> <span style="color:#309">type</span><span style="color:#555">=</span><span style="color:#c30">&#34;text&#34;</span> <span style="color:#309">data-type</span><span style="color:#555">=</span><span style="color:#c30">&#34;tags&#34;</span> <span style="color:#309">data-min-chars</span><span style="color:#555">=</span><span style="color:#c30">&#34;3&#34;</span> <span style="color:#309">data-max-chars</span><span style="color:#555">=</span><span style="color:#c30">&#34;5&#34;</span> <span style="color:#309">placeholder</span><span style="color:#555">=</span><span style="color:#c30">&#34;Choose Tags&#34;</span> <span style="color:#309">value</span><span style="color:#555">=</span><span style="color:#c30">&#34;One,Two&#34;</span>&gt;
+	&lt;/<span style="color:#309;font-weight:bold">div</span>&gt;
+&lt;/<span style="color:#309;font-weight:bold">div</span>&gt;</code></pre></div>
+        </div>
+    </div>
+</div></p>
+<hr>
+<h2 id="object-tags">Object Tags</h2>
+<p>Use objects as tags instead of simple string. This makes it possible to set id values in your input field&rsquo;s value, instead of just the tag&rsquo;s text.</p>
+<p>
+<div class="notification is-warning is-light" >Warning: It is not possible to add tag by typing in this mode (only programmatically or using providing a data source).</div>
+
+
+
+  
+
+
+
+<div class="preview">
+    <div class="tabs">
+        <ul>
+            <li class="is-active" data-toggle="tab" data-target="#previewobject-tags" role="tab" aria-selected="true">
+                <a>Preview</a>
+            </li>
+            
+            <li data-toggle="tab" data-target="#previewCodeobject-tags" role="tab" aria-selected="false">
+                <a>Code</a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="tab-content" id="preview-object-tags">
+        <div class="tab-pane is-active" id="previewobject-tags" role="tabpanel" aria-labelledby="preview-object-tags">
+            <div class="field">
+	<label class="label">Object tags</label>
+	<div class="control">
+		<input id="tags" class="input" type="text" data-type="tags" data-item-value="value" data-item-text="text" placeholder="Choose Tags" value=''>
+	</div>
+</div>
+<script>
+	document.addEventListener('DOMContentLoaded', function() {
+      const tags = document.getElementById('tags');
+      BulmaTagsInput.attach(tags);
+	
+		tags.BulmaTagsInput().add([
+			{"value": 1,"text": "One"},
+			{"value": 2,"text": "Two"}
+		]);
+	}, false);
+</script>
+
+<br />
+<div class="field">
+	<label class="label">Object tags work well with select element</label>
+	<div class="control">
+		<select multiple data-type="tags" data-placeholder="Choose Tags">
+			<option value="one" selected>One</option>
+			<option value="two">Two</option>
+		</select>
+	</div>
+</div>
+        </div>
+        <div class="tab-pane" id="previewCodeobject-tags" role="tabpanel" aria-labelledby="preview-code-object-tags">
+            <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#309;font-weight:bold">div</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;field&#34;</span>&gt;
+	&lt;<span style="color:#309;font-weight:bold">label</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;label&#34;</span>&gt;Object tags&lt;/<span style="color:#309;font-weight:bold">label</span>&gt;
+	&lt;<span style="color:#309;font-weight:bold">div</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;control&#34;</span>&gt;
+		&lt;<span style="color:#309;font-weight:bold">input</span> <span style="color:#309">id</span><span style="color:#555">=</span><span style="color:#c30">&#34;tags&#34;</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;input&#34;</span> <span style="color:#309">type</span><span style="color:#555">=</span><span style="color:#c30">&#34;text&#34;</span> <span style="color:#309">data-type</span><span style="color:#555">=</span><span style="color:#c30">&#34;tags&#34;</span> <span style="color:#309">data-item-value</span><span style="color:#555">=</span><span style="color:#c30">&#34;value&#34;</span> <span style="color:#309">data-item-text</span><span style="color:#555">=</span><span style="color:#c30">&#34;text&#34;</span> <span style="color:#309">placeholder</span><span style="color:#555">=</span><span style="color:#c30">&#34;Choose Tags&#34;</span> <span style="color:#309">value</span><span style="color:#555">=</span><span style="color:#c30">&#39;&#39;</span>&gt;
+	&lt;/<span style="color:#309;font-weight:bold">div</span>&gt;
+&lt;/<span style="color:#309;font-weight:bold">div</span>&gt;
+&lt;<span style="color:#309;font-weight:bold">script</span>&gt;
+	<span style="color:#366">document</span>.addEventListener(<span style="color:#c30">&#39;DOMContentLoaded&#39;</span>, <span style="color:#069;font-weight:bold">function</span>() {
+      <span style="color:#069;font-weight:bold">const</span> tags <span style="color:#555">=</span> <span style="color:#366">document</span>.getElementById(<span style="color:#c30">&#39;tags&#39;</span>);
+      BulmaTagsInput.attach(tags);
+	
+		tags.BulmaTagsInput().add([
+			{<span style="color:#c30">&#34;value&#34;</span><span style="color:#555">:</span> <span style="color:#f60">1</span>,<span style="color:#c30">&#34;text&#34;</span><span style="color:#555">:</span> <span style="color:#c30">&#34;One&#34;</span>},
+			{<span style="color:#c30">&#34;value&#34;</span><span style="color:#555">:</span> <span style="color:#f60">2</span>,<span style="color:#c30">&#34;text&#34;</span><span style="color:#555">:</span> <span style="color:#c30">&#34;Two&#34;</span>}
+		]);
+	}, <span style="color:#069;font-weight:bold">false</span>);
+&lt;/<span style="color:#309;font-weight:bold">script</span>&gt;
+
+&lt;<span style="color:#309;font-weight:bold">br</span> /&gt;
+&lt;<span style="color:#309;font-weight:bold">div</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;field&#34;</span>&gt;
+	&lt;<span style="color:#309;font-weight:bold">label</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;label&#34;</span>&gt;Object tags work well with select element&lt;/<span style="color:#309;font-weight:bold">label</span>&gt;
+	&lt;<span style="color:#309;font-weight:bold">div</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;control&#34;</span>&gt;
+		&lt;<span style="color:#309;font-weight:bold">select</span> <span style="color:#309">multiple</span> <span style="color:#309">data-type</span><span style="color:#555">=</span><span style="color:#c30">&#34;tags&#34;</span> <span style="color:#309">data-placeholder</span><span style="color:#555">=</span><span style="color:#c30">&#34;Choose Tags&#34;</span>&gt;
+			&lt;<span style="color:#309;font-weight:bold">option</span> <span style="color:#309">value</span><span style="color:#555">=</span><span style="color:#c30">&#34;one&#34;</span> <span style="color:#309">selected</span>&gt;One&lt;/<span style="color:#309;font-weight:bold">option</span>&gt;
+			&lt;<span style="color:#309;font-weight:bold">option</span> <span style="color:#309">value</span><span style="color:#555">=</span><span style="color:#c30">&#34;two&#34;</span>&gt;Two&lt;/<span style="color:#309;font-weight:bold">option</span>&gt;
+		&lt;/<span style="color:#309;font-weight:bold">select</span>&gt;
+	&lt;/<span style="color:#309;font-weight:bold">div</span>&gt;
+&lt;/<span style="color:#309;font-weight:bold">div</span>&gt;</code></pre></div>
+        </div>
+    </div>
+</div></p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script src="/components/tagsinput/1.0/js/clipboard.min.js" type="text/javascript"></script>
+    <script async src="/components/tagsinput/1.0/js/docs.js" type="text/javascript"></script>
+    <script src="/components/tagsinput/1.0/js/bulma-tagsinput.min.js" type="text/javascript"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            BulmaTagsInput.attach();
+        });
+    </script>
+    
+</body>
+
+</html>

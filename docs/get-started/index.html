@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <base href="https://demo.creativebulma.net/components/tagsinput/1.0/">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    
+    <title>Installation - BulmaTagsInput</title>
+
+    <link rel="icon" href="https://demo.creativebulma.net/components/tagsinput/1.0/favicon.png">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <link rel="stylesheet" href="/components/tagsinput/1.0/css/docs.css" />
+    <link rel="stylesheet" href="/components/tagsinput/1.0/css/bulma-tagsinput.min.css" />
+
+    
+
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+
+<body class=''>
+    
+    <div class="container is-fullheight">
+        
+        <div class="mobile-burger burger is-hidden-desktop" data-target="#doc-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="columns is-gapless is-fullheight">
+            <div id="doc-menu" class="column is-2 menu is-mobile">
+                <a href="https://demo.creativebulma.net/components/tagsinput/1.0/" class="brand">
+    <span class="title is-6 has-text-weight-normal">BulmaTagsInput</span>
+    <span class="subtitle tag is-primary is-light is-7 has-text-weight-light is-uppercase">docs</span>
+</a>
+<ul class="menu-list">
+    
+    
+    
+        
+            <li class="">
+                <a href="/components/tagsinput/1.0/" class="menu-item">
+                    
+                    <span>Introduction</span>
+                </a>
+            </li>
+        
+    
+        
+            <li class="menu-item has-dropdown is-active">
+                <a href="#" class="menu-title">
+                    
+                    <span>Get started</span>
+                    <span class="menu-caret"></span>
+                </a>
+                <ul class="menu-dropdown">
+                    
+                        <li class="is-active">
+                            <a href="/components/tagsinput/1.0/get-started/" class="menu-item">Installation</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="/components/tagsinput/1.0/get-started/usage/" class="menu-item">Usage</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="/components/tagsinput/1.0/get-started/javascript-api/" class="menu-item">Javascript API</a>
+                        </li>
+                    
+                </ul>
+            </li>
+        
+    
+        
+            <li class="menu-item has-dropdown ">
+                <a href="#" class="menu-title">
+                    
+                    <span>How-To</span>
+                    <span class="menu-caret"></span>
+                </a>
+                <ul class="menu-dropdown">
+                    
+                        <li class="">
+                            <a href="/components/tagsinput/1.0/how-to/customize/" class="menu-item">Customize</a>
+                        </li>
+                    
+                </ul>
+            </li>
+        
+    
+        
+            <li class="">
+                <a href="/components/tagsinput/1.0/changelog/" class="menu-item">
+                    
+                    <span>Changelog</span>
+                </a>
+            </li>
+        
+    
+</ul>
+            </div>
+            <div class="column is-fullheight">
+                <nav class="navbar" role="navigation" aria-label="navigation" style="background-color: transparent !important;">
+    <div class="navbar-menu">
+        <div class="navbar-start">
+        </div>
+        <div class="navbar-end">
+            
+            
+            <div class="navbar-item">
+                <span >Version 1.0</span>
+            </div>
+            
+            
+            <a class="navbar-item is-square" href="https://github.com/CreativeBulma/bulma-tagsinput" alt="Github repository" target="_blank">
+                <span class="icon">
+                    <i class="fab fa-lg fa-github"></i>
+                </span>
+            </a>
+            
+        </div>
+    </div>
+</nav>
+
+                <div class="section is-fullheight" style="padding: 3rem;">
+                    <div class="content is-fullheight">
+                        
+<div class="notification is-warning is-light" >This component extends Bulma CSS Framework, so you need to have Bulma installed to use it.</div>
+<h2 id="installation">Installation</h2>
+<h3 id="first-lets-install-the-component">First, let&rsquo;s install the component!</h3>
+<p>There are several ways to get started with BulmaTagsInput.
+<div class="tabs">
+    <ul>
+        
+		
+
+		
+		
+		
+
+		
+        <li class="is-active" id="nav-install" data-toggle="tab" data-target="#tabinstall1" role="tab" aria-selected="true">
+            <a>1. NPM</a>
+        </li>
+        
+		
+
+		
+		
+		
+
+		
+        <li id="nav-install" data-toggle="tab" data-target="#tabinstall2" role="tab" aria-selected="false">
+            <a>2. CDN</a>
+        </li>
+        
+		
+
+		
+		
+		
+
+		
+        <li id="nav-install" data-toggle="tab" data-target="#tabinstall3" role="tab" aria-selected="false">
+            <a>3. Github</a>
+        </li>
+        
+		
+    </ul>
+</div>
+<div class="tab-content" id="install">
+
+
+
+
+
+
+<div class="tab-pane is-active" id="tabinstall1" role="tabpanel" aria-labelledby="nav-tabName1">
+	<p>Use npm to install the <code>bulma-tagsinput</code> package <strong>recommended</strong></p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">npm install @creativebulma/bulma-tagsinput
+</code></pre></div>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="tab-pane" id="tabinstall2" role="tabpanel" aria-labelledby="nav-tabName2">
+	<p>Use the <a href="https://jsdelivr.com" target="_blank" rel="noreferrer noopener">jsDelivr</a> CDN to link to the BulmaTagsInput stylesheet</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">https://www.jsdelivr.com/package/npm/@creativebulma/bulma-tagsinput
+</code></pre></div>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="tab-pane" id="tabinstall3" role="tabpanel" aria-labelledby="nav-tabName3">
+	<p>Use the GitHub repository to get the latest development version.</p>
+<p>Download from the repository <a href="https://github.com/CreativeBulma/bulma-tagsinput/tree/master/dist/" target="_blank" rel="noreferrer noopener">https://github.com/CreativeBulma/bulma-tagsinput/tree/master/dist/</a></p>
+
+</div>
+
+
+
+</div></p>
+<h3 id="integrate-styles">Integrate styles</h3>
+<div class="tabs">
+    <ul>
+        
+		
+
+		
+		
+		
+
+		
+        <li class="is-active" id="nav-import-style" data-toggle="tab" data-target="#tabimport-style1" role="tab" aria-selected="true">
+            <a>1. Browser</a>
+        </li>
+        
+		
+
+		
+		
+		
+
+		
+        <li id="nav-import-style" data-toggle="tab" data-target="#tabimport-style2" role="tab" aria-selected="false">
+            <a>2. Sass</a>
+        </li>
+        
+		
+    </ul>
+</div>
+<div class="tab-content" id="import-style">
+
+
+
+
+
+
+<div class="tab-pane is-active" id="tabimport-style1" role="tabpanel" aria-labelledby="nav-tabName1">
+	<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#309;font-weight:bold">link</span> <span style="color:#309">rel</span><span style="color:#555">=</span><span style="color:#c30">&#34;stylesheet&#34;</span> <span style="color:#309">href</span><span style="color:#555">=</span><span style="color:#c30">&#34;https://www.jsdelivr.com/package/npm/@creativebulma/bulma-tagsinput/dist/css/bulma-tagsinput.min.css&#34;</span> /&gt;
+</code></pre></div>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="tab-pane" id="tabimport-style2" role="tabpanel" aria-labelledby="nav-tabName2">
+	<p>Open you application&rsquo;s main sass file and add the following lines:</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sass" data-lang="sass"><span style="color:#555">//</span> <span style="color:#309;font-weight:bold">Import</span> <span style="color:#309;font-weight:bold">Bulma</span> <span style="color:#309;font-weight:bold">first</span>
+<span style="color:#069;font-weight:bold">@import</span> <span style="color:#c30">&#39;bulma&#39;;</span>
+
+<span style="color:#555">//</span> <span style="color:#309;font-weight:bold">Import</span> <span style="color:#309;font-weight:bold">BulmaTagsInput</span> <span style="color:#309;font-weight:bold">main</span> <span style="color:#309;font-weight:bold">Sass</span> <span style="color:#309;font-weight:bold">File</span>
+<span style="color:#069;font-weight:bold">@import</span> <span style="color:#c30">&#39;~@creativebulma/bulma-tagsinput&#39;;</span>
+</code></pre></div>
+</div>
+
+
+
+</div>
+<h3 id="integrate-the-javascript">Integrate the JavaScript</h3>
+<div class="tabs">
+    <ul>
+        
+		
+
+		
+		
+		
+
+		
+        <li class="is-active" id="nav-import-js" data-toggle="tab" data-target="#tabimport-js1" role="tab" aria-selected="true">
+            <a>1. Browser</a>
+        </li>
+        
+		
+
+		
+		
+		
+
+		
+        <li id="nav-import-js" data-toggle="tab" data-target="#tabimport-js2" role="tab" aria-selected="false">
+            <a>2. ES6</a>
+        </li>
+        
+		
+    </ul>
+</div>
+<div class="tab-content" id="import-js">
+
+
+
+
+
+
+<div class="tab-pane is-active" id="tabimport-js1" role="tabpanel" aria-labelledby="nav-tabName1">
+	<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#309;font-weight:bold">script</span> <span style="color:#309">src</span><span style="color:#555">=</span><span style="color:#c30">&#34;https://www.jsdelivr.com/package/npm/@creativebulma/bulma-tagsinput/dist/js/bulma-tagsinput.min.js&#34;</span>&gt;&lt;/<span style="color:#309;font-weight:bold">script</span>&gt;
+</code></pre></div>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="tab-pane" id="tabimport-js2" role="tabpanel" aria-labelledby="nav-tabName2">
+	<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#069;font-weight:bold">import</span> BulmaTagsInput from <span style="color:#c30">&#39;@creativebulma/bulma-tagsinput&#39;</span>;
+</code></pre></div>
+</div>
+
+
+
+</div>
+<p>See <a href="/components/tagsinput/1.0/get-started/javascript-api/">JavaScript API</a> documentation to find out how to work with the component in Javascript.</p>
+<h2 id="framework-integration">Framework Integration</h2>
+<div class="tabs">
+    <ul>
+        
+		
+
+		
+		
+		
+
+		
+        <li class="is-active" id="nav-framework-integration" data-toggle="tab" data-target="#tabframework-integration1" role="tab" aria-selected="true">
+            <a>1. ReactJS</a>
+        </li>
+        
+		
+
+		
+		
+		
+
+		
+        <li id="nav-framework-integration" data-toggle="tab" data-target="#tabframework-integration2" role="tab" aria-selected="false">
+            <a>2. VueJS</a>
+        </li>
+        
+		
+    </ul>
+</div>
+<div class="tab-content" id="framework-integration">
+
+
+
+
+
+
+<div class="tab-pane is-active" id="tabframework-integration1" role="tabpanel" aria-labelledby="nav-tabName1">
+	See our <a href="https://codepen.io/CreativeBulma/pen/PoPJVQx" target="_blank" rel="noreferrer noopener">ReactJS integration</a> example on CodePen
+</div>
+
+
+
+
+
+
+
+
+
+<div class="tab-pane" id="tabframework-integration2" role="tabpanel" aria-labelledby="nav-tabName2">
+	See our <a href="https://codepen.io/CreativeBulma/pen/pojWGpo" target="_blank" rel="noreferrer noopener">VueJS integration</a> example on CodePen
+</div>
+
+
+
+</div>
+<h1 id="youre-ready-to-use-bulmatagsinputhahahugoshortcode-s6-hbhb-">You&rsquo;re ready to <a href="/components/tagsinput/1.0/get-started/usage/">use BulmaTagsInput</a> !</h1>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script src="/components/tagsinput/1.0/js/clipboard.min.js" type="text/javascript"></script>
+    <script async src="/components/tagsinput/1.0/js/docs.js" type="text/javascript"></script>
+    <script src="/components/tagsinput/1.0/js/bulma-tagsinput.min.js" type="text/javascript"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            BulmaTagsInput.attach();
+        });
+    </script>
+    
+</body>
+
+</html>

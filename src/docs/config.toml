@@ -1,14 +1,23 @@
-baseURL = "https://demo.creativebulma.net/boilerplate/1.0/"
+baseURL = "https://demo.creativebulma.net/components/tagsinput/1.0/"
 languageCode = "en-us"
-title = "BulmaBoilerplate"
+title = "BulmaTagsInput"
 theme = "creativebulma"
 
 [markup]
   [markup.highlight]
     style = "manni"
 
+[params]
+  version = "1.0"
+
 [menu]
 
+  [[menu.main]]
+    identifier = "get-started"
+    name = "Get started"
+    url = "/get-started/"
+    weight = 10
+  
   [[menu.main]]
     identifier = "how-to"
     name = "How-To"

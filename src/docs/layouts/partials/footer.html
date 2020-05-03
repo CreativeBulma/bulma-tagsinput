@@ -1,0 +1,12 @@
+<script src="{{ "/js/clipboard.min.js" | relURL }}" type="text/javascript"></script>
+    <script async src="{{ "/js/docs.js" | relURL }}" type="text/javascript"></script>
+    <script src="{{ "/js/bulma-tagsinput.min.js" | relURL }}" type="text/javascript"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            BulmaTagsInput.attach();
+        });
+    </script>
+    {{ block "footer_js" . }}{{ end }}
+</body>
+
+</html>

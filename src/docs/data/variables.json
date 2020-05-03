@@ -1,52 +1,12 @@
 [
     {
-        "name": "$tooltip-arrow-size",
+        "name": "$tagsinput-selected-background-color",
         "description": "",
-        "value": "6px"
+        "value": "$primary"
     },
     {
-        "name": "$tooltip-background-color",
+        "name": "$tagsinput-duplicate-animation",
         "description": "",
-        "value": "$grey-dark"
-    },
-    {
-        "name": "$tooltip-background-opacity",
-        "description": "",
-        "value": "0.9"
-    },
-    {
-        "name": "$tooltip-color",
-        "description": "",
-        "value": "$white"
-    },
-    {
-        "name": "$tooltip-font-family",
-        "description": "",
-        "value": "$family-primary"
-    },
-    {
-        "name": "$tooltip-font-size",
-        "description": "",
-        "value": "$size-7"
-    },
-    {
-        "name": "$tooltip-max-width",
-        "description": "",
-        "value": "15rem"
-    },
-    {
-        "name": "$tooltip-padding",
-        "description": "",
-        "value": ".5rem 1rem"
-    },
-    {
-        "name": "$tooltip-radius",
-        "description": "",
-        "value": "$radius-small"
-    },
-    {
-        "name": "$tooltip-z-index",
-        "description": "",
-        "value": "1020"
+        "value": "blinker .75s linear infinite"
     }
 ]

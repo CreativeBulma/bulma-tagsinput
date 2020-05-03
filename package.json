@@ -1,40 +1,40 @@
 {
-	"name": "@creativebulma/bulma-boilerplate",
-	"description": "Official CreativeBulma Boilerplate to create beautiful template for the awesome Bulma CSS framework.",
+	"name": "@creativebulma/bulma-tagsinput",
+	"description": "A full-featured user interface for managing tags with Bulma",
 	"version": "1.0.0",
-	"homepage": "https://creativebulma.net/blog/start-creating-bulma-template-with-ease",
+	"homepage": "https://github.com/CreativeBulma/bulma-tagsinput",
 	"author": {
-		"name": "CreativeBulma",
+		"name": "Gaetan",
 		"email": "support@creativebulma.net",
 		"url": "https://creativebulma.net"
 	},
 	"main": "./src/js/index.js",
-	"style": "./dist/css/app.css",
-	"script": "./dist/js/app.js",
+	"style": "./dist/css/bulma-tagsinput.css",
+	"script": "./dist/js/bulma-tagsinput.js",
 	"sass": "./src/sass/index.sass",
-	"library": "App",
+	"library": "BulmaTagsInput",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/CreativeBulma/BulmaBoilerplate.git"
+		"url": "git+https://github.com/CreativeBulma/bulma-tagsinput.git"
 	},
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/CreativeBulma/BulmaBoilerplate/issues"
+		"url": "https://github.com/CreativeBulma/bulma-tagsinput/issues"
 	},
 	"keywords": [
-		"boilerplate",
-		"theme",
-		"template",
-		"kit",
-		"starter",
-		"starter-kit",
+		"tags",
+		"input",
+		"tagsinput",
+		"autocomplete",
+		"autocompletion",
+		"typehead",
+		"ui",
+		"component",
+		"extension",
 		"html",
 		"html5",
 		"css3",
-		"flexbox",
 		"sass",
-		"javascript",
-		"babel",
 		"bulma",
 		"bulmaio",
 		"bulma.io"
@@ -69,6 +69,7 @@
 		"gulp-concat": "^2.6.1",
 		"gulp-cssnano": "^2.1.3",
 		"gulp-header": "^2.0.9",
+		"gulp-if": "^3.0.0",
 		"gulp-nop": "0.0.3",
 		"gulp-postcss": "^8.0.0",
 		"gulp-rename": "^2.0.0",
@@ -76,7 +77,7 @@
 		"gulp-sass": "^4.0.2",
 		"gulp-shell": "^0.8.0",
 		"gulp-svgmin": "^2.2.0",
-		"gulp-uglify": "^3.0.2",
+		"gulp-terser": "^1.2.0",
 		"hugo-bin": "^0.55.0",
 		"internal-ip": "^6.0.0",
 		"parse-filepath": "^1.0.2",
@@ -87,7 +88,6 @@
 	},
 	"scripts": {
 		"build": "gulp",
-		"build:scripts": "gulp build:scripts",
 		"build:styles": "gulp build:styles",
 		"demo": "gulp demo",
 		"demo:build": "gulp demo:build",
@@ -97,5 +97,11 @@
 		"doc:serve": "gulp doc:serve",
 		"optimize": "gulp optimize",
 		"start": "gulp demo:serve"
-	}
+	},
+	"files": [
+		"dist",
+		"src",
+		"LICENSE",
+		"README.md"
+	]
 }
