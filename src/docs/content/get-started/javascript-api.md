@@ -73,6 +73,7 @@ BulmaTagsInput.attach('input[data-type="tags"], input[type="tags"], select[data-
 	searchMinChars: 1,
 	searchOn: 'text',
 	selectable: true,
+	source: undefined,
 	tagClass: 'is-rounded',
 	trim: true
 });

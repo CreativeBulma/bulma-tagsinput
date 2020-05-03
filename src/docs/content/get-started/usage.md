@@ -48,6 +48,7 @@ ___
 
 ## Dynamic data source
 Work with dynamic data source to automatically retreive data.
+Provide an `Array`, a `Function` or a `Promise` into the `source` option to get dynamic data.
 
 The following demo helps you find a country using free [REST Countries API](https://restcountries.eu/#api-endpoints-all).
 {{< preview id="tags-input-source" lang="html" >}}<div class="field">
