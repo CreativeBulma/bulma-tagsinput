@@ -20,6 +20,7 @@ const defaultOptions = {
 	searchMinChars: 1,						// How many characters should we enter before starting dynamic search ?
 	searchOn: 'text',						// On what dropdown item data do we search the entered value : 'value' or 'text' ?
 	selectable: true,						// Are tags selectable ?
+	source: undefined,						// Array/Function/Promise to get external data
 	tagClass: 'is-rounded',					// Customize tags style by passing classes - They will be added to the tag element
 	trim: true								// Should we trim value before processing them ?
 }
