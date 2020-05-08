@@ -1,5 +1,5 @@
 # Introduction
-This components has been developped as a [Bulma](https://bulma.io) extension and brings **a full-featured user interface for managing tags** to your project.
+This components has been developped as a [Bulma](https://bulma.io) extension and brings **a full-featured user interface for managing tags  supporting autocomplete** to your project.
 
 [![npm](https://img.shields.io/npm/v/@creativebulma/bulma-tagsinput.svg)](https://www.npmjs.com/package/@creativebulma/bulma-tagsinput)
 [![npm](https://img.shields.io/npm/dm/@creativebulma/bulma-tagsinput.svg)](https://www.npmjs.com/package/@creativebulma/bulma-tagsinput)

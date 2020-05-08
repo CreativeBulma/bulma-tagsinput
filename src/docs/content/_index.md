@@ -9,7 +9,7 @@ draft: false
 # Introduction
 ## What is BulmaTagsInput
 
-BulmaTagsInput is a {{% link text="Bulma" href="https://bulma.io" target="_blank" %}} extension which brings **a full-featured user interface for managing tags** to your project.
+BulmaTagsInput is a {{% link text="Bulma" href="https://bulma.io" target="_blank" %}} extension which brings **a full-featured user interface for managing tags supporting autocomplete** to your project.
 
 {{% notification primary %}}If you enjoy this component, have a look at our [MarketPlace](https://creativebulma.net) and discover Free and Premium Bulma components and Templates.{{% /notification %}}
 

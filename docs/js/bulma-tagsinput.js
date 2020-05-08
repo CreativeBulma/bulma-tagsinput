@@ -1,4 +1,4 @@
-/*! @creativebulma/bulma-tagsinput v1.0.0 | (c) 2020 Gaetan | MIT License | https://github.com/CreativeBulma/bulma-tagsinput */
+/*! @creativebulma/bulma-tagsinput v1.0.1 | (c) 2020 Gaetan | MIT License | https://github.com/CreativeBulma/bulma-tagsinput */
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory();

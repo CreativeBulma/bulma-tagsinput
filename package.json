@@ -1,6 +1,6 @@
 {
 	"name": "@creativebulma/bulma-tagsinput",
-	"description": "A full-featured user interface for managing tags with Bulma",
+	"description": "A full-featured user interface for managing tags with Bulma supporting autocomplete.",
 	"version": "1.0.1",
 	"homepage": "https://github.com/CreativeBulma/bulma-tagsinput",
 	"author": {
