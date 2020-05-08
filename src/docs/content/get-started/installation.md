@@ -52,7 +52,7 @@ Open you application's main sass file and add the following lines:
 @import 'bulma';
 
 // Import BulmaTagsInput main Sass File
-@import '~@creativebulma/bulma-tagsinput';
+@import '@creativebulma/bulma-tagsinput/src/sass/index';
 ```
 {{< /tab >}}
 {{< /tabs >}}

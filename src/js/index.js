@@ -123,7 +123,7 @@ export default class BulmaTagsInput extends Component {
         this.dropdownEmptyOption = this.dropdown.querySelector('.empty-title');
 
         // Clone attributes between original and new input
-        cloneAttributes(this.input, this.element, 'data-type multiple type value');
+        cloneAttributes(this.input, this.element, 'data-type multiple name type value');
 
         // Propagate original input disabled attribute to the container
         if (this.input.getAttribute('disabled') || this.input.classList.contains('is-disabled')) {

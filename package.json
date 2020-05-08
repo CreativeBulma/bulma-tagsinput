@@ -1,7 +1,7 @@
 {
 	"name": "@creativebulma/bulma-tagsinput",
 	"description": "A full-featured user interface for managing tags with Bulma",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"homepage": "https://github.com/CreativeBulma/bulma-tagsinput",
 	"author": {
 		"name": "Gaetan",
