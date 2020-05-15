@@ -125,6 +125,12 @@ export default class BulmaTagsInput extends Component {
         // Clone attributes between original and new input
         cloneAttributes(this.input, this.element, 'data-type multiple name type value');
 
+        if (this.element.disabled) {
+            this.container.setAttribute('disabled', 'disabled');
+            this.options.removable = false;
+            this.options.selectable = false;
+        }
+
         // Propagate original input disabled attribute to the container
         if (this.input.getAttribute('disabled') || this.input.classList.contains('is-disabled')) {
             this.container.setAttribute('disabled', 'disabled');
@@ -146,7 +152,11 @@ export default class BulmaTagsInput extends Component {
             Array.from(this.element.options).forEach(option => {
                 if (option.selected) {
                     // HTML Option element contains value and text properties
-                    this.add(option);
+                    // Add it silently to not propagate to the original element
+                    this.add(option.value ? option : {
+                        value: option.text,
+                        text: option.text
+                    }, true);
                 }
 
                 this._createDropdownItem(option);
@@ -154,7 +164,7 @@ export default class BulmaTagsInput extends Component {
         } else {
             // We have on input element
             if (this.element.value.length) {
-                this.add(this._objectItems ? JSON.parse(this.element.value) : this.element.value);
+                this.add(this._objectItems ? JSON.parse(this.element.value) : this.element.value, true);
             }
         }
 
@@ -466,8 +476,9 @@ export default class BulmaTagsInput extends Component {
      *  "text": "Jane"
      * }]
      * @param {String|Object} item 
+     * @param {Boolean} silently Should the change be propagated to the original element
      */
-    add(items) {
+    add(items, silently = false) {
         // Check if number of items is limited ans reached
         if (typeof this.options.maxTags !== 'undefined' && this.items.length >= this.options.maxTags) {
             return this;
@@ -511,13 +522,15 @@ export default class BulmaTagsInput extends Component {
                         // save item into the internal array
                         this.items.push(item);
 
-                        // Propagate change event to the original input
-                        this._propagateChange();
+                        if (!silently) { 
+                            // Propagate change event to the original input
+                            this._propagateChange();
 
-                        this.emit('after.add', {
-                            item,
-                            tag
-                        });
+                            this.emit('after.add', {
+                                item,
+                                tag
+                            });
+                        }
                     } else {
                         if (this.options.highlightDuplicate) {
                             const duplicateTag = Array.from(this.container.children).filter(child => child.classList.contains('tag'))[this.indexOf(item)];

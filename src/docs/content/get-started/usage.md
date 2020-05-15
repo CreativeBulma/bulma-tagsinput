@@ -39,12 +39,24 @@ Even with a `multiple` select element:
 	<div class="control">
 		<select multiple data-type="tags" data-placeholder="Choose Tags">
 			<option value="one" selected>One</option>
-			<option value="two">Two</option>
+			<option value="two" selected>Two</option>
+			<option value="three">Three</option>
 		</select>
 	</div>
 </div>{{< /preview >}}
 
 ___
+
+## Disabled state
+{{< preview  id="tags-input-select-disabled" lang="html" >}}<div class="field">
+	<label class="label">Tags</label>
+	<div class="control">
+		<select data-type="tags" data-placeholder="Choose Tags" disabled>
+			<option value="one" selected>One</option>
+			<option value="two">Two</option>
+		</select>
+	</div>
+</div>{{< /preview >}}
 
 ## Dynamic data source
 Work with dynamic data source to automatically retreive data.
@@ -171,7 +183,7 @@ Use objects as tags instead of simple string. This makes it possible to set id v
 {{< preview id="object-tags" lang="html" >}}<div class="field">
 	<label class="label">Object tags</label>
 	<div class="control">
-		<input id="tags" class="input" type="text" data-type="tags" data-item-value="value" data-item-text="text" placeholder="Choose Tags" value=''>
+		<input id="tags" class="input" type="text" data-item-value="value" data-item-text="text" placeholder="Choose Tags" value=''>
 	</div>
 </div>
 <script>

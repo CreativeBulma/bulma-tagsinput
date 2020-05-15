@@ -245,7 +245,8 @@
 	<div class="control">
 		<select multiple data-type="tags" data-placeholder="Choose Tags">
 			<option value="one" selected>One</option>
-			<option value="two">Two</option>
+			<option value="two" selected>Two</option>
+			<option value="three">Three</option>
 		</select>
 	</div>
 </div>
@@ -256,7 +257,8 @@
 	&lt;<span style="color:#309;font-weight:bold">div</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;control&#34;</span>&gt;
 		&lt;<span style="color:#309;font-weight:bold">select</span> <span style="color:#309">multiple</span> <span style="color:#309">data-type</span><span style="color:#555">=</span><span style="color:#c30">&#34;tags&#34;</span> <span style="color:#309">data-placeholder</span><span style="color:#555">=</span><span style="color:#c30">&#34;Choose Tags&#34;</span>&gt;
 			&lt;<span style="color:#309;font-weight:bold">option</span> <span style="color:#309">value</span><span style="color:#555">=</span><span style="color:#c30">&#34;one&#34;</span> <span style="color:#309">selected</span>&gt;One&lt;/<span style="color:#309;font-weight:bold">option</span>&gt;
-			&lt;<span style="color:#309;font-weight:bold">option</span> <span style="color:#309">value</span><span style="color:#555">=</span><span style="color:#c30">&#34;two&#34;</span>&gt;Two&lt;/<span style="color:#309;font-weight:bold">option</span>&gt;
+			&lt;<span style="color:#309;font-weight:bold">option</span> <span style="color:#309">value</span><span style="color:#555">=</span><span style="color:#c30">&#34;two&#34;</span> <span style="color:#309">selected</span>&gt;Two&lt;/<span style="color:#309;font-weight:bold">option</span>&gt;
+			&lt;<span style="color:#309;font-weight:bold">option</span> <span style="color:#309">value</span><span style="color:#555">=</span><span style="color:#c30">&#34;three&#34;</span>&gt;Three&lt;/<span style="color:#309;font-weight:bold">option</span>&gt;
 		&lt;/<span style="color:#309;font-weight:bold">select</span>&gt;
 	&lt;/<span style="color:#309;font-weight:bold">div</span>&gt;
 &lt;/<span style="color:#309;font-weight:bold">div</span>&gt;</code></pre></div>
@@ -264,6 +266,52 @@
     </div>
 </div></p>
 <hr>
+<h2 id="disabled-state">Disabled state</h2>
+
+
+
+  
+
+
+
+<div class="preview">
+    <div class="tabs">
+        <ul>
+            <li class="is-active" data-toggle="tab" data-target="#previewtags-input-select-disabled" role="tab" aria-selected="true">
+                <a>Preview</a>
+            </li>
+            
+            <li data-toggle="tab" data-target="#previewCodetags-input-select-disabled" role="tab" aria-selected="false">
+                <a>Code</a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="tab-content" id="preview-tags-input-select-disabled">
+        <div class="tab-pane is-active" id="previewtags-input-select-disabled" role="tabpanel" aria-labelledby="preview-tags-input-select-disabled">
+            <div class="field">
+	<label class="label">Tags</label>
+	<div class="control">
+		<select data-type="tags" data-placeholder="Choose Tags" disabled>
+			<option value="one" selected>One</option>
+			<option value="two">Two</option>
+		</select>
+	</div>
+</div>
+        </div>
+        <div class="tab-pane" id="previewCodetags-input-select-disabled" role="tabpanel" aria-labelledby="preview-code-tags-input-select-disabled">
+            <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#309;font-weight:bold">div</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;field&#34;</span>&gt;
+	&lt;<span style="color:#309;font-weight:bold">label</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;label&#34;</span>&gt;Tags&lt;/<span style="color:#309;font-weight:bold">label</span>&gt;
+	&lt;<span style="color:#309;font-weight:bold">div</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;control&#34;</span>&gt;
+		&lt;<span style="color:#309;font-weight:bold">select</span> <span style="color:#309">data-type</span><span style="color:#555">=</span><span style="color:#c30">&#34;tags&#34;</span> <span style="color:#309">data-placeholder</span><span style="color:#555">=</span><span style="color:#c30">&#34;Choose Tags&#34;</span> <span style="color:#309">disabled</span>&gt;
+			&lt;<span style="color:#309;font-weight:bold">option</span> <span style="color:#309">value</span><span style="color:#555">=</span><span style="color:#c30">&#34;one&#34;</span> <span style="color:#309">selected</span>&gt;One&lt;/<span style="color:#309;font-weight:bold">option</span>&gt;
+			&lt;<span style="color:#309;font-weight:bold">option</span> <span style="color:#309">value</span><span style="color:#555">=</span><span style="color:#c30">&#34;two&#34;</span>&gt;Two&lt;/<span style="color:#309;font-weight:bold">option</span>&gt;
+		&lt;/<span style="color:#309;font-weight:bold">select</span>&gt;
+	&lt;/<span style="color:#309;font-weight:bold">div</span>&gt;
+&lt;/<span style="color:#309;font-weight:bold">div</span>&gt;</code></pre></div>
+        </div>
+    </div>
+</div>
 <h2 id="dynamic-data-source">Dynamic data source</h2>
 <p>Work with dynamic data source to automatically retreive data.
 Provide an <code>Array</code>, a <code>Function</code> or a <code>Promise</code> into the <code>source</code> option to get dynamic data.</p>
@@ -676,7 +724,7 @@ Provide an <code>Array</code>, a <code>Function</code> or a <code>Promise</code>
             <div class="field">
 	<label class="label">Object tags</label>
 	<div class="control">
-		<input id="tags" class="input" type="text" data-type="tags" data-item-value="value" data-item-text="text" placeholder="Choose Tags" value=''>
+		<input id="tags" class="input" type="text" data-item-value="value" data-item-text="text" placeholder="Choose Tags" value=''>
 	</div>
 </div>
 <script>
@@ -706,7 +754,7 @@ Provide an <code>Array</code>, a <code>Function</code> or a <code>Promise</code>
             <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#309;font-weight:bold">div</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;field&#34;</span>&gt;
 	&lt;<span style="color:#309;font-weight:bold">label</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;label&#34;</span>&gt;Object tags&lt;/<span style="color:#309;font-weight:bold">label</span>&gt;
 	&lt;<span style="color:#309;font-weight:bold">div</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;control&#34;</span>&gt;
-		&lt;<span style="color:#309;font-weight:bold">input</span> <span style="color:#309">id</span><span style="color:#555">=</span><span style="color:#c30">&#34;tags&#34;</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;input&#34;</span> <span style="color:#309">type</span><span style="color:#555">=</span><span style="color:#c30">&#34;text&#34;</span> <span style="color:#309">data-type</span><span style="color:#555">=</span><span style="color:#c30">&#34;tags&#34;</span> <span style="color:#309">data-item-value</span><span style="color:#555">=</span><span style="color:#c30">&#34;value&#34;</span> <span style="color:#309">data-item-text</span><span style="color:#555">=</span><span style="color:#c30">&#34;text&#34;</span> <span style="color:#309">placeholder</span><span style="color:#555">=</span><span style="color:#c30">&#34;Choose Tags&#34;</span> <span style="color:#309">value</span><span style="color:#555">=</span><span style="color:#c30">&#39;&#39;</span>&gt;
+		&lt;<span style="color:#309;font-weight:bold">input</span> <span style="color:#309">id</span><span style="color:#555">=</span><span style="color:#c30">&#34;tags&#34;</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;input&#34;</span> <span style="color:#309">type</span><span style="color:#555">=</span><span style="color:#c30">&#34;text&#34;</span> <span style="color:#309">data-item-value</span><span style="color:#555">=</span><span style="color:#c30">&#34;value&#34;</span> <span style="color:#309">data-item-text</span><span style="color:#555">=</span><span style="color:#c30">&#34;text&#34;</span> <span style="color:#309">placeholder</span><span style="color:#555">=</span><span style="color:#c30">&#34;Choose Tags&#34;</span> <span style="color:#309">value</span><span style="color:#555">=</span><span style="color:#c30">&#39;&#39;</span>&gt;
 	&lt;/<span style="color:#309;font-weight:bold">div</span>&gt;
 &lt;/<span style="color:#309;font-weight:bold">div</span>&gt;
 &lt;<span style="color:#309;font-weight:bold">script</span>&gt;
