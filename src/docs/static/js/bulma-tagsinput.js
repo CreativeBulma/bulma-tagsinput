@@ -1,4 +1,4 @@
-/*! @creativebulma/bulma-tagsinput v1.0.1 | (c) 2020 Gaetan | MIT License | https://github.com/CreativeBulma/bulma-tagsinput */
+/*! @creativebulma/bulma-tagsinput v1.0.3 | (c) 2020 Gaetan | MIT License | https://github.com/CreativeBulma/bulma-tagsinput */
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory();
@@ -109,6 +109,39 @@ module.exports = _interopRequireDefault;
 
 /***/ }),
 /* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+var _interopRequireDefault=__webpack_require__(0);Object.defineProperty(exports,"__esModule",{value:!0}),exports.escape=exports.cloneAttributes=exports.optionsFromDataset=exports.querySelectorAll=exports.querySelector=void 0;var _toConsumableArray2=_interopRequireDefault(__webpack_require__(19)),_defineProperty2=_interopRequireDefault(__webpack_require__(9)),_type=__webpack_require__(11);function ownKeys(a,b){var c=Object.keys(a);if(Object.getOwnPropertySymbols){var d=Object.getOwnPropertySymbols(a);b&&(d=d.filter(function(b){return Object.getOwnPropertyDescriptor(a,b).enumerable})),c.push.apply(c,d)}return c}function _objectSpread(a){for(var b,c=1;c<arguments.length;c++)b=null==arguments[c]?{}:arguments[c],c%2?ownKeys(Object(b),!0).forEach(function(c){(0,_defineProperty2["default"])(a,c,b[c])}):Object.getOwnPropertyDescriptors?Object.defineProperties(a,Object.getOwnPropertyDescriptors(b)):ownKeys(Object(b)).forEach(function(c){Object.defineProperty(a,c,Object.getOwnPropertyDescriptor(b,c))});return a}/**
+ * querySelector under steroid
+ * Can use as selector:
+ *  - function
+ *  - DOM Node
+ *  - String
+ * @param {String|Node|Function} selector 
+ * @param {Node|undefined} node 
+ */var querySelector=function querySelector(a,b){return(0,_type.isFunction)(a)?a(b):(0,_type.isNode)(a)?a:(0,_type.isString)(a)?(b&&(0,_type.isNode)(b)&&1===b.nodeType||(b=document),b.querySelector(a)):Array.isArray(a)||"undefined"!=typeof NodeList&&NodeList.prototype.isPrototypeOf(a)?a[0]:void 0};/** 
+ * querySelectorAll under steroid
+ * Can use as selector:
+ *  - function
+ *  - DOM Node
+ *  - String
+ * @param {String|Node|Function} selector 
+ * @param {Node|undefined} node 
+ */exports.querySelector=querySelector;var querySelectorAll=function querySelectorAll(a,b){return(0,_type.isFunction)(a)?a(b):(0,_type.isNode)(a)?[a]:(0,_type.isString)(a)?(b&&(0,_type.isNode)(b)&&1===b.nodeType||(b=document),b.querySelectorAll(a)):"undefined"!=typeof NodeList&&NodeList.prototype.isPrototypeOf(a)?a:[]};// Convert dataset into Object
+exports.querySelectorAll=querySelectorAll;var optionsFromDataset=function optionsFromDataset(a){var b=1<arguments.length&&arguments[1]!==void 0?arguments[1]:{};return(0,_type.isNode)(a)?a.dataset?Object.keys(a.dataset).filter(function(a){return Object.keys(b).includes(a)}).reduce(function(b,c){return _objectSpread(_objectSpread({},b),{},(0,_defineProperty2["default"])({},c,a.dataset[c]))},{}):{}:{}};/**
+ * Copy HTML attributes from a source element to a target element
+ * @param {Node} target 
+ * @param {Node} source 
+ * @param {String} except list of attributes to skip (separated by space)
+ */exports.optionsFromDataset=optionsFromDataset;var cloneAttributes=function cloneAttributes(a,b){var c=2<arguments.length&&arguments[2]!==void 0?arguments[2]:null;null!==c&&(c=c.split(" ")),(0,_toConsumableArray2["default"])(b.attributes).forEach(function(b){c.includes(b.nodeName)||a.setAttribute("id"===b.nodeName?"data-id":b.nodeName,b.nodeValue)})};/**
+ * Escapes string for insertion into HTML, replacing special characters with HTML
+ * entities.
+ * @param {String} string
+ */exports.cloneAttributes=cloneAttributes;var escape=function escape(a){return(0,_type.isString)(a)?a.replace(/(['"<>])/g,function(a){return{"<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[a]}):a};exports.escape=escape;
+
+/***/ }),
+/* 2 */
 /***/ (function(module, exports) {
 
 function _classCallCheck(instance, Constructor) {
@@ -120,7 +153,7 @@ function _classCallCheck(instance, Constructor) {
 module.exports = _classCallCheck;
 
 /***/ }),
-/* 2 */
+/* 3 */
 /***/ (function(module, exports) {
 
 function _defineProperties(target, props) {
@@ -142,7 +175,7 @@ function _createClass(Constructor, protoProps, staticProps) {
 module.exports = _createClass;
 
 /***/ }),
-/* 3 */
+/* 4 */
 /***/ (function(module, exports) {
 
 function _assertThisInitialized(self) {
@@ -156,7 +189,7 @@ function _assertThisInitialized(self) {
 module.exports = _assertThisInitialized;
 
 /***/ }),
-/* 4 */
+/* 5 */
 /***/ (function(module, exports) {
 
 function _getPrototypeOf(o) {
@@ -169,7 +202,7 @@ function _getPrototypeOf(o) {
 module.exports = _getPrototypeOf;
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var setPrototypeOf = __webpack_require__(16);
@@ -192,12 +225,12 @@ function _inherits(subClass, superClass) {
 module.exports = _inherits;
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var _typeof = __webpack_require__(7);
+var _typeof = __webpack_require__(8);
 
-var assertThisInitialized = __webpack_require__(3);
+var assertThisInitialized = __webpack_require__(4);
 
 function _possibleConstructorReturn(self, call) {
   if (call && (_typeof(call) === "object" || typeof call === "function")) {
@@ -210,7 +243,7 @@ function _possibleConstructorReturn(self, call) {
 module.exports = _possibleConstructorReturn;
 
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ (function(module, exports) {
 
 function _typeof(obj) {
@@ -232,7 +265,7 @@ function _typeof(obj) {
 module.exports = _typeof;
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, exports) {
 
 function _defineProperty(obj, key, value) {
@@ -251,35 +284,6 @@ function _defineProperty(obj, key, value) {
 }
 
 module.exports = _defineProperty;
-
-/***/ }),
-/* 9 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-var _interopRequireDefault=__webpack_require__(0);Object.defineProperty(exports,"__esModule",{value:!0}),exports.cloneAttributes=exports.optionsFromDataset=exports.querySelectorAll=exports.querySelector=void 0;var _toConsumableArray2=_interopRequireDefault(__webpack_require__(19)),_defineProperty2=_interopRequireDefault(__webpack_require__(8)),_type=__webpack_require__(11);function ownKeys(a,b){var c=Object.keys(a);if(Object.getOwnPropertySymbols){var d=Object.getOwnPropertySymbols(a);b&&(d=d.filter(function(b){return Object.getOwnPropertyDescriptor(a,b).enumerable})),c.push.apply(c,d)}return c}function _objectSpread(a){for(var b,c=1;c<arguments.length;c++)b=null==arguments[c]?{}:arguments[c],c%2?ownKeys(Object(b),!0).forEach(function(c){(0,_defineProperty2["default"])(a,c,b[c])}):Object.getOwnPropertyDescriptors?Object.defineProperties(a,Object.getOwnPropertyDescriptors(b)):ownKeys(Object(b)).forEach(function(c){Object.defineProperty(a,c,Object.getOwnPropertyDescriptor(b,c))});return a}/**
- * querySelector under steroid
- * Can use as selector:
- *  - function
- *  - DOM Node
- *  - String
- * @param {String|Node|Function} selector 
- * @param {Node|undefined} node 
- */var querySelector=function querySelector(a,b){return(0,_type.isFunction)(a)?a(b):(0,_type.isNode)(a)?a:(0,_type.isString)(a)?(b&&(0,_type.isNode)(b)&&1===b.nodeType||(b=document),b.querySelector(a)):Array.isArray(a)||"undefined"!=typeof NodeList&&NodeList.prototype.isPrototypeOf(a)?a[0]:void 0};/** 
- * querySelectorAll under steroid
- * Can use as selector:
- *  - function
- *  - DOM Node
- *  - String
- * @param {String|Node|Function} selector 
- * @param {Node|undefined} node 
- */exports.querySelector=querySelector;var querySelectorAll=function querySelectorAll(a,b){return(0,_type.isFunction)(a)?a(b):(0,_type.isNode)(a)?[a]:(0,_type.isString)(a)?(b&&(0,_type.isNode)(b)&&1===b.nodeType||(b=document),b.querySelectorAll(a)):"undefined"!=typeof NodeList&&NodeList.prototype.isPrototypeOf(a)?a:[]};// Convert dataset into Object
-exports.querySelectorAll=querySelectorAll;var optionsFromDataset=function optionsFromDataset(a){var b=1<arguments.length&&arguments[1]!==void 0?arguments[1]:{};return(0,_type.isNode)(a)?a.dataset?Object.keys(a.dataset).filter(function(a){return Object.keys(b).includes(a)}).reduce(function(b,c){return _objectSpread({},b,(0,_defineProperty2["default"])({},c,a.dataset[c]))},{}):{}:{}};/**
- * Copy HTML attributes from a source element to a target element
- * @param {Node} target 
- * @param {Node} source 
- * @param {String} except list of attributes to skip (separated by space)
- */exports.optionsFromDataset=optionsFromDataset;var cloneAttributes=function cloneAttributes(a,b){var c=2<arguments.length&&arguments[2]!==void 0?arguments[2]:null;null!==c&&(c=c.split(" ")),(0,_toConsumableArray2["default"])(b.attributes).forEach(function(b){c.includes(b.nodeName)||a.setAttribute("id"===b.nodeName?"data-id":b.nodeName,b.nodeValue)})};exports.cloneAttributes=cloneAttributes;
 
 /***/ }),
 /* 10 */
@@ -302,7 +306,7 @@ module.exports = _arrayLikeToArray;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-var _interopRequireDefault=__webpack_require__(0);Object.defineProperty(exports,"__esModule",{value:!0}),exports.isSelectorValid=exports.BooleanParse=exports.isNode=exports.isPromise=exports.isObject=exports.isString=exports.isFunction=void 0;var _typeof2=_interopRequireDefault(__webpack_require__(7)),isFunction=function isFunction(a){return"function"==typeof a};exports.isFunction=isFunction;var isString=function isString(a){return"string"==typeof a||!!a&&"object"===(0,_typeof2["default"])(a)&&"[object String]"===Object.prototype.toString.call(a)};exports.isString=isString;var isObject=function isObject(a){return("function"==typeof a||"object"===(0,_typeof2["default"])(a)&&!!a)&&!Array.isArray(a)};// Returns true if the value has a "then" function. Adapted from
+var _interopRequireDefault=__webpack_require__(0);Object.defineProperty(exports,"__esModule",{value:!0}),exports.isSelectorValid=exports.BooleanParse=exports.isNode=exports.isPromise=exports.isObject=exports.isString=exports.isFunction=void 0;var _typeof2=_interopRequireDefault(__webpack_require__(8)),isFunction=function isFunction(a){return"function"==typeof a};exports.isFunction=isFunction;var isString=function isString(a){return"string"==typeof a||!!a&&"object"===(0,_typeof2["default"])(a)&&"[object String]"===Object.prototype.toString.call(a)};exports.isString=isString;var isObject=function isObject(a){return("function"==typeof a||"object"===(0,_typeof2["default"])(a)&&!!a)&&!Array.isArray(a)};// Returns true if the value has a "then" function. Adapted from
 // https://github.com/graphql/graphql-js/blob/499a75939f70c4863d44149371d6a99d57ff7c35/src/jsutils/isPromise.js
 exports.isObject=isObject;var isPromise=function isPromise(a){return!!(a&&"function"==typeof a.then)};exports.isPromise=isPromise;var isNode=function isNode(a){try{return Node.prototype.cloneNode.call(a,!1),!0}catch(a){return!1}};/**
  * Convert String (false,False,True,true,no,yes,0,1) to real Boolean
@@ -317,14 +321,14 @@ exports.isObject=isObject;var isPromise=function isPromise(a){return!!(a&&"funct
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports,"__esModule",{value:!0}),exports["default"]=void 0;var _default=function _default(a){return"<span class=\"tag ".concat(a.style,"\" data-value=\"").concat(a.value,"\">\n        ").concat(a.text,"\n        ").concat(a.removable?"<div class=\"delete is-small\" data-tag=\"delete\"></div>":"","\n    </span>")};exports["default"]=_default;
+Object.defineProperty(exports,"__esModule",{value:!0}),exports["default"]=void 0;var _dom=__webpack_require__(1),_default=function _default(a){return"<span class=\"tag ".concat((0,_dom.escape)(a.style),"\" data-value=\"").concat((0,_dom.escape)(a.value),"\">\n        ").concat((0,_dom.escape)(a.text),"\n        ").concat(a.removable?"<div class=\"delete is-small\" data-tag=\"delete\"></div>":"","\n    </span>")};exports["default"]=_default;
 
 /***/ }),
 /* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-var _interopRequireDefault=__webpack_require__(0);Object.defineProperty(exports,"__esModule",{value:!0}),exports["default"]=void 0;var _classCallCheck2=_interopRequireDefault(__webpack_require__(1)),_createClass2=_interopRequireDefault(__webpack_require__(2)),_assertThisInitialized2=_interopRequireDefault(__webpack_require__(3)),_get2=_interopRequireDefault(__webpack_require__(14)),_inherits2=_interopRequireDefault(__webpack_require__(5)),_possibleConstructorReturn2=_interopRequireDefault(__webpack_require__(6)),_getPrototypeOf2=_interopRequireDefault(__webpack_require__(4)),_component=_interopRequireDefault(__webpack_require__(17)),_dom=__webpack_require__(9),_type=__webpack_require__(11),_defaultOptions=_interopRequireDefault(__webpack_require__(25)),_tag=_interopRequireDefault(__webpack_require__(12)),_wrapper=_interopRequireDefault(__webpack_require__(26)),_dropdownItem=_interopRequireDefault(__webpack_require__(27));function _createSuper(a){return function(){var b,c=(0,_getPrototypeOf2["default"])(a);if(_isNativeReflectConstruct()){var d=(0,_getPrototypeOf2["default"])(this).constructor;b=Reflect.construct(c,arguments,d)}else b=c.apply(this,arguments);return(0,_possibleConstructorReturn2["default"])(this,b)}}function _isNativeReflectConstruct(){if("undefined"==typeof Reflect||!Reflect.construct)return!1;if(Reflect.construct.sham)return!1;if("function"==typeof Proxy)return!0;try{return Date.prototype.toString.call(Reflect.construct(Date,[],function(){})),!0}catch(a){return!1}}// TODO: add pattern or function to valdiate value before adding
+var _interopRequireDefault=__webpack_require__(0);Object.defineProperty(exports,"__esModule",{value:!0}),exports["default"]=void 0;var _classCallCheck2=_interopRequireDefault(__webpack_require__(2)),_createClass2=_interopRequireDefault(__webpack_require__(3)),_assertThisInitialized2=_interopRequireDefault(__webpack_require__(4)),_get2=_interopRequireDefault(__webpack_require__(14)),_inherits2=_interopRequireDefault(__webpack_require__(6)),_possibleConstructorReturn2=_interopRequireDefault(__webpack_require__(7)),_getPrototypeOf2=_interopRequireDefault(__webpack_require__(5)),_component=_interopRequireDefault(__webpack_require__(17)),_dom=__webpack_require__(1),_type=__webpack_require__(11),_defaultOptions=_interopRequireDefault(__webpack_require__(25)),_tag=_interopRequireDefault(__webpack_require__(12)),_wrapper=_interopRequireDefault(__webpack_require__(26)),_dropdownItem=_interopRequireDefault(__webpack_require__(27));function _createSuper(a){var b=_isNativeReflectConstruct();return function _createSuperInternal(){var c,d=(0,_getPrototypeOf2["default"])(a);if(b){var e=(0,_getPrototypeOf2["default"])(this).constructor;c=Reflect.construct(d,arguments,e)}else c=d.apply(this,arguments);return(0,_possibleConstructorReturn2["default"])(this,c)}}function _isNativeReflectConstruct(){if("undefined"==typeof Reflect||!Reflect.construct)return!1;if(Reflect.construct.sham)return!1;if("function"==typeof Proxy)return!0;try{return Date.prototype.toString.call(Reflect.construct(Date,[],function(){})),!0}catch(a){return!1}}// TODO: add pattern or function to valdiate value before adding
 var BulmaTagsInput=/*#__PURE__*/function(a){function BulmaTagsInput(a){var c,d=1<arguments.length&&void 0!==arguments[1]?arguments[1]:{};return(0,_classCallCheck2["default"])(this,BulmaTagsInput),c=b.call(this,a,d,_defaultOptions["default"]),c.options.allowDuplicates=(0,_type.BooleanParse)(c.options.allowDuplicates),c.options.caseSensitive=(0,_type.BooleanParse)(c.options.caseSensitive),c.options.clearSelectionOnTyping=(0,_type.BooleanParse)(c.options.clearSelectionOnTyping),c.options.closeDropdownOnItemSelect=(0,_type.BooleanParse)(c.options.closeDropdownOnItemSelect),c.options.freeInput=(0,_type.BooleanParse)(c.options.freeInput),c.options.highlightDuplicate=(0,_type.BooleanParse)(c.options.highlightDuplicate),c.options.highlightMatchesString=(0,_type.BooleanParse)(c.options.highlightMatchesString),c.options.removable=(0,_type.BooleanParse)(c.options.removable),c.options.searchOn=c.options.searchOn.toLowerCase(),c.options.selectable=(0,_type.BooleanParse)(c.options.selectable),c.options.trim=(0,_type.BooleanParse)(c.options.trim),c._onDocumentClick=c._onDocumentClick.bind((0,_assertThisInitialized2["default"])(c)),c._onInputChange=c._onInputChange.bind((0,_assertThisInitialized2["default"])(c)),c._onInputClick=c._onInputClick.bind((0,_assertThisInitialized2["default"])(c)),c._onInputFocusOut=c._onInputFocusOut.bind((0,_assertThisInitialized2["default"])(c)),c._onInputFocusIn=c._onInputFocusIn.bind((0,_assertThisInitialized2["default"])(c)),c._onInputKeyDown=c._onInputKeyDown.bind((0,_assertThisInitialized2["default"])(c)),c._onInputKeyPress=c._onInputKeyPress.bind((0,_assertThisInitialized2["default"])(c)),c._onOriginalInputChange=c._onOriginalInputChange.bind((0,_assertThisInitialized2["default"])(c)),c._onTagDeleteClick=c._onTagDeleteClick.bind((0,_assertThisInitialized2["default"])(c)),c._onTagClick=c._onTagClick.bind((0,_assertThisInitialized2["default"])(c)),c._onDropdownItemClick=c._onDropdownItemClick.bind((0,_assertThisInitialized2["default"])(c)),c.items=[],c._selected=-1,c._init(),c}/**
 	 * Initiate all DOM element corresponding to selector
 	 * @method
@@ -410,7 +414,7 @@ if(b.options.allowDuplicates||!b.has(a)){var d={value:b._objectItems?a[b.options
      */},{key:"focus",value:function focus(){return this.container.classList.add("is-focused"),this.input.focus(),this}/**
      * Check if given item is present
      * @param {String} item 
-     */},{key:"has",value:function has(a){var b=this;return a=this._trim(a),this._objectItems?this.items.some(function(c){return b.options.caseSensitive?c[b.options.itemValue]===a[b.options.itemValue]:c[b.options.itemValue].toLowerCase()===a[b.options.itemValue].toLowerCase()}):this.hasValue(a)}/**
+     */},{key:"has",value:function has(a){var b=this;return a=this._trim(a),this._objectItems?this.items.some(function(c){return b.options.caseSensitive||!(0,_type.isString)(c[b.options.itemValue])?c[b.options.itemValue]===a[b.options.itemValue]:c[b.options.itemValue].toLowerCase()===a[b.options.itemValue].toLowerCase()}):this.hasValue(a)}/**
      * Check if given text is present
      * @param {String} value 
      */},{key:"hasText",value:function hasText(a){var b=this;return this.options.trim&&(a=a.trim()),this.items.some(function(c){var d=b._objectItems?c[b.options.itemText]:c;return b.options.caseSensitive?d===a:d.toLowerCase()===a.toLowerCase()})}/**
@@ -485,7 +489,7 @@ case 39:this.input.value.length||(0>this._selected?this.selectAtIndex(0):this.se
      * 
      * @param {Event} e 
      */},{key:"_onInputKeyPress",value:function _onInputKeyPress(a){var b=this,c=a.charCode||a.keyCode||a.which,d=this._trim(this.input.value)+String.fromCharCode(c);if(!this._manualInputAllowed&&!this._filterInputAllowed)return a.preventDefault(),!1;// ENTER
-if(!d.length&&13!==c)return!1;if(this._filterInputAllowed&&this._filterDropdownItems(d),this._filterInputAllowed&&this.source&&d.length>=this.options.searchMinChars&&13!==c&&(this._openDropdown(),this.dropdown.classList.add("is-loading"),this._emptyDropdown(),this.source(d).then(function(a){a=b.emit("on.results.received",a),a.length&&a.forEach(function(a){var c={value:null,text:null};(0,_type.isObject)(a)?(c.value=a[b.options.itemValue],c.text=a[b.options.itemText]):(c.value=a,c.text=a),b._createDropdownItem(c)}),b._filterDropdownItems(d),b.dropdown.classList.remove("is-loading")})),this._manualInputAllowed&&(d.includes(this.options.delimiter)||13==c)){a.preventDefault();// Split value by delimiter in case we copy/paste multiple values
+if(!d.length&&13!==c)return!1;if(this._filterInputAllowed&&this._filterDropdownItems(d),this._filterInputAllowed&&this.source&&d.length>=this.options.searchMinChars&&13!==c&&(this._openDropdown(),this.dropdown.classList.add("is-loading"),this._emptyDropdown(),this.source(d).then(function(a){a=b.emit("on.results.received",a),a.length&&a.forEach(function(a){var c={value:null,text:null};(0,_type.isObject)(a)?(c.value=a[b.options.itemValue],c.text=a[b.options.itemText]):(c.value=a,c.text=a),b._createDropdownItem(c)}),b._filterDropdownItems(d),b.dropdown.classList.remove("is-loading")})["catch"](function(a){console.log(a)})),this._manualInputAllowed&&(d.includes(this.options.delimiter)||13==c)){a.preventDefault();// Split value by delimiter in case we copy/paste multiple values
 var e=d.split(this.options.delimiter);return e.forEach(function(a){""!=(a=a.replace(b.options.delimiter,""))&&b.add(a)}),d="",this.input.value="",this._closeDropdown(),!1}}/**
      * Original input change event handler
      * CAUTION: because original input is now hidden the change event must be triggered manually on change
@@ -542,7 +546,7 @@ module.exports = _get;
 /* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var getPrototypeOf = __webpack_require__(4);
+var getPrototypeOf = __webpack_require__(5);
 
 function _superPropBase(object, property) {
   while (!Object.prototype.hasOwnProperty.call(object, property)) {
@@ -575,8 +579,8 @@ module.exports = _setPrototypeOf;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-var _interopRequireDefault=__webpack_require__(0);Object.defineProperty(exports,"__esModule",{value:!0}),exports["default"]=void 0;var _defineProperty2=_interopRequireDefault(__webpack_require__(8)),_classCallCheck2=_interopRequireDefault(__webpack_require__(1)),_createClass2=_interopRequireDefault(__webpack_require__(2)),_assertThisInitialized2=_interopRequireDefault(__webpack_require__(3)),_inherits2=_interopRequireDefault(__webpack_require__(5)),_possibleConstructorReturn2=_interopRequireDefault(__webpack_require__(6)),_getPrototypeOf2=_interopRequireDefault(__webpack_require__(4)),_events=_interopRequireDefault(__webpack_require__(18)),_dom=__webpack_require__(9),_uuid=_interopRequireDefault(__webpack_require__(24));function ownKeys(a,b){var c=Object.keys(a);if(Object.getOwnPropertySymbols){var d=Object.getOwnPropertySymbols(a);b&&(d=d.filter(function(b){return Object.getOwnPropertyDescriptor(a,b).enumerable})),c.push.apply(c,d)}return c}function _objectSpread(a){for(var b,c=1;c<arguments.length;c++)b=null==arguments[c]?{}:arguments[c],c%2?ownKeys(Object(b),!0).forEach(function(c){(0,_defineProperty2["default"])(a,c,b[c])}):Object.getOwnPropertyDescriptors?Object.defineProperties(a,Object.getOwnPropertyDescriptors(b)):ownKeys(Object(b)).forEach(function(c){Object.defineProperty(a,c,Object.getOwnPropertyDescriptor(b,c))});return a}function _createSuper(a){return function(){var b,c=(0,_getPrototypeOf2["default"])(a);if(_isNativeReflectConstruct()){var d=(0,_getPrototypeOf2["default"])(this).constructor;b=Reflect.construct(c,arguments,d)}else b=c.apply(this,arguments);return(0,_possibleConstructorReturn2["default"])(this,b)}}function _isNativeReflectConstruct(){if("undefined"==typeof Reflect||!Reflect.construct)return!1;if(Reflect.construct.sham)return!1;if("function"==typeof Proxy)return!0;try{return Date.prototype.toString.call(Reflect.construct(Date,[],function(){})),!0}catch(a){return!1}}var Component=/*#__PURE__*/function(a){function Component(a){var c,d=1<arguments.length&&void 0!==arguments[1]?arguments[1]:{},e=2<arguments.length&&void 0!==arguments[2]?arguments[2]:{};// An invalid selector or non-DOM node has been provided.
-if((0,_classCallCheck2["default"])(this,Component),c=b.call(this),c.element=(0,_dom.querySelector)(a,document),!c.element)throw new Error("An invalid selector or non-DOM node has been provided for ".concat(c.constructor.name,"."));return c.element[c.constructor.name]=c.constructor._interface.bind((0,_assertThisInitialized2["default"])(c)),c.element[c.constructor.name].Constructor=c.constructor.name,c.id=(0,_uuid["default"])(c.constructor.name+"-"),c.options=_objectSpread({},e,{},d,{},(0,_dom.optionsFromDataset)(c.element,e)),c}/**
+var _interopRequireDefault=__webpack_require__(0);Object.defineProperty(exports,"__esModule",{value:!0}),exports["default"]=void 0;var _defineProperty2=_interopRequireDefault(__webpack_require__(9)),_classCallCheck2=_interopRequireDefault(__webpack_require__(2)),_createClass2=_interopRequireDefault(__webpack_require__(3)),_assertThisInitialized2=_interopRequireDefault(__webpack_require__(4)),_inherits2=_interopRequireDefault(__webpack_require__(6)),_possibleConstructorReturn2=_interopRequireDefault(__webpack_require__(7)),_getPrototypeOf2=_interopRequireDefault(__webpack_require__(5)),_events=_interopRequireDefault(__webpack_require__(18)),_dom=__webpack_require__(1),_uuid=_interopRequireDefault(__webpack_require__(24));function ownKeys(a,b){var c=Object.keys(a);if(Object.getOwnPropertySymbols){var d=Object.getOwnPropertySymbols(a);b&&(d=d.filter(function(b){return Object.getOwnPropertyDescriptor(a,b).enumerable})),c.push.apply(c,d)}return c}function _objectSpread(a){for(var b,c=1;c<arguments.length;c++)b=null==arguments[c]?{}:arguments[c],c%2?ownKeys(Object(b),!0).forEach(function(c){(0,_defineProperty2["default"])(a,c,b[c])}):Object.getOwnPropertyDescriptors?Object.defineProperties(a,Object.getOwnPropertyDescriptors(b)):ownKeys(Object(b)).forEach(function(c){Object.defineProperty(a,c,Object.getOwnPropertyDescriptor(b,c))});return a}function _createSuper(a){var b=_isNativeReflectConstruct();return function _createSuperInternal(){var c,d=(0,_getPrototypeOf2["default"])(a);if(b){var e=(0,_getPrototypeOf2["default"])(this).constructor;c=Reflect.construct(d,arguments,e)}else c=d.apply(this,arguments);return(0,_possibleConstructorReturn2["default"])(this,c)}}function _isNativeReflectConstruct(){if("undefined"==typeof Reflect||!Reflect.construct)return!1;if(Reflect.construct.sham)return!1;if("function"==typeof Proxy)return!0;try{return Date.prototype.toString.call(Reflect.construct(Date,[],function(){})),!0}catch(a){return!1}}var Component=/*#__PURE__*/function(a){function Component(a){var c,d=1<arguments.length&&void 0!==arguments[1]?arguments[1]:{},e=2<arguments.length&&void 0!==arguments[2]?arguments[2]:{};// An invalid selector or non-DOM node has been provided.
+if((0,_classCallCheck2["default"])(this,Component),c=b.call(this),c.element=(0,_dom.querySelector)(a,document),!c.element)throw new Error("An invalid selector or non-DOM node has been provided for ".concat(c.constructor.name,"."));return c.element[c.constructor.name]=c.constructor._interface.bind((0,_assertThisInitialized2["default"])(c)),c.element[c.constructor.name].Constructor=c.constructor.name,c.id=(0,_uuid["default"])(c.constructor.name+"-"),c.options=_objectSpread(_objectSpread(_objectSpread({},e),d),(0,_dom.optionsFromDataset)(c.element,e)),c}/**
 	 * Initiate all DOM element corresponding to selector
 	 * @method
 	 * @return {Array} Array of all Plugin instances
@@ -592,7 +596,7 @@ if((0,_classCallCheck2["default"])(this,Component),c=b.call(this),c.element=(0,_
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-var _interopRequireDefault=__webpack_require__(0);Object.defineProperty(exports,"__esModule",{value:!0}),exports["default"]=void 0;var _classCallCheck2=_interopRequireDefault(__webpack_require__(1)),_createClass2=_interopRequireDefault(__webpack_require__(2)),EventEmitter=/*#__PURE__*/function(){/**
+var _interopRequireDefault=__webpack_require__(0);Object.defineProperty(exports,"__esModule",{value:!0}),exports["default"]=void 0;var _classCallCheck2=_interopRequireDefault(__webpack_require__(2)),_createClass2=_interopRequireDefault(__webpack_require__(3)),EventEmitter=/*#__PURE__*/function(){/**
 	 * Construct EventEmitter
 	 * 
 	 * @param {Array} listeners 
@@ -689,7 +693,7 @@ function _unsupportedIterableToArray(o, minLen) {
   if (typeof o === "string") return arrayLikeToArray(o, minLen);
   var n = Object.prototype.toString.call(o).slice(8, -1);
   if (n === "Object" && o.constructor) n = o.constructor.name;
-  if (n === "Map" || n === "Set") return Array.from(n);
+  if (n === "Map" || n === "Set") return Array.from(o);
   if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return arrayLikeToArray(o, minLen);
 }
 
@@ -746,14 +750,14 @@ trim:!0// Should we trim value before processing them ?
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports,"__esModule",{value:!0}),exports["default"]=void 0;var _default=function _default(a){return"<div class=\"tags-input\">\n        <input class=\"input\" type=\"text\" placeholder=\"".concat(a.placeholder,"\">\n        <div id=\"").concat(a.uuid,"-list\" class=\"dropdown-menu\" role=\"menu\">\n            <div class=\"dropdown-content\">\n                <span class=\"dropdown-item empty-title\">").concat(a.emptyTitle,"</span>\n            </div>\n        </div>\n    </div>")};exports["default"]=_default;
+Object.defineProperty(exports,"__esModule",{value:!0}),exports["default"]=void 0;var _dom=__webpack_require__(1),_default=function _default(a){return"<div class=\"tags-input\">\n        <input class=\"input\" type=\"text\" placeholder=\"".concat((0,_dom.escape)(a.placeholder),"\">\n        <div id=\"").concat((0,_dom.escape)(a.uuid),"-list\" class=\"dropdown-menu\" role=\"menu\">\n            <div class=\"dropdown-content\">\n                <span class=\"dropdown-item empty-title\">").concat((0,_dom.escape)(a.emptyTitle),"</span>\n            </div>\n        </div>\n    </div>")};exports["default"]=_default;
 
 /***/ }),
 /* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports,"__esModule",{value:!0}),exports["default"]=void 0;var _default=function _default(a){return"<a href=\"javascript:void(0);\" class=\"dropdown-item\" data-value=\"".concat(a.value,"\" data-text=\"").concat(a.text,"\">").concat(a.text,"</a>")};exports["default"]=_default;
+Object.defineProperty(exports,"__esModule",{value:!0}),exports["default"]=void 0;var _dom=__webpack_require__(1),_default=function _default(a){return"<a href=\"javascript:void(0);\" class=\"dropdown-item\" data-value=\"".concat((0,_dom.escape)(a.value),"\" data-text=\"").concat((0,_dom.escape)(a.text),"\">").concat((0,_dom.escape)(a.text),"</a>")};exports["default"]=_default;
 
 /***/ })
 /******/ ])["default"];
