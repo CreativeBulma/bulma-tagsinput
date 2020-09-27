@@ -8,7 +8,8 @@
 		"email": "support@creativebulma.net",
 		"url": "https://creativebulma.net"
 	},
-	"main": "./src/js/index.js",
+	"main": "./dist/js/bulma-tagsinput.js",
+	"module": "./src/js/index.js",
 	"style": "./dist/css/bulma-tagsinput.css",
 	"script": "./dist/js/bulma-tagsinput.js",
 	"sass": "./src/sass/index.sass",
