@@ -605,7 +605,7 @@ export default class BulmaTagsInput extends Component {
         item = this._trim(item);
 
         if (this._objectItems) {
-            return this.items.some(i => this.options.caseSensitive ? i[this.options.itemValue] === item[this.options.itemValue] : i[this.options.itemValue].toLowerCase() === item[this.options.itemValue].toLowerCase());
+            return this.items.some(i => this.options.caseSensitive || !isString(i[this.options.itemValue]) ? i[this.options.itemValue] === item[this.options.itemValue] : i[this.options.itemValue].toLowerCase() === item[this.options.itemValue].toLowerCase());
         } else {
             return this.hasValue(item);
         }
