@@ -96,4 +96,20 @@ export const cloneAttributes = (target, source, except = null) => {
 			target.setAttribute(attr.nodeName === "id" ? 'data-id' : attr.nodeName, attr.nodeValue);
 		}
 	});
-}
+};
+
+/**
+ * Escapes string for insertion into HTML, replacing special characters with HTML
+ * entities.
+ * @param {String} string
+ */
+export const escape = (string) => {
+	return string.replace(/(['"<>])/g, (char) => {
+		return {
+			'<': "&lt;",
+			'>': "&gt;",
+			'"': "&quot;",
+			"'": "&#39;"
+		}[char];
+	});
+};
