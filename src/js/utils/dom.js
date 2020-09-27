@@ -104,12 +104,14 @@ export const cloneAttributes = (target, source, except = null) => {
  * @param {String} string
  */
 export const escape = (string) => {
-	return string.replace(/(['"<>])/g, (char) => {
-		return {
-			'<': "&lt;",
-			'>': "&gt;",
-			'"': "&quot;",
-			"'": "&#39;"
-		}[char];
-	});
+	return isString(string) ?
+		string.replace(/(['"<>])/g, (char) => {
+			return {
+				'<': "&lt;",
+				'>': "&gt;",
+				'"': "&quot;",
+				"'": "&#39;"
+			}[char];
+		})
+	: string;
 };
