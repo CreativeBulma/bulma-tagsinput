@@ -1,4 +1,4 @@
-baseURL = "https://demo.creativebulma.net/components/tagsinput/1.0/"
+baseURL = "https://bulma-tagsinput.netlify.app/"
 languageCode = "en-us"
 title = "BulmaTagsInput"
 theme = "creativebulma"
