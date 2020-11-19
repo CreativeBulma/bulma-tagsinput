@@ -11,10 +11,8 @@ draft: false
 
 BulmaTagsInput is a {{% link text="Bulma" href="https://bulma.io" target="_blank" %}} extension which brings **a full-featured user interface for managing tags supporting autocomplete** to your project.
 
-{{% notification primary %}}If you enjoy this component, have a look at our [MarketPlace](https://creativebulma.net) and discover Free and Premium Bulma components and Templates.{{% /notification %}}
-
 ## License
-BulmaTagsInput is © 2020 by [CreativeBulma](https://creativebulma.net).
+BulmaTagsInput is © 2020 by [CreativeBulma](https://github.com/CreativeBulma).
 
 BulmaTagsInput is distributed under [MIT](https://github.com/CreativeBulma/bulma-tagsinput/blob/master/LICENSE) license.
 
