@@ -12,7 +12,7 @@ draft: false
 # Basic usage
 To easiest way to start with BulmaTagsInput is to add `data-type="tags"` attribute or set `type="tags"` to an input element and call `BulmaTagsInput.attach();` to convert them all into a Tags input control.
 
-By default Tags input prevent duplicate entries and create selectable and removable tags. These options can be overiden either by JavaScript or by adding options into the input dataset (see [Javascript API](http://10.0.0.6:59626/get-started/javascript-api/) documentation).
+By default Tags input prevent duplicate entries and create selectable and removable tags. These options can be overiden either by JavaScript or by adding options into the input dataset (see [Javascript API](/get-started/javascript-api/) documentation).
 {{< preview id="tags-input" lang="html" >}}<div class="field">
 	<label class="label">Tags</label>
 	<div class="control">
