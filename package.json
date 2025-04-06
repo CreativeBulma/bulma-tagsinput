@@ -3,11 +3,6 @@
 	"description": "A full-featured user interface for managing tags with Bulma supporting autocomplete.",
 	"version": "1.0.3",
 	"homepage": "https://github.com/CreativeBulma/bulma-tagsinput",
-	"author": {
-		"name": "Gaetan",
-		"email": "support@creativebulma.net",
-		"url": "https://creativebulma.net"
-	},
 	"main": "./dist/js/bulma-tagsinput.js",
 	"module": "./src/js/index.js",
 	"style": "./dist/css/bulma-tagsinput.css",
